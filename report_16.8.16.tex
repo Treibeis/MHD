@@ -1,0 +1,299 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath}
+\usepackage{amsfonts}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+%\usepackage{morefloats}% A pacakge which enables this text to contain more figures and tables.
+\usepackage{grffile}% A pacakge which changes the algorithm to check for known extensions, so that we can insert pdf figures into this text.
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Report on August 16]{The isothermal MHD shock conditions and a `new' type of isothermal MHD shocks under (dynamical) MHD energy conservation}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Bo-Yuan Liu]{Bo-Yuan Liu$^{1}$\thanks{E-mail: liu-by13@mails.tsinghua.edu.cn}
+\\
+% List of institutions
+$^{1}$Department of Physics, Tsinghua University, Beijing, China(PRC)\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+\begin{keywords}
+MHD -- shock waves -- stars: formation -- supernovae: general -- ISM: clouds
+\end{keywords}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+ 
+\section{When the effective entropy is conserved}
+This section shows how the equations for MHD shock conditions reduce from their general forms in a (sphericall symmetric) general polytropic magneto-fluid (under self-gravity) of \citet{wang2008dynamic} to those in an isothermal magneto-fluid of the present paper when $\gamma\rightarrow 1$.
+
+The self-similar transformation in \citet{wang2008dynamic} (formulae (7)) is
+\begin{gather}
+\begin{split}
+r&=k^{\frac{1}{2}}t^{n}x\ ,\quad u=k^{\frac{1}{2}}t^{n-1}v\ ,\quad \rho=\frac{\alpha}{4\pi Gt^{2}}\ ,\\
+p&=\frac{kt^{2n-4}}{4\pi G}\beta\ ,\quad M=\frac{k^{\frac{3}{4}}t^{3n-2}m}{(3n-2)G}\ ,\quad \langle B^{2}_{t}\rangle=\frac{kt^{2n-4}}{G}\omega\ ,
+\end{split}\label{e1}
+\end{gather}
+where the definitions of $u$, $\rho$, $p$ and $M$ are
+the same with my work and the $B_{t}$ here is just the $B_{\parallel}$ in my draft. We further know from the MHD PDEs/ODEs that (equations (11) and (12) in \citet{wang2008dynamic}) 
+\begin{gather}
+\omega=h\alpha^{2}x^{2}\ ,\quad \beta=\alpha^{\gamma}m^{q}\ ,\label{e2}
+\end{gather}
+where $\gamma$ is the polytropic index and $q=2(n+\gamma-2)/(3n-2)$. Since for the polytropic MHD model in \citet{wang2008dynamic}, the effective entropy is conserved, which is only possible in our isothermal MHD model with $\gamma\rightarrow 1$. Therefore, as $\gamma\rightarrow 1$, $n\rightarrow 1$, $q\rightarrow 0$, $k=a^{2}$, and $h=\lambda$, the general polytropic MHD model just reduces to our isothermal MHD model, where $a$ is the isothermal speed of sound and $\lambda$ is the dimensionless parameter that characterises the strength of the magnetic field in our isothermal MHD model.
+
+The shock conditions expressed by physical quantities are (expressions (17)-(20) in \citet{wang2008dynamic}\footnote{It here uses a pair of square brackets outside each expression enclosed to denote the difference between the upstream (marked by sub-script `1') and downstream (marked by subscript `2') quantities, as has been done conventionally for shock analyses.})
+\begin{gather}
+\left[\rho\left(u_{s}-u\right)\right]_{1}^{2}=0\ ,\label{e3}\\
+\left[p+\rho\left(u_{s}-u\right)^{2}+\frac{\langle B_{t}^{2}\rangle}{8\pi}\right]_{1}^{2}=0\ ,\label{e4}\\
+\left[\frac{\rho\left(u_{s}-u\right)^{3}}{2}+\frac{\gamma p\left(u_{s}-u\right)}{\gamma-1}+\frac{\langle B_{t}^{2}\rangle}{4\pi}\left(u_{s}-u\right)\right]_{1}^{2}=0\ ,\label{e5}\\
+\left[\left(u_{s}-u\right)^{2}\langle B_{t}^{2}\rangle\right]_{1}^{2}=0\ ,\label{e6}
+\end{gather}
+of which euqation~(\ref{e5}) for (dynamical) MHD energy conservation\footnote{Actually, equation~(\ref{e5}) is based on the presupposition that gas around the shock layer experience an `isentropic' process, i.e. $\partial s/\partial t+\bf{u}\cdot\nabla s$, in which there is no heat flux, and that is why we use the qualifier `dynamical'.} is not well formulated in the isothermal model, since the second term $\gamma p\left(u_{s}-u\right)/(\gamma-1)$ diverges as $\gamma\rightarrow 1$, and there is no relevant equation for MHD/HD energy conservation in the isothermal models of \citet{lou2014self}, \citet{yuLou2006} and my work. So what is the condition of MHD/HD energy conservation in the isothermal MHD/HD model? The following derivations will show that in the isothermal MHD model with $\gamma\rightarrow 1$, MHD energy is conserved (dynamically) only when both sides of the shock have the same temperature.
+
+
+By formulae~(\ref{e1}) and (\ref{e2}), from equations~(\ref{e3})-(\ref{e6}), we obtain the shock conditions in self-similar variables (formulae~(64) in \citet{wang2008dynamic}):
+\begin{gather}
+\alpha_{1}\Gamma_{1}=\alpha_{2}\Gamma_{2}\ ,\label{e7}\\
+\alpha_{1}^{2-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+\alpha_{1}\Gamma_{1}^{2}+\frac{h\alpha_{1}^{2}}{2}=left(\alpha_{2},x_{2},\Gamma_{2})\ ,\label{e8}\\
+\Gamma_{1}^{2}+\frac{2\gamma}{\gamma-1}\alpha_{1}^{1-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+2h\alpha_{1}=left(\alpha_{2},x_{2},\Gamma_{2})\ ,\label{e9}
+\end{gather}
+where $left(\alpha_{2},x_{2},\Gamma_{2})$ denotes the formula on the left side of the equal sign with $\alpha_{1}$, $x_{1}$ and $\Gamma_{1}$ replaced by $\alpha_{2}$, $x_{2}$ and $\Gamma_{2}$, $\Gamma_{i}=n-v_{i}/x_{i}$, and $\tau=\sqrt{k_{2}/k_{1}}=x_{1}/x_{2}$, since $u_{s}=dr_{s}/dt=nk_{i}^{1/2}t^{n-1}x_{i}$ ($i=1,2$). And it is necessay to point out that equations~(\ref{e7})-(\ref{e9}) correspond to equations~(\ref{e3})-(\ref{e5}), respectively, while equation~(\ref{e6}) has been combined with equation~(\ref{e3}) to give $h_{1}=h_{2}=h$. We can further eliminate $\alpha_{2}$ in equations~(\ref{e8}) and (\ref{e9}) by equation~(\ref{e7}) to give (equations~(65) in \citet{wang2008dynamic})
+\begin{gather}
+\alpha_{1}^{2-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+\alpha_{1}\Gamma_{1}^{2}+\frac{h\alpha_{1}^{2}}{2}\notag\\
+=\frac{\left(\alpha_{1}\Gamma_{1}\right)^{2-n+\frac{3nq}{2}}}{\Gamma_{2}^{2-n+\frac{(3n-2)q}{2}}}x_{2}^{3q-2}+\alpha_{1}\Gamma_{1}\Gamma_{2}+\frac{h\alpha_{1}^{2}\Gamma_{1}^{2}}{2\Gamma_{2}^{2}}\ ,\label{e10}\\
+\frac{2\gamma}{(\gamma-1)}\alpha_{1}^{1-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+\Gamma_{1}^{2}+2h\alpha_{1}\notag\\
+=\frac{2\gamma}{(\gamma-1)}\frac{\left(\alpha_{1}\Gamma_{1}\right)^{1-n+\frac{3nq}{2}}}{\Gamma_{2}^{1-n+\frac{(3n-2)q}{2}}}x_{2}^{3q-2}+\Gamma_{2}^{2}+2h\frac{\alpha_{1}\Gamma_{1}}{\Gamma_{2}}\ ,\label{e11}
+\end{gather}
+of which equation~(\ref{e11}) can be regarded to embody (dynamical) MHD energy conservation since it is directly related to equation~(\ref{e5}) which, as mentioned above, cannot be included in the $\gamma\rightarrow 1$ isothermal model in a straight forward manner, while equation~(\ref{e6}) corresponds to momentum conservation.
+
+Now, recall the cubic equation (40) and the quadric equation (34) (whose real solutions correspond to possible shocks) of my draft for two-temperature and one-temperature isothermal MHD shock conditions
+\begin{gather}
+X^{3}+\tau^{2}X^{2}\beta_{1}-\left(1+\beta_{1}+\beta_{1}M_{1}^{2}\right)X+M_{1}^{2}\beta_{1}=0\ ,\label{e12}\\
+X^{2}+\left(\beta_{1}+1\right)X-\beta_{1}M_{1}^{2}=0\ ,\label{e13}
+\end{gather}
+where 
+\begin{gather}
+\begin{split}
+&\tau=a_{j}/a_{i}=x_{si}/x_{sj}\ ,
+\ M_{1}=v_{i}-x_{si}\ ,
+\ \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ ,\\
+&X=\alpha_{j}/\alpha_{i}=(v_{i}-x_{si})/[\tau (v_{j}-x_{sj})]\ .
+%\\
+%&M_{1}=v_{i}-x_{si}\ ,
+%\qquad \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ .
+\end{split}\label{e14}
+\end{gather}
+Our goal is to find the relations among equations~(\ref{e10})-(\ref{e11}) and equations~(\ref{e12})-(\ref{e13}). For the relations among the variables of these two groups of equations, when we set $(i,j)=(1,2)$\footnote{To be consistent, we also have $x_{s1}=x_{1}$ and $x_{s2}=x_{2}$.} in formulae~(\ref{e14}), as $\gamma\rightarrow 1$, $n\rightarrow 1$, $q\rightarrow 0$, $k=a^{2}$, and $h=\lambda$, it turns out that
+\begin{gather}
+\beta_{1}=\frac{2}{hx_{1}^{2}\alpha_{1}}\ ,\quad M_{1}=-x_{1}\Gamma_{1}\ ,\quad X=\frac{\Gamma_{1}}{\Gamma_{2}}\ .\label{e15}
+\end{gather}
+Then through simple algebra and equations~(\ref{e15}), the reduced (isothermal) version of equation~(\ref{e10})
+\begin{gather}
+\alpha_{1}x_{1}^{-2}+\alpha_{1}\Gamma_{1}^{2}+\frac{h\alpha_{1}^{2}}{2}\notag\\
+-\frac{\alpha_{1}\Gamma_{1}}{\Gamma_{2}}\left(\frac{x_{1}}{\tau}\right)^{-2}-\alpha_{1}\Gamma_{1}\Gamma_{2}-\frac{h\alpha_{1}^{2}\Gamma_{1}^{2}}{2\Gamma_{2}^{2}}=0 \label{e16}
+\end{gather}
+can be easily put into the form
+\begin{gather}
+\alpha_{1}x_{1}^{-2}\lbrace 1+\left(x_{1}\Gamma_{1}\right)^{2}+\frac{h\alpha_{1}x_{1}^{2}}{2}\notag\\
+-\tau^{2}\frac{\Gamma_{1}}{\Gamma_{2}}-\left(x_{1}\Gamma_{1}\right)^{2}\frac{\Gamma_{2}}{\Gamma_{1}}-\frac{h\alpha_{1}x_{1}^{2}}{2}\left(\frac{\Gamma_{1}}{\Gamma_{2}}\right)^{2}\rbrace=0\ ,i.e.\notag\\
+1+M_{1}^{2}+\frac{1}{\beta_{1}}-\tau^{2}X-\frac{M_{1}^{2}}{X}-\frac{1}{\beta_{1}}X^{2}=0\ ,\label{e17}
+\end{gather}
+which is exactly equation~(\ref{e12}) for two-temperature isothermal MHD shock conditions divided by $-X\beta_{1}$. \textbf{Here we do not consider equation~(\ref{e11}) for (dynamical) MHD energy conservation at all. So the conclusion is that for two-temperature isothermal MHD shocks, the MHD energy does not conserve.} Then what about one-temperature MHD shocks?
+
+Actually, we can eliminate $x_{2}$ in equations~(\ref{e10}) and (\ref{e11}) to give (equations~(66) and (67) in \citet{wang2008dynamic})
+\begin{gather}
+\lbrace \frac{(\gamma+1)}{2\gamma}\Gamma_{2}^{2}-\left(\alpha_{1}^{1-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q-1}+\frac{\gamma-1}{2\gamma}\Gamma_{1}+\frac{h\alpha_{1}}{2\Gamma_{1}}\right)\Gamma_{2}\notag\\
+-\frac{2-\gamma}{2\gamma}h\alpha_{1}\rbrace \left(\Gamma_{2}-\Gamma_{1}\right)=0\ ,\label{e18}
+\end{gather}
+which can be reduced to the isothermal version
+\begin{gather}
+\left[\Gamma_{2}^{2}-\left(x_{1}^{-2}\Gamma_{1}^{-1}+\frac{h\alpha_{1}}{2\Gamma_{1}}\right)\Gamma_{2}-\frac{h\alpha_{1}}{2}\right]\left(\Gamma_{2}-\Gamma_{1}\right)=0\ .\label{e19}
+\end{gather}
+By equations~(\ref{e15}), we can write this equation~(\ref{e19}) as
+\begin{gather}
+\left[\left(\Gamma_{1}x_{1}\right)^{2}\left(\frac{\Gamma_{2}}{\Gamma_{1}}\right)^{2}-\left(1+\frac{h\alpha_{1}x_{1}^{2}}{2}\right)\frac{\Gamma_{2}}{\Gamma_{1}}-\frac{h\alpha_{1}x_{1}^{2}}{2}\right]\notag\\
+\times \left(1-\frac{\Gamma_{1}}{\Gamma_{2}}\right)\Gamma_{2}x_{1}^{-2}=0\ , i.e.\notag\\
+\left[M_{1}^{2}\frac{1}{X^{2}}-\left(1+\frac{1}{\beta_{1}}\right)\frac{1}{X}-\frac{1}{\beta_{1}}\right](1-X)=0\ ,\label{e20}
+\end{gather}
+which is exactly equation~(\ref{e13}) multiplied by a factor $(X-1)/\left(X^{2}\beta_{1}\right)$, and we can throw away the factor $\left(1-X\right)$, since $X=1$ gives trivial results. This outcome indicates that \textbf{if we take into account (dynamical) MHD energy conservation by combining equations~(\ref{e10}) and (\ref{e11}) to attain equation~(\ref{e18}), the shock condition in the polytropic model will reduce to the one-temperature shock condition in the isothermal model under $\gamma\rightarrow 1$}. We may further conclude that equation~(\ref{e5}) for (dynamical) MHD energy conservation in the polytropic model is consistent with the very restriction that $a_{1}=a_{2}$ (i.e. $\left(k_{B}T_{u}/\mu\right)^{1/2}=a_{u}=a_{d}=\left(k_{B}T_{d}/\mu\right)^{1/2}$, $T_{u}=T_{d}$: both sides of the shock have the same temperature) in the $\gamma\rightarrow 1$ isothermal model. 
+
+\section{When the effective entropy is not conserved: a `new' isothermal MHD model}
+The problem of non-conservation of (dynamical)\footnote{The qualifier `dynamical' here denotes that there is no heat flux.} MHD energy comes from the condition that $\gamma\rightarrow 1$ for an isothermal gas. So why shall $\gamma\rightarrow 1$ for an isothermal gas, if we regard it as the ratio of the isobaric heat capacity and the isovolumetric heat capacity which can be larger than 1 (e.g. $4/3$ for the relativistic perfect gas and $5/3$ for the non-relativistic perfect gas)? The answer is to conserve the effective entropy. 
+
+In the polytropic model mentioned above, the equation of effective entropy conservation (equation~(6) in \citet{wang2008dynamic}) is
+\begin{gather}
+\left(\frac{\partial}{\partial t}+u\frac{\partial}{\partial r}\right)\left(\mathrm{ln}\frac{p}{\rho^{\gamma}}\right)=0\ ,\label{e21}
+\end{gather}
+from which and other MHD ODEs, we can obtain the relation $\beta=\alpha^{\gamma}m^{q}$ (see equations~(\ref{e2})). If meanwhile the gas is isothermal, i.e. $p=a^{2}\rho$, the self-similar transformation~(\ref{e1}) reduces to that (expressions~(6) in my work)\footnote{$r=atx$.}
+\begin{gather}
+\begin{split}
+&\rho(r,t)=\frac{\alpha(x)}{4\pi Gt^{2}},
+ \qquad\quad M(r,t)=\frac{a^{3}t}{G}m(x)\ ,\\
+&u(r,t)=av(x), \qquad\quad B_{||}(r,\ t)=\frac{ab(x)}{\sqrt{G}t}\ .
+\end{split}\label{e22}
+\end{gather}
+Therefore, we must have $n=1$, $k=A^{2}=\gamma a^{2}$ (, where $A$ is the adiabatic sound speed), $h=\lambda$, $\omega=b$, and $\alpha^{\gamma}m^{q}=\alpha/\gamma$, which means that $\gamma\rightarrow 1$ and $q=0$, then we arrive at the case of the last section that the effective entropy is conserved.
+
+Actually, in my work as well as \citet{lou2014self}, \citet{yuLou2005} and \citet{yuLou2006}, equation~(\ref{e21}) does not show up, but the effective entropy is still conserved when $\gamma\rightarrow 1$ \textbf{for the model itself}, since $s=\mathrm{ln}\left(p/\rho^{\gamma}\right)=2\mathrm{ln}a=const.$. But for two-temperature shocks, because $a_{u}\neq a_{d}$, the effective entropy varies across the shock front. 
+%The conclusion here is that \textbf{those two-temperature MHD/HD isothermal shocks studied by our present work as well as \citet{lou2014self}, \citet{yuLou2005} and \citet{yuLou2006} broke the conservation of both MHD/HD energy and the effective entropy}.
+
+If we discard the conservation of the effective entropy $\mathrm{ln}\left(p/\rho^{\gamma}\right)$ \textbf{for the model itself} and regard $\gamma>1$ as an adjustable parameter of the model, equation~(\ref{e5}) is no longer badly formulated, and we can include it into our model to derive the isothermal MHD shock condition that conserves MHD energy (dynamically), but this leads to a completely different type of isothermmal shocks, which is beyond the range of our present paper
+%\footnote{It seems that I am in a hurry  to get the present paper submitted and accepted, so that it can help me apply for phD positions in the USA. Maybe this is true... Anyway, even though I am interested at this `new' type of isothermal MHD shocks, it will take a lot of time to study it throughly. I believe that they will produce physical results with the good feature that MHD energy conservation is considered. It may become an individual topic for another paper, unless someone else has already studied relevant problems.}
+. By the self-similar transformation~(\ref{e22}), we can wirte equation~(\ref{e5}) for (dynamical) MHD energy conservation in self-similar variables
+\begin{gather}
+a_{i}^{2}\left[\frac{\left(v_{i}-x_{si}\right)^{2}}{2}+\frac{\gamma}{\gamma-1}+\lambda\alpha_{i}x_{si}^{2}\right]\notag\\
+\qquad =a_{j}^{2}\left[\frac{\left(v_{j}-x_{sj}\right)^{2}}{2}+\frac{\gamma}{\gamma-1}+\lambda\alpha_{j}x_{sj}^{2}\right]\ ,\label{e23}
+\end{gather}
+where all the variables involved follow the same definitions of my draft and we have used equation~(\ref{e3}) to simplify the formula. This equation is shown by formulae~(\ref{e14}) to be equivalent to
+\begin{gather}
+X^{3}+\left[\frac{\left(\tau^{2}-1\right)\gamma}{2(\gamma-1)}\beta_{1}-1-\frac{M_{1}^{2}\beta_{1}}{4}\right]X^{2}+\frac{M_{1}^{2}\beta_{1}}{4}=0\ ,\label{e24}
+\end{gather}
+which can be combined with equation~(\ref{e12}) for momentum conservation to eliminate $\tau$ and give an equation for the complete isothermal shock condition with (dynamical) MHD energy conservation, that is independent of the strength of the shock $\tau$, which is similar to what has been done in \citet{wang2008dynamic} for the polytropic model. Finally we obtain a quadratic equation
+\begin{gather}
+f(X)=\frac{2-\gamma}{(\gamma-1)\beta_{1}}X^{2}+\left[\frac{M_{1}^{2}}{2}+\frac{\gamma}{\gamma-1}\left(1+\frac{1}{\beta_{1}}\right)\right]X\notag\\
+\qquad -\frac{(\gamma+1)M_{1}^{2}}{2(\gamma-1)}=0\ ,\label{e25}
+\end{gather}
+for which we have thrown away the trivial factor $X-1$. When $1<\gamma<2$, the coefficient of the $X^{2}$ term  $(2-\gamma)/\left[(\gamma-1)\beta_{1}\right]$ is positive, and we have
+\begin{gather}
+f(X=0)=-\frac{(\gamma+1)M_{1}^{2}}{2(\gamma-1)}<0\ ,\label{e26}\\
+f(X=1)=\frac{1}{\gamma-1}\left(\gamma+\frac{2}{\beta_{1}}-M_{1}^{2}\right)\ .\label{e27}
+\end{gather}
+Therefore, quadratic equation~(\ref{e25}) always has one positive root $X_{+}$ and one negative root $X_{-}$, and only the positive one is physical. When the upstream is given, i.e. $(i,\ j)=(u,\ d)$, we require that $X_{+}>1$, which means that $u_{u}-u_{s}>u_{d}-u_{s}$, where $u_{u}-u_{s}$ and $u_{d}-u_{s}$ are the upstream velocity and the downstream flow velocity relative to the shock front \citep{FM}, so we must have 
+\begin{gather}
+f(X=1)>0\ ,i.e.\quad \gamma+\frac{2}{\beta_{1}}-M_{1}^{2}<0\ ,\label{e28}
+\end{gather}
+which exactly corresponds to the physical requirement that the upstream flow speed relative to the shock speed must exceed the upstream fast magneto-sonic speed, i.e. $a_{u}^{2}\left(v_{u}-x_{su}\right)^{2}>A_{u}^{2}+v_{Au}^{2}$, where $v_{Au}=\sqrt{\lambda\alpha_{u}}\cdot x_{su}a_{u}$, and $A_{u}=a_{u}\gamma^{1/2}$ is the upstream adiabatic sound speed. Once attain the positive root $X=X_{+}>1$, we can calculate $\tau$ (which is no longer an adjustable parameter now) by
+\begin{gather}
+\tau^{2}=\frac{X-1}{X}\left(\frac{M_{1}^{2}}{X}-\frac{1+X}{\beta_{1}}\right)+\frac{1}{X}\ ,\label{e29}
+\end{gather}
+the right side of which must be larger than 1 due to the second law of thermodynamics, given the upstream.
+
+When the properties of the downstream are given, i.e. $(i,\ j)=(d,\ u)$, we require that $X=X_{+}<1$, and $\tau<1$, thus, $f(X=1)>0$, and the right hand side of formula~(\ref{e29}) should be positive and smaller than 1. We can further prove that $a_{u}^{2}\left(v_{u}-x_{su}\right)^{2}>A_{u}^{2}+v_{Au}^{2}$ is still valid, which is now equivalent to $\gamma+2/\beta_{2}<M_{2}^{2}$, where the definitions of $M_{2}$ and $\beta_{2}$ are similar to those of $M_{1}$ and $\beta_{1}$, i.e. $M_{2}\equiv u_{2}/a_{2}=M_{1}/(X\tau)$ and $\beta_{2}\equiv 8\pi p_{2}/\left(B_{2}^{2}\right)=\beta_{1}\tau^{2}/X$. By these definitions and the expression of $\tau^{2}$~(\ref{e29}), we have
+\begin{gather}
+\left(\gamma+\frac{2}{\beta_{2}}-M_{2}^{2}\right)\tau^{2}=\tau^{2}\gamma+\frac{2X}{\beta_{1}}-\frac{M_{1}^{2}}{X^{2}}\notag\\
+\qquad =\left[\frac{\gamma\left(X-1\right)-1}{X^{2}}\right]M_{1}^{2}+\frac{1}{\beta_{1}}\left[(2-\gamma)X+\frac{\gamma}{X}\right]+\frac{\gamma}{X}\ .\label{e30}
+\end{gather}
+Since $X<1$, and $1<\gamma<2$, from equation~(\ref{e25}), we note down an inequality
+\begin{gather}
+\frac{(\gamma+1)M_{1}^2}{2X^{2}}-\frac{(\gamma-1)M_{1}^{2}}{2X}-\frac{\gamma}{X}\notag\\
+\qquad =\left[(2-\gamma)+\frac{\gamma}{X}\right]\frac{1}{\beta_{1}}> \left[(2-\gamma)X+\frac{\gamma}{X}\right]\frac{1}{\beta_{1}}\ ,\label{e31}
+\end{gather}
+which is substituted to formula~(\ref{e30}) to eliminate the second term of the right side and gives
+\begin{gather}
+\left(\gamma+\frac{2}{\beta_{2}}-M_{2}^{2}\right)\tau^{2}<\frac{(\gamma+1)(X-1)M_{1}^{2}}{2X^{2}}<0\ ,i.e.\notag\\
+\qquad \gamma+\frac{2}{\beta_{2}}-M_{2}^{2}<0\ .\label{e32}
+\end{gather}
+The above analysis implies that equation~(\ref{e25}) is the correct equation for the isothermal MHD shock condition with (dynamical) MHD energy conservation, from which we obtained the prefered `one to one' relation between the upstream and the downstream.
+
+Besides, if we have $\gamma\rightarrow 1$, equation~(\ref{e25}) can be put into the form
+\begin{gather}
+(\gamma-1)f(X)\beta_{1}\notag\\
+\qquad =(2-\gamma)X^{2}+\left[\frac{(\gamma-1)M_{1}^{2}\beta_{1}}{2}+\gamma\left(1+\beta_{1}\right)\right]X\notag\\
+\qquad -\frac{(\gamma+1)\beta_{1}M_{1}^{2}}{2}=0\ ,i.e.\notag\\
+\qquad X^{2}+\left(1+\beta_{1}\right)X-\beta_{1}M_{1}^{2}=0\ ,\label{e33}
+\end{gather}
+which is exactly the quadratic equation~(\ref{e13}) for the one-temperature MHD shock condition. By this equation and equation~(\ref{e12}), we can further show that
+\begin{gather}
+\frac{X^{2}-1}{\beta_{1}}+X\tau^{2}-1+\frac{1-X}{X}M_{1}^{2}\notag\\
+\qquad = \frac{X^{2}-1}{\beta_{1}}+X\tau^{2}-1+(1-X)+\frac{1-X^{2}}{\beta_{1}}\notag\\
+\qquad =X\left(\tau^{2}-1\right)=0\ ,i.e.\notag\\
+\qquad\tau=1\ ,\label{e35}
+\end{gather}
+where the first line is just the left hand side of equation~(\ref{e13}) divided by $\beta_{1}X$, and for the second line we have used equation~(\ref{e33}) multiplied by $(1/X-1)/\beta_{1}$. This outcome supports our argument that (dynamical) MHD energy conservation for isotherm MHD shocks under $\gamma\rightarrow 1$ is consistent with the very restriction that $a_{1}=a_{2}$ (i.e. $\left(k_{B}T_{u}/\mu\right)^{1/2}=a_{u}=a_{d}=\left(k_{B}T_{d}/\mu\right)^{1/2}$, $T_{u}=T_{d}$: both sides of the shock have the same temperature).
+
+I have already written and tested the codes for this new type of isothermal MHD shocks under (dynamical) MHD energy conservation. By now, I have verified that the shock condition~(\ref{e25}) is indeed reversible, but it would be more difficult to construct relevant shock solutions, in that $\tau$ is not adjustable here.
+%And the upstream is always in the supersonic region, while the downstream in the subsonic region, which is consistent with the arguement in \citet{SFSW} that the shock front always moves i) with supersonic speed as observed from the \textit{front side} (i.e. the upstream), and ii) with subsonic speed as observed from the \textit{back side} (i.e. the downstream), in which the second property could only be derived analytically when (MHD) energy conservation is taken into account. So I believe that this new isothermal model is physical for isothermal processes (which are not necessarily adiabatic) in the context of astrophysics.
+
+%\appendix
+%\section{The fonts}
+%\textbf{Again}, I use larger fonts (i.e. around 22) for annotations and labels to reproduce Figure 1 and 2 of my draft, as shown by Figure~\ref{1} and \ref{2} here.
+% \textbf{Please have a look at Figure~\ref{2} and tell me whether the fonts are large enough.}
+%I think that this font is large enough because if the font is too large, the figure looks awkward and it is difficult to avoid overlaps of text and curves, especially when there are lots of places to annotate. So I'd like to reproduce all the other figures with these fonts.
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{lv_0.85.pdf}
+%\caption{An example of the locus pair to construct MHD void solutions for illustration, where $\lambda=0.1$, and the meeting point $x_{m}=1.5$. The locus marked by asterisks comes from outward integrations (labelled by `o') with a fixed void boundary $x_{1}=0.85$ and the dimensionless density at the void boundary $\alpha_{0}$ varying in the range of $1.45\sim 1.9$, while the locus marked by solid dots is produced by inward integrations (labelled by `i') with different starting points $x_{*}$s on the magnetosonic critical line (MSCL) in the range of $2.4\sim 2.6$ as Type 1 eigensolutions.}
+%\label{1}
+%\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{void.pdf}
+%\caption{The $-v$ versus $x$ plots of five  MHD void solutions, with $\lambda=0.1$, and the curve labels are consistent with the MHD solution labels. The pertinent parameters are listed in the form of tuples, i.e. (the curve/MHD solution label L, the void boundary $x_{1}$, the dimensionless density at the void boundary $\alpha_{0}$, the point at which the solution crosses the MSCL $x_{*}$): (v1, 0.85, 1.8004, 2.5013), (v2, 0.4, 2.8406, 2.2313), (v3, 0.04, 3.6487, 2.1641) and (v4, 0.004, 3401, 0.8705). The dash-dotted line corresponds to the zero mass line (ZML) $x-v=0$. The dashed line is the MSCL. }
+%\label{2}
+%\end{figure}
+
+
+\bibliographystyle{mnras}
+\bibliography{ref} 
+
+\label{lastpage}
+\end{document}
