@@ -61,7 +61,7 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[Report on August 16]{The isothermal MHD shock conditions and a `new' type of isothermal MHD shocks under (dynamical) MHD energy conservation}
+\title[Report on August 16]{The isothermal MHD shock conditions under (dynamical) isentropic/isothermal MHD energy conservation}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
@@ -98,7 +98,7 @@ The self-similar transformation in \citet{wang2008dynamic} (formulae (7)) is
 \begin{gather}
 \begin{split}
 r&=k^{\frac{1}{2}}t^{n}x\ ,\quad u=k^{\frac{1}{2}}t^{n-1}v\ ,\quad \rho=\frac{\alpha}{4\pi Gt^{2}}\ ,\\
-p&=\frac{kt^{2n-4}}{4\pi G}\beta\ ,\quad M=\frac{k^{\frac{3}{4}}t^{3n-2}m}{(3n-2)G}\ ,\quad \langle B^{2}_{t}\rangle=\frac{kt^{2n-4}}{G}\omega\ ,
+p&=\frac{kt^{2n-4}}{4\pi G}\beta\ ,\quad M=\frac{k^{\frac{3}{2}}t^{3n-2}m}{(3n-2)G}\ ,\quad \langle B^{2}_{t}\rangle=\frac{kt^{2n-4}}{G}\omega\ ,
 \end{split}\label{e1}
 \end{gather}
 where the definitions of $u$, $\rho$, $p$ and $M$ are
@@ -108,12 +108,12 @@ the same with my work and the $B_{t}$ here is just the $B_{\parallel}$ in my dra
 \end{gather}
 where $\gamma$ is the polytropic index and $q=2(n+\gamma-2)/(3n-2)$. Since for the polytropic MHD model in \citet{wang2008dynamic}, the effective entropy is conserved, which is only possible in our isothermal MHD model with $\gamma\rightarrow 1$. Therefore, as $\gamma\rightarrow 1$, $n\rightarrow 1$, $q\rightarrow 0$, $k=a^{2}$, and $h=\lambda$, the general polytropic MHD model just reduces to our isothermal MHD model, where $a$ is the isothermal speed of sound and $\lambda$ is the dimensionless parameter that characterises the strength of the magnetic field in our isothermal MHD model.
 
-The shock conditions expressed by physical quantities are (expressions (17)-(20) in \citet{wang2008dynamic}\footnote{It here uses a pair of square brackets outside each expression enclosed to denote the difference between the upstream (marked by sub-script `1') and downstream (marked by subscript `2') quantities, as has been done conventionally for shock analyses.})
+The shock conditions expressed by physical quantities are (expressions (17)-(20) in \citet{wang2008dynamic}\footnote{It here uses a pair of square brackets outside each expression enclosed to denote the difference between the upstream (marked by sub-script `u') and downstream (marked by subscript `d') quantities, as has been done conventionally for shock analyses.})
 \begin{gather}
-\left[\rho\left(u_{s}-u\right)\right]_{1}^{2}=0\ ,\label{e3}\\
-\left[p+\rho\left(u_{s}-u\right)^{2}+\frac{\langle B_{t}^{2}\rangle}{8\pi}\right]_{1}^{2}=0\ ,\label{e4}\\
-\left[\frac{\rho\left(u_{s}-u\right)^{3}}{2}+\frac{\gamma p\left(u_{s}-u\right)}{\gamma-1}+\frac{\langle B_{t}^{2}\rangle}{4\pi}\left(u_{s}-u\right)\right]_{1}^{2}=0\ ,\label{e5}\\
-\left[\left(u_{s}-u\right)^{2}\langle B_{t}^{2}\rangle\right]_{1}^{2}=0\ ,\label{e6}
+\left[\rho\left(u_{s}-u\right)\right]_{u}^{d}=0\ ,\label{e3}\\
+\left[p+\rho\left(u_{s}-u\right)^{2}+\frac{\langle B_{t}^{2}\rangle}{8\pi}\right]_{u}^{d}=0\ ,\label{e4}\\
+\left[\frac{\rho\left(u_{s}-u\right)^{3}}{2}+\frac{\gamma p\left(u_{s}-u\right)}{\gamma-1}+\frac{\langle B_{t}^{2}\rangle}{4\pi}\left(u_{s}-u\right)\right]_{u}^{d}=0\ ,\label{e5}\\
+\left[\left(u_{s}-u\right)^{2}\langle B_{t}^{2}\rangle\right]_{u}^{d}=0\ ,\label{e6}
 \end{gather}
 of which euqation~(\ref{e5}) for (dynamical) MHD energy conservation\footnote{Actually, equation~(\ref{e5}) is based on the presupposition that gas around the shock layer experience an `isentropic' process, i.e. $\partial s/\partial t+\bf{u}\cdot\nabla s$, in which there is no heat flux, and that is why we use the qualifier `dynamical'.} is not well formulated in the isothermal model, since the second term $\gamma p\left(u_{s}-u\right)/(\gamma-1)$ diverges as $\gamma\rightarrow 1$, and there is no relevant equation for MHD/HD energy conservation in the isothermal models of \citet{lou2014self}, \citet{yuLou2006} and my work. So what is the condition of MHD/HD energy conservation in the isothermal MHD/HD model? The following derivations will show that in the isothermal MHD model with $\gamma\rightarrow 1$, MHD energy is conserved (dynamically) only when both sides of the shock have the same temperature.
 
@@ -185,6 +185,7 @@ By equations~(\ref{e15}), we can write this equation~(\ref{e19}) as
 which is exactly equation~(\ref{e13}) multiplied by a factor $(X-1)/\left(X^{2}\beta_{1}\right)$, and we can throw away the factor $\left(1-X\right)$, since $X=1$ gives trivial results. This outcome indicates that \textbf{if we take into account (dynamical) MHD energy conservation by combining equations~(\ref{e10}) and (\ref{e11}) to attain equation~(\ref{e18}), the shock condition in the polytropic model will reduce to the one-temperature shock condition in the isothermal model under $\gamma\rightarrow 1$}. We may further conclude that equation~(\ref{e5}) for (dynamical) MHD energy conservation in the polytropic model is consistent with the very restriction that $a_{1}=a_{2}$ (i.e. $\left(k_{B}T_{u}/\mu\right)^{1/2}=a_{u}=a_{d}=\left(k_{B}T_{d}/\mu\right)^{1/2}$, $T_{u}=T_{d}$: both sides of the shock have the same temperature) in the $\gamma\rightarrow 1$ isothermal model. 
 
 \section{When the effective entropy is not conserved: a `new' isothermal MHD model}
+\label{s2}
 The problem of non-conservation of (dynamical)\footnote{The qualifier `dynamical' here denotes that there is no heat flux.} MHD energy comes from the condition that $\gamma\rightarrow 1$ for an isothermal gas. So why shall $\gamma\rightarrow 1$ for an isothermal gas, if we regard it as the ratio of the isobaric heat capacity and the isovolumetric heat capacity which can be larger than 1 (e.g. $4/3$ for the relativistic perfect gas and $5/3$ for the non-relativistic perfect gas)? The answer is to conserve the effective entropy. 
 
 In the polytropic model mentioned above, the equation of effective entropy conservation (equation~(6) in \citet{wang2008dynamic}) is
@@ -225,7 +226,7 @@ for which we have thrown away the trivial factor $X-1$. When $1<\gamma<2$, the c
 f(X=0)=-\frac{(\gamma+1)M_{1}^{2}}{2(\gamma-1)}<0\ ,\label{e26}\\
 f(X=1)=\frac{1}{\gamma-1}\left(\gamma+\frac{2}{\beta_{1}}-M_{1}^{2}\right)\ .\label{e27}
 \end{gather}
-Therefore, quadratic equation~(\ref{e25}) always has one positive root $X_{+}$ and one negative root $X_{-}$, and only the positive one is physical. When the upstream is given, i.e. $(i,\ j)=(u,\ d)$, we require that $X_{+}>1$, which means that $u_{u}-u_{s}>u_{d}-u_{s}$, where $u_{u}-u_{s}$ and $u_{d}-u_{s}$ are the upstream velocity and the downstream flow velocity relative to the shock front \citep{FM}, so we must have 
+Therefore, quadratic equation~(\ref{e25}) always has one positive root $X_{+}$ and one negative root $X_{-}$, and only the positive one is physical. When the upstream is given, i.e. $(i,\ j)=(u,\ d)$, we require that $X_{+}>1$, which means that $|u_{u}-u_{s}|>|u_{d}-u_{s}|$, where $|u_{u}-u_{s}|$ and $|u_{d}-u_{s}|$ are the upstream flow speed and the downstream flow speed relative to the shock front \citep{FM}, so we must have 
 \begin{gather}
 f(X=1)>0\ ,i.e.\quad \gamma+\frac{2}{\beta_{1}}-M_{1}^{2}<0\ ,\label{e28}
 \end{gather}
@@ -269,28 +270,71 @@ which is exactly the quadratic equation~(\ref{e13}) for the one-temperature MHD 
 where the first line is just the left hand side of equation~(\ref{e13}) divided by $\beta_{1}X$, and for the second line we have used equation~(\ref{e33}) multiplied by $(1/X-1)/\beta_{1}$. This outcome supports our argument that (dynamical) MHD energy conservation for isotherm MHD shocks under $\gamma\rightarrow 1$ is consistent with the very restriction that $a_{1}=a_{2}$ (i.e. $\left(k_{B}T_{u}/\mu\right)^{1/2}=a_{u}=a_{d}=\left(k_{B}T_{d}/\mu\right)^{1/2}$, $T_{u}=T_{d}$: both sides of the shock have the same temperature).
 
 I have already written and tested the codes for this new type of isothermal MHD shocks under (dynamical) MHD energy conservation. By now, I have verified that the shock condition~(\ref{e25}) is indeed reversible, but it would be more difficult to construct relevant shock solutions, in that $\tau$ is not adjustable here.
-%And the upstream is always in the supersonic region, while the downstream in the subsonic region, which is consistent with the arguement in \citet{SFSW} that the shock front always moves i) with supersonic speed as observed from the \textit{front side} (i.e. the upstream), and ii) with subsonic speed as observed from the \textit{back side} (i.e. the downstream), in which the second property could only be derived analytically when (MHD) energy conservation is taken into account. So I believe that this new isothermal model is physical for isothermal processes (which are not necessarily adiabatic) in the context of astrophysics.
 
-%\appendix
-%\section{The fonts}
-%\textbf{Again}, I use larger fonts (i.e. around 22) for annotations and labels to reproduce Figure 1 and 2 of my draft, as shown by Figure~\ref{1} and \ref{2} here.
-% \textbf{Please have a look at Figure~\ref{2} and tell me whether the fonts are large enough.}
-%I think that this font is large enough because if the font is too large, the figure looks awkward and it is difficult to avoid overlaps of text and curves, especially when there are lots of places to annotate. So I'd like to reproduce all the other figures with these fonts.
+\section{The (dynamical) isothermal MHD energy conservation for isothermal MHD shocks}
+Since equation~(\ref{e23}) for MHD energy conservation is based on the presupposition that gas around the shock layer experience an `isentropic' process (of no `entropy source'), i.e. $\partial S/\partial t+{\bf{u}} \cdot\nabla S=\partial S/\partial t+u\partial S/\partial r=0$, the MHD energy conservation considered in the last section can be called (dynamical) isentropic MHD energy conservation. 
 
-%\begin{figure}
-%\centering
-%\includegraphics[width=1.0\columnwidth]{lv_0.85.pdf}
-%\caption{An example of the locus pair to construct MHD void solutions for illustration, where $\lambda=0.1$, and the meeting point $x_{m}=1.5$. The locus marked by asterisks comes from outward integrations (labelled by `o') with a fixed void boundary $x_{1}=0.85$ and the dimensionless density at the void boundary $\alpha_{0}$ varying in the range of $1.45\sim 1.9$, while the locus marked by solid dots is produced by inward integrations (labelled by `i') with different starting points $x_{*}$s on the magnetosonic critical line (MSCL) in the range of $2.4\sim 2.6$ as Type 1 eigensolutions.}
-%\label{1}
-%\end{figure}
+In this section, I investigate another version of MHD energy conservation, i.e. (dynamical) isothermal MHD energy conservation, which assumes that gas near the shock layer shares the same temperature (though the temperatures of different sides of the shock can be different). According to the energy flux formula (i.e. equations~(23) of \citet{lou2004envelope}), the isothermal counterpart of equation~(\ref{e5}) is
+\begin{gather}
+\left[\frac{\left(u_{s}-u\right)^{2}}{2}+a^{2}\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)+\frac{\langle B_{t}^{2}\rangle}{4\pi \rho}\right]_{u}^{d}=0\ ,\label{e35}
+\end{gather} 
+in which we have used the expression of entropy per unit mass $S$, i.e.
+\begin{gather}
+S=S_{0}+\frac{R}{\gamma+1}\mathrm{ln}\left(\frac{a^{2}\rho^{1-\gamma}}{\gamma-1}\right)=\frac{R\gamma}{\gamma-1}-R\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)\ ,\label{e36}
+\end{gather}
+where $RT=a^{2}$. The problem here is that we have to do self-similar transformation of $\rho_{c}$ to express equation~(\ref{e35}) in self-similar variables, while choice of such transformation is sort of arbitrary. And I always doubt the significance of studying such MHD energy conservation in the isothermal model. Actually, we have already assumed that different parts (which are not separated by shocks) of the system share the same invariant temperature, which implies that heat conduction may be efficient in our model. Thus, considering other possibly effective mechanisms involved around the shock (e.g. radiation transfer, cosmic rays, and chemical reaction), it should be allowed that non-zero heat flux exists across the shock front, so that MHD energies (per unit mass) of the two sides of the shock can be different. 
 
-%\begin{figure}
-%\centering
-%\includegraphics[width=1.0\columnwidth]{void.pdf}
-%\caption{The $-v$ versus $x$ plots of five  MHD void solutions, with $\lambda=0.1$, and the curve labels are consistent with the MHD solution labels. The pertinent parameters are listed in the form of tuples, i.e. (the curve/MHD solution label L, the void boundary $x_{1}$, the dimensionless density at the void boundary $\alpha_{0}$, the point at which the solution crosses the MSCL $x_{*}$): (v1, 0.85, 1.8004, 2.5013), (v2, 0.4, 2.8406, 2.2313), (v3, 0.04, 3.6487, 2.1641) and (v4, 0.004, 3401, 0.8705). The dash-dotted line corresponds to the zero mass line (ZML) $x-v=0$. The dashed line is the MSCL. }
-%\label{2}
-%\end{figure}
+Anyway, I just try two possible types of self-similar transformation: (1) $\rho_{c}^{-1}=4\pi Gt^{4-2\gamma}r^{2\gamma-2}a^{2\gamma-2}$, (2) $\rho_{c}^{-1}=4\pi Gt^{2}$, where the first ensures that $S_{0}$ is independent of $a$, while the second means that $\rho_{c}$ itself is independent of $a$. Then I can put equation~(\ref{e35}) into the conventional form of our paper by formulae~(\ref{e14}):
+\begin{gather}
+\frac{2(X-1)}{\beta_{1}}+\frac{M_{1}^{2}}{2}\left(\frac{1}{X^{2}}-1\right)+\tau^{2}\mathrm{ln}X+\tau^{2}(1-\gamma)\mathrm{\tau^{2}}\notag\\
+\qquad +\left(\tau^{2}-1\right)\left[\mathrm{ln}\alpha_{1}+(2\gamma-2)\mathrm{ln}x_{1}\right]=0\ ,\label{e37}\\
+\frac{2(X-1)}{\beta_{1}}+\frac{M_{1}^{2}}{2}\left(\frac{1}{X^{2}}-1\right)+\tau^{2}\mathrm{ln}X+\left(\tau^{2}-1\right)\mathrm{\alpha_{1}}=0\ ,\label{e38}
+\end{gather}
+of which equation~(\ref{e37}) corresponds to $\rho_{c}^{-1}=4\pi Gt^{4-2\gamma}r^{2\gamma-2}a^{2\gamma-2}$ (Condition 1) , while equation~(\ref{e38}) $\rho_{c}^{-1}=4\pi Gt^{2}$ (Condition 2). These equations are transcendental and cannot be evaluated analytically. I have to combine them with equation~(\ref{e12}) for momentum conservation to solve $X$ and $\tau$ numerically. 
 
+Unfortunately, by limited numerical trials (for $\gamma=5/3$, and $\lambda=0.1$), for both Condition 1 and Condition 2, I cannot find any isothermal MHD shock under such (dynamical) isothermal MHD energy conservation. The problem is i) in  many regions of the solution space the transcendental equation set have no solution al all, and ii) when we have $X>1$, we always meanwhile have $\tau<1$ (and vice via: $X<1$ with $\tau>1$), which violates the second law of thermodynamics\footnote{Later on I realized that Condition 2 is itself contradictory, since here the requirement of $S_{d}-S_{u}>0$ becomes $\mathrm{ln}(\alpha_{u}/\alpha_{d})>0$. And this contradicts the natural requirement for shock propagation that $|u_{s}-u_{u}|>|u_{s}-u_{d}|$ (which is equivalent to $\alpha_{u}/\alpha_{d}<1$). }. Figure~\ref{1}-\ref{4} show some \textbf{FALSE} isothermal MHD shock solutions under such (dynamical) isothermal MHD energy conservation. (Even though these \textbf{FALSE} solutions are unphysical, they are indeed \textbf{reversible}.) I also plot some solutions under (dynamical) isentropic MHD energy conservation prescribed by the last section in Figure~\ref{5}-\ref{e6}, which show that both Type 1 and Type 2 two temperature shock condition can produce some results that do not break (dynamical) isentropic MHD energy conservation. In these figures, some solutions hit the MSCL and show instability, which is not our main concern here, since we only want to know features of the shock and are not at that stage of constructing complete shock solutions. So please ignore those meaningless curves after hitting the MSCL with instability.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{shock3.pdf}
+\caption{$-v$ versus $x$ plots of some \textbf{FALSE} Shocks under Condition 1 (dynamical) isothermal MHD energy conservation for $\gamma=5/3$, and $\lambda=0.1$. Here we have $\tau<1$ but $X>1$. It is found that only when $x_{su}$ is not to far away from $x_{*}(u)$, the transcendental equation set of Condition 1 has solutions.}
+\label{1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{shock4.pdf}
+\caption{$-v$ versus $x$ plots of some \textbf{FALSE} Shocks under Condition 1 (dynamical) isothermal MHD energy conservation for $\gamma=5/3$, and $\lambda=0.1$. Here we have $\tau<1$ but $X>1$.}
+\label{2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{shock5.pdf}
+\caption{$-v$ versus $x$ plots of some \textbf{FALSE} Shocks under Condition 2 (dynamical) isothermal MHD energy conservation for $\gamma=5/3$, and $\lambda=0.1$. Here we have $\tau<1$ but $X>1$. It is found that only when $x_{*}(u)$ is large enough, the transcendental equation set of Condition 2 has solutions.}
+\label{3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{shock6.pdf}
+\caption{$-v$ versus $x$ plots of some \textbf{FALSE} Shocks under Condition 2 (dynamical) isothermal MHD energy conservation for $\gamma=5/3$, and $\lambda=0.1$. Here we have $\tau<1$ but $X>1$.}
+\label{4}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{shock1.pdf}
+\caption{$-v$ versus $x$ plots of some Shocks under (dynamical) isentropic MHD energy conservation in Section~\ref{s2} for $\gamma=5/3$, and $\lambda=0.1$. I found that when $\gamma$ is not too close to 1, Type 1 isothermal two-temperature MHD shock condition can give results which do not break (dynamical) isentropic energy conservation when $x_{su}-x_{*}(u)$ is small enough.}
+\label{5}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{shock2.pdf}
+\caption{$-v$ versus $x$ plots of some Shocks under (dynamical) isentropic MHD energy conservation in Section~\ref{s2} for $\gamma=5/3$, and $\lambda=0.1$. }
+\label{6}
+\end{figure}
 
 \bibliographystyle{mnras}
 \bibliography{ref} 
