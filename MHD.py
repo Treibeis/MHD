@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
+plt.style.use('test1')
+
 G = 6.674/10**8
 Ms = 1.986*10**33
 k = 1.381/10**16
@@ -694,7 +696,7 @@ def locus_s1(lam, t, x0, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 10
 			else:
 				ld.append(connect(do,do_,2))
 			b = b + step
-		dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+		dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 		return dl
 	if (t==2)or(t==3):
 		for i in range(n+1):
@@ -750,7 +752,7 @@ def locus_s1(lam, t, x0, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 10
 				ld.append(connect(do_,do,1))
 			else:
 				ld.append(connect(do,do_,2))
-		dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+		dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 		return dl
 	for i in range(n+1):
 		m =m0
@@ -773,7 +775,7 @@ def locus_s1(lam, t, x0, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 10
 			ld.append(connect(do_,do,1))
 		else:
 			ld.append(connect(do,do_,2))
-	dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+	dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 	return dl
 
 def locus_s2(lam, t, x0, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx = 1.0/10**5, m0 = 10000):
@@ -812,7 +814,7 @@ def locus_s2(lam, t, x0, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx 
 				ld.append(connect(do,do_,2))
 			else:
 				ld.append(connect(do_,do,1))
-		dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+		dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 		return dl
 	if (t==2)or(t==3):
 		for i in range(n+1):
@@ -873,7 +875,7 @@ def locus_s2(lam, t, x0, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx 
 				ld.append(connect(do,do_,2))
 			else:
 				ld.append(connect(do_,do,1))
-		dl = {'v':lv, 'a':la, 'x':ls, 'm':lm, 'dx':ldx, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+		dl = {'v':lv, 'a':la, 'x':ls, 'm':lm, 'dx':ldx, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 		return dl
 	for i in range(n+1):
 		m = m0
@@ -901,7 +903,7 @@ def locus_s2(lam, t, x0, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx 
 			ld.append(connect(do,do_,2))
 		else:
 			ld.append(connect(do_,do,1))
-	dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+	dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 	return dl
 
 
@@ -933,7 +935,7 @@ def locus_s11(lam, t, xs, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 1
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 			return dl
 		else:
 			for i in range(n+1):
@@ -951,7 +953,7 @@ def locus_s11(lam, t, xs, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 1
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 			return dl
 	else:
 		if n>0:
@@ -972,7 +974,7 @@ def locus_s11(lam, t, xs, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 1
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 			return dl
 		else:
 			for i in range(n+1):
@@ -989,7 +991,7 @@ def locus_s11(lam, t, xs, xm, l, d = {}, h = 0, n = 0, mindx = 1.0/10**5, m0 = 1
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 			return dl
 
 
@@ -1021,7 +1023,7 @@ def locus_s21(lam, t, xs, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 			return dl
 		else:
 			for i in range(n+1):
@@ -1039,14 +1041,14 @@ def locus_s21(lam, t, xs, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 			return dl
 	else:
 		if n>0:
 			step = (l[1]-l[0])/n
 		if (t==2)or(t==3):
 			for i in range(n+1):
-				l = locus_s1(lam, t, b, xm, [xs, 1], d, X, 0, k, f, mindx, m0)
+				l = locus_s2(lam, t, b, xm, [xs, 1], d, X, 0, k, f, mindx, m0)
 				if l['v'] == []:
 					b = b+step
 					continue
@@ -1060,11 +1062,11 @@ def locus_s21(lam, t, xs, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+			dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 			return dl
 		else:
 			for i in range(n+1):
-				l = locus_s1(lam, t, b, xm, [xs, 1], d, X, 0, k, f, mindx, m0)
+				l = locus_s2(lam, t, b, xm, [xs, 1], d, X, 0, k, f, mindx, m0)
 				if l['v'] == []:
 					b = b+step
 					continue
@@ -1077,7 +1079,7 @@ def locus_s21(lam, t, xs, xm, l, d = {}, X = 1.0/1.5, n = 0, k = 0, f = 1, mindx
 					lv_a_s1.append(l['s1'][0])
 					lv_a_s2.append(l['s2'][0])
 					b = b+step
-			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+			dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 			return dl
 
 def locus_s22(lam, t, x0, xs, xm, l, d = {}, n = 0, k = 0, f = 1, mindx = 1.0/10**5, m0 = 10000):
@@ -1105,7 +1107,7 @@ def locus_s22(lam, t, x0, xs, xm, l, d = {}, n = 0, k = 0, f = 1, mindx = 1.0/10
 				lv_a_s1.append(l['s1'][0])
 				lv_a_s2.append(l['s2'][0])
 				b = b+step
-		dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
+		dl = {'v':lv, 'a':la, 'x':ls, 'dx':ldx, 'm':lm, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2}
 		return dl
 	else:
 		for i in range(n+1):
@@ -1122,7 +1124,7 @@ def locus_s22(lam, t, x0, xs, xm, l, d = {}, n = 0, k = 0, f = 1, mindx = 1.0/10
 				lv_a_s1.append(l['s1'][0])
 				lv_a_s2.append(l['s2'][0])
 				b = b+step
-		dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':n+1, 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
+		dl = {'v':lv, 'a':la, 'x':ls, 'm':m, 'n':len(ls), 'd':ld, 's1':lv_a_s1, 's2':lv_a_s2 }
 		return dl
 
 def connect(d1,d2,k = 0):

@@ -1,0 +1,407 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath}
+\usepackage{amsfonts}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+%\usepackage{morefloats}% A pacakge which enables this text to contain more figures and tables.
+\usepackage{grffile}% A pacakge which changes the algorithm to check for known extensions, so that we can insert pdf figures into this text.
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Note on December 11]{The isothermal HD shock condition considering temperature discontinuity across the shock front}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Bo-Yuan Liu]{Bo-Yuan Liu$^{1}$\thanks{E-mail: liu-by13@mails.tsinghua.edu.cn}
+\\
+% List of institutions
+$^{1}$Department of Physics, Tsinghua University, Beijing, China(PRC)\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+\begin{abstract}
+In Section~\ref{s1.1}, I summarized the previous isothermal hydrodynamic (HD) model and relevant shock conditions. In Section~\ref{s1.2}, I derived the isothermal HD shock condition for a new conservation law that considers temperature discontinuity across the shock front and showed the qualitative features of the possible solutions obtained from this new shock condition. In Section~\ref{s2}, I presented some numerical results of converging isothermal HD shock solutions, which verifies the conclusion of Section~\ref{s1.2}, i.e. with such a new isothermal HD shock condition, we can only have shocks which go along with the cooling and compression of the gas. Section~\ref{s3} discussed the physical meanings of the new shock condition as well as the isothermal approximation, and evaluated the validity of the derivation in Section~\ref{s1.2}.
+\end{abstract}
+\begin{keywords}
+HD -- shock waves -- stars: formation -- supernovae: general -- ISM: clouds
+\end{keywords}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+
+\section{Analytical derivation and qualitative analysis}
+\label{s1}
+
+\subsection{Previous isothermal HD model and shock conditions}
+\label{s1.1}
+Under the isothermal approximation, we adopt a specific equation of state for an isothermal ideal gas $p(r,\ t)=a^{2}\rho(r,\ t)$, where $p$ is the pressure, $\rho$ is the mass density, and $a=\left(k_{B}T/\mu\right)^{1/2}$ is the isothermal sound speed (, where $\mu$ is the average particle density, and $k_{B}=1.38\times 10^{-16}\mathrm{erg\cdot K^{-1}}$ is the Boltzmann constant). Then we write down the hydrodynamic (HD) partial differential equations (PDEs) for a quasi-spherically symmetric isothermal fluid:
+\begin{gather}
+\frac{\partial\rho}{\partial t}+\frac{1}{r^{2}}\frac{\partial
+  \left(r^{2}\rho u\right)}{\partial r}=0\ ,\label{e1}\\
+\frac{\partial M}{\partial r}=4\pi\rho r^{2},
+ \qquad\qquad \frac{\partial M}
+  {\partial t}+u\frac{\partial M}{\partial r}=0\ ,\label{e2}\\
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial r}=-\frac{a^{2}}{\rho}\frac{\partial \rho}
+ {\partial r}-\frac{GM}{r^{2}}\ .\label{e3}
+\end{gather}
+where PDEs (\ref{e1}) and (\ref{e2}) represent conservation of mass, PDE (\ref{e3}) stands for HD radial momentum conservation, $u(r,\ t)$ is the radial flow speed, $M(r,\ t)$ is the mass enclosed within radius $r$ at time $t$, and $G=6.67\times 10^{-8}~\rmn{g}^{-1}\cdot\rmn{cm}^{3}\cdot\rmn{s}^{-2}$ is the universal gravitational constant. 
+In the self-similar model, we define the dimensionless independent self-similar variable as $x\equiv r/(at)$ and perform the following self-similar HD transformation to PDEs (\ref{e1})-(\ref{e3}):
+\begin{gather}
+\begin{split}
+\rho(r,\ t)=\frac{\alpha(x)}{4\pi Gt^{2}},\ M(r,\ t)=\frac{a^{3}t}{G}m(x),\ u(r,\ t)=av(x)\ ,
+\end{split}\label{e4}
+\end{gather}
+where $\alpha(x)\geq 0$, $m(x)$, and $v(x)$ are the reduced dimensionless (self-similar) variables as functions of $x$ for the mass density, the enclosed mass, and the radial flow speed, respectively. 
+Through simple algebra, we derive the final two coupled non-linear HD ODEs as followings:
+\begin{gather}
+\left[(x-v)^{2}-1\right]v'=(x-v)
+ \left[\alpha (x-v)-\frac{2}{x}\right]\ ,\label{e5}\\
+\left[(x-v)^{2}-1\right]\alpha'=(x-v)\left[\alpha^{2}-\frac{2\alpha}{x}
+ \left(x-v\right)\right]\ .\label{e6}
+\end{gather}
+These two ODEs can be solved numerically by the standard 4-order Runge-Kutta scheme given certain asymptotic solution as the starting point. Note that there are possible singularities in ODEs~(\ref{e5}) and (\ref{e6}) portrayed by 
+\begin{gather}
+x-v=1,\quad \alpha=\frac{2}{x}\ ,\label{e7}
+\end{gather}
+which is called the sonic critical line (SCL) (usually shown in the $-v$ versus $x$ plane and the $\alpha$ versus $x$ plane). We usually require that self-similar solutions cross the SCL smoothly, and these solutions must have certain asymptotic forms near the SCL. By the L'Hospital rule and ODEs~(\ref{e5})-(\ref{e6}), we can identify two types of such asymptotic forms called Type 1 and Type 2 eigensolution, whose stabilities around the SCL are different \citep{shu1977self,hunter1977collapse,whitworth1985self,lou2004envelope}. 
+In the below text, we follow the definitions of these two types of eigensolutions in \citet{yuLou2005}, and only use Type 1 eigensolution which is more stable than Type 2 under such definitions. 
+
+We only consider the simplest isothermal HD shock waves, in which case the velocities of both the isothermal HD shock front and the gas can only have a non-zero radial component. In the shock co-moving framework of reference, the physical variables of both sides of the isothermal HD shock $(\rho_{1},\ u_{1},\ p_{1})$ and $(\rho_{2},\ u_{2},\ p_{2})$ are connected by the following equations for conservation of mass and momentum:
+\begin{gather}
+\rho_{2}u_{2}=\rho_{1}u_{1}\ ,\label{e8}\\
+p_{2}+\rho_{2}u_{2}^{2}
+ =p_{1}+\rho_{1}u_{1}^{2}\ ,\label{e9}
+\end{gather}
+These isothermal HD shock equations enable us to calculate $(\rho_{2},\ u_{2},\ p_{2})$ from $(\rho_{1},\ u_{1},\ p_{1})$. Note that previous work on isothermal HD shocks did not consider any energy/thermodynamic potential conservation. In our self-similar model, the shock propagates with a speed $u_{s}=a_{i}x_{si}=a_{j}x_{sj}$, where $a_{i}$ and $a_{j}$ are the sound speeds while $x_{si}$ and $x_{sj}$ the values of the self-similar variable $x$ of the two sides of the shock. 
+We further define $M_{1}\equiv u_{1}/a_{1}=v_{i}-x_{si}$, $M_{2}\equiv u_{2}/a_{2}=v_{j}-x_{sj}$, and perform the self-similar HD transformation~(\ref{e4}) to equations~(\ref{e8}) and (\ref{e9}), which gives
+\begin{gather}
+\alpha_{i}(v_{i}-x_{si})a_{i}=\alpha_{j}(v_{j}-x_{sj})a_{j}\ ,\label{e10}\\
+a^{2}_{i}\left[\alpha_{i}+\alpha_{i}(v_{i}-x_{si})^{2}\right]=a^{2}_{j}\left[\alpha_{j}+\alpha_{j}(v_{i}-x_{sj})^{2}\right]\ ,\label{e11}
+\end{gather}
+where the subscripts `1' and `2' for the physical quantities in equations~(\ref{e8}) and (\ref{e9}) correspond to the subscript `i' and `j' for the self-similar variables. And $(i,\ j)=(u,\ d)$ means that properties of the upstream side are known, while $(i,\ j)=(d,\ u)$ means that properties of the downstream side are given.
+Then following the definition of $M_{1}$ and equation~(\ref{e10}), we define the shock parameters $\tau$ and $X$ as
+\begin{gather}
+\begin{split}
+&\tau=a_{j}/a_{i}=x_{si}/x_{sj}\ ,\\
+&X=\alpha_{j}/\alpha_{i}=(v_{i}-x_{si})/[\tau (v_{j}-x_{sj})]\ ,
+%\\
+%&M_{1}=v_{i}-x_{si}\ ,
+%\qquad \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ ,
+\end{split}\label{e12}
+\end{gather}
+where is a positive root of the following quadratic equation derived from the momentum conservation equation in self-similar variables~(\ref{e11}):
+\begin{gather}
+f(X)=\tau^{2} X^{2}
+ -(1+M_{1}^{2}) X+M_{1}^{2}=0. \label{e13}
+\end{gather}
+Given the position of the shock $x_{si}$ (or $x_{sj}$), after choosing a value of $\tau$, we immediately know the value of $M_{1}$, by which we can solve the above quadratic equation~(\ref{e13}) whose root other than one is noted as $X_{*}$. Besides, we usually set several additional requirements to such self-similar isothermal HD shock solutions\footnote{For adiabatic shocks, these requirements are derived from shock conditions and the second law of thermodynamics, rather than added artificially into the model.}: 
+
+i) If the shock is the propagation of heating and compression (instead of cooling and compression), we have $\tau^{2}\geq 1$ given the upstream while $\tau^{2}\leq 1$ given the downstream, which means that the temperature at the downstream side is larger than that of the upstream side.
+
+ii) When the upstream is known, we must have $M_{1}^{2}>1$ and $X_{*}>1$, which means that the upstream side flow relative to the shock front is supersonic and faster than that of the downstream side. Similarly, when the downstream is given, we have $X_{*}<1$ and $M_{2}^{2}>1$.
+
+We also want to know whether the flow at the downstream side is subsonic (which is the case for the adiabatic shock) or not. If the upstream is known, $M_{2}^{2}<1$ leads to subsonic downstream flow, while $M_{2}^{2}>1$ leads to supersonic downstream flow. So we may include the third requirement that is optional:
+
+iii) The downstream flow must be subsonic, i.e. given the upstream (with $M_{1}^{2}>1$ and $X_{*}>1$), we require that $M_{2}<1$, while given the downstream (with $X_{*}<1$ and $M_{2}>1$), we must start with certain $M_{1}<1$.
+
+It turns out that, with $\tau^{2}>1$ and $M_{1}^{2}>1$ (given upstream), the quadratic equation~(\ref{e13}) can have two positive roots both larger than 1, i.e. there are two possible downstream solutions that satisfy requirement i) and ii) for one known upstream, which seems weird. And one of these two possible downstream solutions is subsonic ($M_{2}^{2}<1$), while the other one is supersonic ($M_{2}^{2}>1$). Since the entropy criterion cannot be used in the isothermal model, at present we do not know whether these three requirements are necessary, so we cannot simply rule out the supersonic downstream solution in the name of requirement iii). Faced with such a `two to one' problem, we have to make refinements to the previous model to see whether all these two solutions are physical. 
+
+\subsection{A new conservation law in isothermal HD shock conditions}
+\label{s1.2}
+Our main idea is to introduce a new conservation law to the previous isothermal HD shock conditions~(\ref{e8}) and (\ref{e9}). In this way, $\tau$ is no longer an adjustable parameter. Similar to the derivation of the Bernoulli's equation in an adiabatic gas, we start at the radial Euler equation~(\ref{e3}) in our quasi-spherical isothermal model 
+\begin{gather}
+\frac{\partial u}{\partial t}=-\frac{\partial}{\partial r}\left(\frac{u^{2}}{2}\right)-a^{2}\frac{\partial}{\partial r}\left(\mathrm{ln}\rho\right)\label{e14}\ ,
+\end{gather}
+in which the terms of gravity are dropped for simplicity. Along the stream line, $\partial u/\partial t=0$, and we can integrate the right hand side of equation~(\ref{e14}) across the shock front $r_{s}$ from $r_{1}<r_{s}$ to $r_{2}>r_{s}$ as\footnote{We note $f(r_{i})$ as $f_{i}$ for short, where $i=1,\ 2$ and $f=a,\ u,\ \rho$.}
+\begin{gather}
+\frac{u_{2}^{2}}{2}-\frac{u_{1}^{2}}{2}+A(r_{1},\ r_{2})=0\label{e15}\ ,\\
+A(r_{1},\ r_{2})=\int_{r_{1}}^{r_{2}}a^{2}\frac{d\mathrm{ln}\rho}{dr}dr\label{e16}\ .
+\end{gather}
+For $A(r_{1},\ r_{2})$, we can apply integration by parts, i.e.
+\begin{align}
+A(r_{1},\ r_{2})=\left(a^{2}\mathrm{ln}\rho\right)\mid_{r_{1}}^{r_{2}}-\int_{r_{1}}^{r_{2}}\frac{da^{2}}{dr}\mathrm{ln}\rho dr\label{e17},
+\end{align}
+where $a^{2}(r)=a_{1}^{2}+\left(a_{2}^{2}-a_{1}^{2}\right)\theta(r-r_{s})$ is an approximated form of squared sound speed considering the temperature discontinuity across the shock front ($\theta(r)$ is the step function). Then we have
+\begin{gather}
+\frac{d a^{2}}{dr}=\left(a_{2}^{2}-a_{1}^{2}\right)\delta(r-r_{s})\label{e18}\ ,\\
+\int_{r_{1}}^{r_{2}}\frac{da^{2}}{dr}\mathrm{ln}\rho dr=\left(a_{2}^{2}-a_{1}^{2}\right)\frac{\mathrm{ln}\rho_{2}+\mathrm{ln}\rho_{1}}{2}\label{e19}\ ,
+\end{gather}
+which\footnote{Integration~(\ref{e19}) may not be valid. If the temperatures of the two sides of the shock are different, the gas is no longer isothermal in the shock layer, so equation~(\ref{e14}) may not be the correct form of the radial Euler equation when the integration crosses the shock front.} is then combined with equations~(\ref{e15}) and (\ref{e17}) to give the final conservation equation
+\begin{gather}
+\frac{u_{2}^{2}}{2}-\frac{u_{1}^{2}}{2}+\frac{\left(a_{2}^{2}+a_{1}^{2}\right)}{2}\mathrm{ln}\left(\frac{\rho_{2}}{\rho_{1}}\right)=0\label{e20}\ .
+\end{gather}
+We can write this additional shock condition~(\ref{e20}) in self-similar variables by formulae~(\ref{e4}) and (\ref{e12}) as
+\begin{gather}
+\frac{M_{1}^{2}}{2}\left(\frac{1}{X^{2}}-1\right)+\frac{1+\tau^{2}}{2}\mathrm{ln}X=0\label{e21}\ ,
+\end{gather}
+which is then combined with equation~(\ref{e13}) to eliminate $\tau$ and give the complete isothermal HD shock condition
+\begin{gather}
+F_{M_{1}}(X)=\frac{M_{1}^{2}\left(X^{2}-1\right)}{X^{2}+X+M_{1}^{2}(X-1)}-\mathrm{ln}X=0\label{e22}\ .
+\end{gather}
+We note the solution of equation~(\ref{e22}) as $X_{*}\neq 1$.
+
+We also want to know whether the relation between the temperatures across the shock front is correct or not and whether the upstream is in the supersonic region while the downstream in the subsonic region. From equation~(\ref{e13}) and formulae~(\ref{e12}), we have
+\begin{gather}
+\tau^{2}=\frac{(X-1)M_{1}^{2}}{X^{2}}+\frac{1}{X}\ ,\label{e23}\\
+M_{2}^{2}=\left(v_{j}-x_{sj}\right)^{2}=\frac{M_{1}^{2}}{X^{2}\tau^{2}} \label{e24}\ .
+\end{gather}
+Then we define the following functions of $X$ with parameter $M_{1}$:
+\begin{gather}
+G_{M_{1}}(X)=\tau^{2}-1=\frac{(X-1)M_{1}^{2}}{X^{2}}+\frac{1-X}{X}\label{e25}\ ,\\
+H_{M_{1}}(X)=M_{2}^{2}-1=\frac{M_{1}^{2}}{\left[G_{M_{1}}(X)+1\right]X^{2}}-1\label{e26}\ .
+\end{gather}
+And the above requirements i), ii) and iii) can be expressed by the following statements:
+\begin{gather}
+\text{If }M_{1}^{2}>1,\notag\\
+\text{i) }X_{*}>1\ ,\quad\text{ii) } G_{M_{1}}(X_{*})>0\ ,\quad\text{iii) } H_{M_{1}}(X_{*})<0\ ;\label{e27}\\
+\text{if }M_{1}^{2}<1,\notag\\
+\text{i) }X_{*}<1\ ,\quad\text{ii) } G_{M_{1}}(X_{*})<0\ ,\quad\text{iii) } H_{M_{1}}(X_{*})>0\ .\label{e28}
+\end{gather}
+
+We can evaluate the features of possible solutions through plots of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ (see Figure~\ref{1} for $M_{1}^{2}<1$ and Figure~\ref{2} for $M_{1}^{2}>1$). It turns out that $F_{M_{1}(X)}$ always has only one zero point other than 1 (i.e. $X_{*}$) for $M_{1}^{2}\neq 1$. But when $M_{1}^{2}=1$, $F_{M_{1}}(X)$ has only one zero point $X=1$\footnote{This indicates that once considering such a new conservation law, isothermal HD shocks with an identical temperature of both the two sides of the shock front, e.g. those in \citet{spitzer}, \citet{shen2004shocked}, \cite{bian2005spherical}, \citet{lou2009dynamic} and \citet{lou2014self}, do not exist.}. Therefore, we can regard $X_{*}$ as a function of $M_{1}^{2}$ in the domain $0<M_{1}^{2}<+\infty$ by assigning $X_{*}=1$ for $M_{1}^{2}=1$. In this way, since $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ depend only on $X$ and $M_{1}^{2}$, we can regard $G_{M_{1}}(X_{*})$ and $H_{M_{1}}(X_{*})$ as functions of $M_{1}^{2}$, i.e. $G(M_{1}^{2})\equiv G_{M_{1}}(X_{*}(M_{1}^{2}))$ and $H(M_{1}^{2})\equiv H_{M_{1}}(X_{*}(M_{1}^{2}))$.
+
+However, in both the cases $M_{1}^{2}>1$ and $M_{1}^{2}<1$, only requirements ii) and iii) are met, while requirement i) is violated, that is to say, when $M_{1}^{2}>1$, we always have $X_{*}>1$, $H_{M_{1}}(X_{*})<0$, while $G_{M_{1}}(X_{*})<0$, and when $M_{1}^{2}<1$, we always have $X_{*}>0$, $H_{M_{1}}(X_{*})>0$ while $G_{M_{1}}(X_{*})>0$, as shown in Figure~\ref{3}-\ref{5}\footnote{To obtain these results purely analytically is tedious due to the complexity of the forms of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$. Here I just plot relevant functions with Mathematica 9.0 to observe the features, which is persuasive enough.}. The conclusion is that \textbf{with such a new isothermal HD shock condition, we get rid of the problematic `two to one' relation but can only have shocks which go along with the cooling and compression of the gas}. Besides, \textbf{under such a new shock condition, there is no shock with the same temperature on both sides of the shock front}.
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{../F_X_1}
+\caption{Plots of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ with $M_{1}^{2}=0.5<1$, in which the zero point of $F_{M_{1}}(X)$ corresponds to $X_{*}<1$, and $H_{M_{1}}(X_{*})>0$ while $G_{M_{1}}(X_{*})>0$. These features remain unchanged for all $M_{1}^{2}<1$.}
+\label{1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{../F_X_2}
+\caption{Plots of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ with $M_{1}^{2}=1.5>1$, in which the zero point of $F_{M_{1}}(X)$ corresponds to $X_{*}>1$, and $H_{M_{1}}(X_{*})<0$ while $G_{M_{1}}(X_{*})<0$. These features remain unchanged for all $M_{1}^{2}>1$. Figure~\ref{n1} shows some examples in our self-similar quasi-spherical model of this case that the upstream is known with $M_{1}^{2}>1$.}
+\label{2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{../X_M}
+\caption{The $X_{*}-1$ versus $M_{1}^{2}$ plot. It is shown that $X_{*}>1$ for $M_{1}^{2}>1$, while $X_{*}<1$ for $M_{1}^{2}<1$.}
+\label{3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{../G_M}
+\caption{The $G(M_{1}^{2})$ versus $M_{1}^{2}$ plot. It is shown that $G(M_{1}^{2})<0$ for $M_{1}^{2}>1$ ($X_{*}>1$), while $G(M_{1}^{2})>0$ for $M_{1}^{2}<1$ ($X_{*}<1$).}
+\label{4}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{../H_M}
+\caption{The $H(M_{1}^{2})$ versus $M_{1}^{2}$ plot. It is shown that $H(M_{1}^{2})<0$ for $M_{1}^{2}>1$ ($X_{*}>1$), while $H(M_{1}^{2})>0$ for $M_{1}^{2}<1$ ($X_{*}<1$).}
+\label{5}
+\end{figure}
+
+\section{Numerical results of converging isothermal HD shock solutions}
+\label{s2}
+To construct converging shocks, we follow the procedure of finding expanding shocks and apply to the solution space a time-reversal operation $t\rightarrow-t$ followed by certain transformation of the self-similar variables, i.e. $x\rightarrow-x$, $v\rightarrow-v$. The free-fall collapse asymptotic solution is unphysical after the time-reversal operation. So near the origin $x\rightarrow 0$, only LP-type and HD void asymptotic solutions are considered. Table~\ref{t1} listed parameters of three LP-type solutions $b_{1}$-$b_{3}$ and nine HD void solutions $c_{1}$-$c_{9}$ (see \citet{larson1969numerical}, \citet{penston1969dynamics}, \citet{whitworth1985self}, \citet{lou2004envelope} and \citet{lou2009dynamic}).
+
+Since the flow of the upstream side must be supersonic, converging isothermal HD shock solutions in our self-similar model must cross the SCL smoothly at least once (to enter the supersonic region). Right after the shock, the solution jumps back to the subsonic region and need to cross the SCL smoothly again to run into the large-$x$ asymptotic form. We note $x_{*}(1)$ as the position where the solution crosses the SCL for the first time (as a Type 1 eigensolution). Note that this parameter determines all the other parameters of the shock solution. With the density-velocity phase diagram matching method, we constructed four converging isothermal HD shock solutions under the new isothermal HD shock condition~(\ref{e22}), whose parameters are presented in Table~\ref{t2}, and $-v$ versus $x$ plots in Figure~\ref{n1}. 
+It turns out that only when $x_{*}(1)<1$, could such shock solutions cross the SCL smoothly. Besides, $x_{sd}$, $x_{su}$ and $\tau$ increase while $x_{*}(2)$ decreases as $x_{*}(1)$ increases.
+
+\begin{table}
+  \centering
+  \caption{Information of three LP-type solutions and nine HD void solutions. For the first and third column, $x_{1}$ and $\alpha_{0}$ are the void boundary and the void density discontinuity parameter of HD void solutions, while $x_{0}=10^{-10}\approx 0$ and $D$ are the approximated origin and the central reduced density parameter of LP-type solutions. $x_{*}(1)$ is the starting point for integrations of Type 1 eigensolutions. $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$ defined in the large-$x$ asymptotic solution as $x$ approaches the infinity, i.e. $\lim\limits_{x\rightarrow +\infty} v=V\approx v(x_{2})$, $\lim\limits_{x\rightarrow +\infty}\alpha x^{2}=A\approx \alpha(x_{2})x_{2}^{2}$. This is accurate enough if we only reserve three significant digits for the value of $V$ and four for that of $A$. L1 is the HD (asymptotic) solution label.}
+    \begin{tabular}{ccccccc}
+    \hline
+    $x_{1}$($x_{0}$) & $x_{*}(1)$ & $\alpha_{0}$(D) & $V$ & $A$ & L1\\
+    \hline
+    $10^{-10}$ & 0.7390 & 1731 & -0.777 & 1.198 & $b_{1}$\\
+    $10^{-10}$ & 1.10244 & 75820 & 0.294 & 2.378 & $b_{2}$\\
+    $10^{-10}$ & 2.341 & 1.666 & 3.26 & 8.853 & $b_{3}$\\
+    \hline
+    0.04161 & 0.5 & 1921.4 & -1.56 & 0.6455 & $c_{1}$\\
+    0.0375 & 0.6 & 1406.04 & -1.22 & 0.8569 & $c_{2}$\\
+    0.02362 & 0.7 & 1352.4 & -0.898 & 1.097 & $c_{3}$\\
+    $4.963\times 10^{-4}$ & 0.8 & $1.265\times 10^{8}$ & -0.590 & 1.366 & $c_{4}$\\
+    $8.206\times 10^{-4}$ & 0.9 & $9.866\times 10^{6}$ & -0.292 & 1.666 &  $c_{5}$\\
+    $0.01459$ & 1.35 & 22279 & 0.992 & 3.460 & $c_{6}$\\
+    $0.02417$ & 1.6 & 15446 & 1.70 & 4.834 & $c_{7}$\\
+    $0.304$ & 2.35 & 1.6123 & 3.27 & 8.879 & $c_{8}$\\
+    $0.852$ & 2.5 & 1.3204 & 3.44 & 9.302 & $c_{9}$\\
+    \hline
+    \end{tabular}
+    \label{t1}
+\end{table}    
+
+\begin{table}
+  \centering
+  \caption{Four converging isothermal HD shock solutions under the new isothermal HD shock condition, where $x_{su}$ is the upstream shock position (at which the values of $v$ and $\alpha$ are known from outward integrations), $x_{sd}$ is the downstream shock position (at which the values of $v$ and $\alpha$ are calculated from the shock condition), $x_{*}(2)$ is the point at which the downstream integration crosses the SCL, $\tau=x_{su}/x_{sd}$, and $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$. Values of the central reduced density parameter $D$ (density discontinuity parameter $\alpha_{0}$) for the LP-type (HD void) solutions involved, the starting points $x_{*}(1)$s on the SCL and the meeting points $x_{m}$s are (L1, $D$($\alpha_{0}$), $x_{*}(1)$, $x_{m}$, L2): ($c_{1}$, 1921.4, 0.5, 0.8, $s_{1}$), ($c_{2}$, 1406.04, 0.6, 0.9, $s_{2}$), ($c_{3}$, 1352.4, 0.7, 1.0, $s_{3}$), ($b_{1}$, 1731, 0.7390, 1.0, $s_{4}$), where L2 is the converging isothermal HD shock solution label, and L1 is the asymptotic solution label consistent with that in Table~\ref{t1}.}
+    \begin{tabular}{ccccccc}
+    \hline
+    $x_{sd}$ & $x_{su}$ & $x_{*}(2)$ & $\tau$ & $V$ & $A$ & L2\\
+    \hline
+    0.7217 & 0.6922 & 1.2160 & 0.9591 & 0.615 & 2.843 & $s_{1}$ \\
+    0.8106 & 0.7926 & 1.2053 & 0.9778 & 0.585 & 2.797 & $s_{2}$\\
+    0.8852 & 0.8761 & 1.1806 & 0.9897 & 0.516 & 2.693 & $s_{3}$\\
+    0.91012 & 0.9037 & 1.167 & 0.9929 & 0.477 & 2.636 & $s_{4}$\\
+    \hline
+    \end{tabular}
+    \label{t2}
+\end{table}    
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{../hd2}
+\caption{The $-v$ versus $x$ diagram corresponding to the case of Figure~\ref{2} of four converging isothermal HD shock solutions whose information is shown in Table~\ref{t2}, in which we integrate from $x_{*}(1)$ as Type 1 eigensolution near the SCL to different $x_{su}$s as the upstream side and generate shocks under our new isothermal HD shock conditions. Obviously, the shock solutions shown here have $M_{2}<1$ and $\tau^{2}<1$. Values of the central reduced density parameter $D$ (density discontinuity parameter $\alpha_{0}$) for the LP-type (HD void) solutions involved, the starting points $x_{*}(1)$s on the SCL and the meeting points $x_{m}$s are (L1, $D$($\alpha_{0}$), $x_{*}(1)$, $x_{m}$, L2): ($c_{1}$, 1921.4, 0.5, 0.8, $s_{1}$), ($c_{2}$, 1406.04, 0.6, 0.9, $s_{2}$), ($c_{3}$, 1352.4, 0.7, 1.0, $s_{3}$), ($b_{1}$, 1731, 0.7390, 1.0, $s_{4}$), where L2 is the converging isothermal HD shock solution label (see Table~\ref{t2}), and L1 is the asymptotic solution label (see Table~\ref{t1}).}
+\label{n1}
+\end{figure}
+
+\section{Discussion}
+\label{s3}
+\subsection{Physical meanings of the new shock condition}
+If there is no temperature discontinuity, the right hand side of the Euler equation~(\ref{e14}) will be a `complete' differential with respect to $r$, and we can by integration of $r$ naturally obtain a `conserved quantity' as
+\begin{gather}
+\frac{u^{2}}{2}+a^{2}\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)=const.\ ,\label{e29}
+\end{gather}
+where $\rho_{c}$ is the reference density as an integration constant. Actually, this `conserved quantity' is something that an infinitesimal volume of the fluid carries with its motion, and it appears exactly in the `energy' flux $\mathbf{F}$ formula shown in \citet{lou2004envelope} (see the attached note of Yu-Kai for a derivation from general HD equations under the isothermal approximation), i.e.
+\begin{gather}
+\mathbf{F}=\rho\left(\frac{u^{2}}{2}+g\right)\textbf{u}\ ,\label{e30}
+\end{gather}
+where $g=w-TS$ is the Gibbs free energy per unit mass, $w=\epsilon-p/\rho=\gamma(p/\rho)/(\gamma-1)=\gamma RT/(\gamma-1)$ is the enthalpy per unit mass, $\epsilon$ is the internal energy per unit mass, $T$ is the temperature, and $S$ is the entropy per unit mass. Recall the expression of $S$ \citep{SFSW}, i.e.
+\begin{gather}
+S=S_{0}+\frac{R}{\gamma-1}\mathrm{ln}\left(\frac{a^{2}\rho^{1-\gamma}}{\gamma-1}\right)=\frac{R\gamma}{\gamma-1}-R\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)\ ,\label{e31}
+\end{gather}
+where $\gamma$ is the polytropic index, and $RT=a^{2}$, it is easily shown that 
+\begin{gather}
+\mathbf{F}=\rho\mathbf{u}\left[\frac{u^{2}}{2}+a^{2}\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)\right]\ .\label{e32}
+\end{gather}
+The same relation between the Bernoulli's equation and energy flux can also be found in an adiabatic fluid with $p=K\rho^{\gamma}$, where $K$ is a parameter relevant to the entropy of the gas\footnote{$K=(\gamma-1)\mathrm{exp}\left[(S-S_{0})/c_{V}\right]$, where $S_{0}$ is the reference entropy (per unit mass), $c_{V}=(\partial\epsilon/\partial T)_{V}$ is the isovolumetric heat capacity \citep{SFSW}.}. It is only by this relation, could we interpret the new shock condition introduced in Section~\ref{s1.2} as a new conservation law, and the corresponding conserved quantity is 
+\begin{gather}
+E=\rho\left(\frac{u^{2}}{2}+h\right)\ ,\label{e33}
+\end{gather}
+where $h=\epsilon-ST$ is the Helmholtz free energy per unit mass. We know that for a thermodynamic system which has a fixed temperature through heat exchange with certain external heat reservoir, the variation of its Helmholtz free energy equals to the mechanical work done by the system to the environment. Our claim that $E$ in formula~(\ref{e33}) is conserved for the shock means that \textbf{there is no mechanical work between the environment and the system along with the shock}\footnote{In other words, any small portion of the gas could only be compressed by or expands into the surrounding gas, and no other objects (e.g. photons, cosmic-rays) are involved.}, rather than that total energy of the system is conserved. 
+
+\subsection{Integration across the shock front}
+The vital relation between the `energy' flux~(\ref{e32}) and the `conserved quantity'~(\ref{e29}) we found from the Euler equation~(\ref{e14}) is under the prerequisite that there is no discontinuity, i.e. $a^{2}$ ($K$ and $\gamma$ for the adiabatic case) is continuous within the region where we integrate the right hand side of equation~(\ref{e14}) and derive the `energy' flux formula~(\ref{e32}). Therefore, the approach of Section~\ref{s1.2} needs further scrutiny. 
+
+Actually, in the adiabatic case (polytropic gas), we integrate the Euler equation on both sides of the shock front individually even though $K$s and even $\gamma$s of the two sides are different. In this way we can get the correct energy flux $\mathbf{F}$ and the correct shock condition for energy conservation, i.e. $\mathbf{F}_{1}=\mathbf{F}_{2}$. However, we can also introduce a conservation law following the approach of Section~\ref{s1.2} to the adiabatic model, and the shock condition obtained in this way is different from what has been adopted in all the previous books and papers in my knowledge. The followings show the details in the spherical model.
+
+Given $p=K\rho^{\gamma}$, the radial Euler equation now becomes
+\begin{gather}
+\frac{\partial u}{\partial t}=-\frac{\partial}{\partial r}\left(\frac{u^{2}}{2}\right)-\frac{\partial p}{\partial r}=-\frac{\partial}{\partial r}\left(\frac{u^{2}}{2}\right)-K\gamma\rho^{\gamma-2}\frac{\partial\rho}{\partial r}\notag\\
+=-\frac{\partial}{\partial r}\left(\frac{u^{2}}{2}\right)-\frac{K\gamma}{\gamma-1}\frac{\partial}{\partial r}\left(\rho^{\gamma-1}\right)=0\ .\label{e34}
+\end{gather}
+If there is no discontinuity (i.e. $K$ and $\gamma$ are constants), the right hand side of equation~(\ref{e34}) can be integrated naturally to give
+\begin{gather}
+\frac{u^{2}}{2}+\frac{\gamma}{\gamma-1}\frac{p}{\rho}=\frac{u^{2}}{2}+w=conts.\ ,\label{e35}
+\end{gather}
+where $w$ is the enthalpy. Therefore, as an analogy of how we go from formula~(\ref{e29}) to expression~(\ref{e32}), the radial energy flux can be written as
+\begin{gather}
+F=\rho u\left(\frac{u^{2}}{2}+\frac{\gamma}{\gamma-1}\frac{p}{\rho}\right)\ ,\label{e36}
+\end{gather}
+from which we obtain the well-known energy conservation condition for adiabatic shocks $F_{1}=F_{2}$\footnote{Here we assume that $\gamma$ has the same value on the two sides of the shock front.}, i.e.
+\begin{gather}
+\rho_{1} u_{1}\left(\frac{u_{1}^{2}}{2}+\frac{\gamma}{\gamma-1}\frac{p_{1}}{\rho_{1}}\right)=\rho_{2} u_{2}\left(\frac{u_{2}^{2}}{2}+\frac{\gamma}{\gamma-1}\frac{p_{2}}{\rho_{2}}\right)\ .\label{e37}
+\end{gather}
+Since $\rho_{1}u_{1}=\rho_{2}u_{2}$ due to mass conservation, we can eliminate them in equation~(\ref{e37}) to give 
+\begin{gather}
+\frac{u_{1}^{2}}{2}+\frac{\gamma K_{1}}{\gamma-1}\rho_{1}^{\gamma-1}=\frac{u_{2}^{2}}{2}+\frac{\gamma K_{2}}{\gamma-1}\rho_{2}^{\gamma-1}\ .\label{e38}
+\end{gather}
+
+However, if we integrate the right hand side of equation~(\ref{e34}) across the shock front following the same procedure of equations~(\ref{e15}) to (\ref{e20}) in Section~\ref{s1.2}, we obtain another shock condition
+\begin{gather}
+\frac{u_{1}^{2}}{2}-\frac{u_{2}^{2}}{2}+\frac{\gamma \left(K_{1}+K_{2}\right)}{2(\gamma-1)}\left(\rho_{1}^{\gamma-1}-\rho_{2}^{\gamma-1}\right)=0\ ,\label{e39}
+\end{gather}
+which is in consistent with equations~(\ref{e37}) and (\ref{e38}) when $K_{1}\neq K_{2}$. Here comes the question: \textbf{If the approach in Section~\ref{s1.2} is correct, why all the previous work on adiabatic shocks used equation~(\ref{e37}) ?}
+
+If we give up the method in Section~\ref{s1.2} and formulate our `energy' conservation through $F_{1}=F_{2}$ with the `energy' flux~(\ref{e32}), the resulting shock condition is
+\begin{gather}
+\left[\frac{u^{2}}{2}+a^{2}\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)\right]_{1}^{2}=0\ ,\label{e40}
+\end{gather}
+which leads to the problems of the adjustable parameter (reference density) $\rho_{c}$ and its self-similar transformation form, the `two to one' relation, and the satisfactory numerical results listed in my report on September 22. 
+
+\subsection{Physical pictures of the isothermal approximation}
+
+The isothermal approximation can be validated in two cases: 
+
+(1) Every small element of the gas is in constant contact with a large heat reservoir of certain temperature (e.g. provided by radiation transfer, cosmic rays, and chemical reaction). This is the case of $\mathrm{H_{II}}$ regions in which the temperature $T$ is in dependent of the mass density $\rho$ for an electron number density $n_{e}<10^2\mathrm{cm^{-3}}$ \citep{spitzer}.
+%In such a case, the assumption that the system is isentropic does not hold. Besides, the mechanisms of the heat reservoir may also play important roles in the emergence and propagation of the shock, so that energy conservation across the shock front is not necessary. 
+
+(2) The gas can be regarded as isentropic (with very high heat conductivity), i.e. without any external entropy source due to any heat reservoir. In such a case, the temperature is not exactly a constant but has a small fluctuation $\delta T$ which gives the heat flux $-\kappa \nabla \delta T$, where $\kappa$ is the heat conduction coefficient. Our approximation is that $\delta T\rightarrow 0$, $\kappa\rightarrow+\infty$, while $-\kappa \nabla \delta T$ is a finite non-zero term which ensures that the entropy of the gas varies properly to maintain the isothermal equation of state $p=a^{2}\rho$. 
+%Since heat conduction is efficient here, it should be allowed that non-zero heat flux exists across the shock front, i.e. $F_{2}-F_{1}\neq 0$, and the values of $F_{1}$ and $F_{2}$ (which would not be calculated explicitly in our work) are non-zero and consistent with the results from equation~(\ref{e30})-(\ref{e32}). 
+
+If we are in case (2), the good news is that the gas is anyway isentropic, and we can also study the (real) energy conservation as shown in Yu-Kai's note on October 24 and my report on October 27, although this is very complicated. But I wonder whether it is possible to have different temperatures on the two sides of the shock front in reality. If the isothermal approximation itself is involved with some effective mechanisms (e.g. heat conduction) that can smooth out the temperature discontinuity in a much smaller time scale than the dynamical time scale of the shock, why such mechanisms do not work around the shock layer so that temperature discontinuity can exist across the shock front? 
+
+If we are to avoid these questions, we can adopt case (1) and assume that the thermodynamic equilibriums in the two regions separated by the shock are established individually through different non-dynamical processes. That is to say, once the shock compresses the gas and makes its temperature different from the original equilibrium value, the gas behind the shock will reach another equilibrium. But in this way, there is no energy conservation, and we cannot use the entropy criterion to validate requirement i), i.e. the temperature of the downstream side should be higher than that of the upstream side. It looks strange that the new isothermal HD shock condition can only produce cooling shocks, but in such a picture highly depending on external conditions (which force the gas on the two sides of the shock front to reach different thermodynamic equilibriums), it is unnecessary to find an explanation of or an approach to solve this `cooling problem' within our dynamical model, on the contrary, we'd better find some realistic physical scenarios suitable to such isothermal HD cooling shocks.
+%\section{Numerical trials}
+
+
+
+
+
+\bibliographystyle{mnras}
+\bibliography{ref} 
+
+\label{lastpage}
+\end{document}

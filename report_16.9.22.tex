@@ -1,0 +1,145 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath}
+\usepackage{amsfonts}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+%\usepackage{morefloats}% A pacakge which enables this text to contain more figures and tables.
+\usepackage{grffile}% A pacakge which changes the algorithm to check for known extensions, so that we can insert pdf figures into this text.
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Report on September 22]{The problems of adding a conservation law to the isothermal MHD/HD shock conditions}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Bo-Yuan Liu]{Bo-Yuan Liu$^{1}$\thanks{E-mail: liu-by13@mails.tsinghua.edu.cn}
+\\
+% List of institutions
+$^{1}$Department of Physics, Tsinghua University, Beijing, China(PRC)\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+\begin{keywords}
+MHD -- shock waves -- stars: formation -- supernovae: general -- ISM: clouds
+\end{keywords}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+ 
+We have been stuck by some problems for a long time when attempting to introduce a new conservation law into the isothermal system. Yesterday I discussed with Yu-Kai and I think that it is time to summarize our problems to evaluate the significance of them and (, if possible, ) find their solutions\footnote{Yu-Kai and I think that we cannot solve these problems by the approaches that we have already tried, so that , perhaps, we need to view them from new perspectives. Yu-Kai said that he was considering the effect of heat conduction.}.
+
+Our initial motivation to introduce such a problematic conservation law was to solve \textbf{the problem of `two to one' relation between the upstream side and the downstream side under purely mechanical shock conditions (i.e. conservation of mass and momentum)}. We wanted to know \textbf{whether that very solution with supersonic downstream (from Type 1 two-temperature isothermal MHD/HD shock condition) is physical or not}. Later on, Yu-Kai's analysis through the $\mathcal{P}$ versus $\mathcal{V}$ diagram and my numerical trials in the self-similar quasi-spherical isothermal model showed that \textbf{such a `two to one' relation and supersonic downstream still exist mathematically}. Then we started to reflect on this conservation law itself to identify where the problems are. I divided our problems into three different aspects, as shown below. For simplicity, the analytical part does not consider magnetic fields.
+
+\section{Physical meanings of the conservation law}
+I believe that our most solid derivation of this conservation law is Yu-Kai's derivation whose resulting energy flux is
+\begin{gather}
+\mathbf{F}=\rho\left(\frac{v^{2}}{2}+g\right)\textbf{v}\ ,\label{e1}
+\end{gather}
+where $g=w-TS$ is the Gibbs free energy per unit mass, $w=\epsilon-p/\rho$ is the enthalpy per unit mass, $\epsilon$ is the internal energy per unit mass, $T$ is the temperature, and $S$ is the entropy per unit mass, while the corresponding conserved quantity is 
+\begin{gather}
+E=\rho\left(\frac{v^{2}}{2}+h\right)\ ,\label{e2}
+\end{gather}
+where $h=\epsilon-ST$ is the Helmholtz free energy per unit mass. We know that for a thermodynamic system which has a fixed temperature through heat exchange with certain external heat reservoir, the variation of its Helmholtz free energy equals to the mechanical work done by the system to the environment. Our claim that $E$ in formula~(\ref{e2}) is conserved for the shock means that \textbf{there is no mechanical work between the environment and the system along with the shock}\footnote{In other words, any small portion of the gas could only be compressed by or expands into the surrounding gas, and no other objects (e.g. photons, cosmic-rays) are involved.}, rather than that total energy of the system is conserved. 
+
+So the first problem is
+
+\textbf{whether this claim is necessary or not.}
+
+I wonder why former studies, e.g. \citet{lou2014self} and \citet{yuLou2006}, did not include this conservation law. Actually, they must have encountered the same problems (i.e. `two to  one' relation and supersonic downstream). Anyway, if the shock is associated with radiation pressure, cosmic-ray pressure or chemical/nuclear reaction, the above claim may not hold.
+
+\section{The adjustable parameter in formula of the conservation law}
+Under such a conservation law and mass conservation, we can write the shock condition by energy flux formula~(\ref{e1}) as
+\begin{gather}
+\left[\frac{\left(u_{s}-u\right)^{2}}{2}+a^{2}\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)\right]_{u}^{d}=0\ ,\label{e3}
+\end{gather} 
+in which we have used the expression of entropy per unit mass $S$ \citep{SFSW}, i.e.
+\begin{gather}
+S=S_{0}+\frac{R}{\gamma-1}\mathrm{ln}\left(\frac{a^{2}\rho^{1-\gamma}}{\gamma-1}\right)=\frac{R\gamma}{\gamma-1}-R\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)\ ,\label{e4}
+\end{gather}
+where $RT=a^{2}$. Yu-Kai's report shows analytically that the problems of `two to  one' relation and supersonic downstream are not solved by introducing the conservation law, which is confirmed by my numerical results. Besides, here is another problem that \textbf{we have an adjustable reference value of the entropy $S_{0}$, or an adjustable reference value of the density $\rho_{c}$}. Such a adjustable parameter affects the qualitative features of the solutions of equation~(\ref{e4}) and causes all the complexity in the $\mathcal{P}$ versus $\mathcal{V}$ diagram. 
+
+In our self-similar model, this adjustable parameter becomes even more troublesome. Actually, we may obtain equation~(\ref{e3}) within the self-similar framework from the Euler equation\footnote{I still doubt the validity of this approach.}
+\begin{gather}
+-\frac{\partial u}{\partial t}=\frac{\partial}{\partial r}\left[a^{2}\mathrm{ln}\left(\frac{\rho}{\rho_{c}}\right)+\frac{u^{2}}{2}\right]\ ,\label{e5}
+\end{gather}
+where the adjustable parameter $\rho_{c}$ still exists. We cannot get rid of this parameter easily because physically speaking, it is related to the reference value of the entropy $S_{0}$. 
+
+Even though we do not care the physical meaning of this adjustable parameter and set $\rho^{-1}_{c}=4\pi G t^{2}$ (without any reason), as done in the numerical investigations of my last report on September 8, \textbf{it is still weird that $\rho_{c}$ depends on the time $t$}. Actually, since $\rho=\alpha/\left(4\pi G t^{2}\right)$ in our self-similar transformation, \textbf{$\rho_{c}$ must be a function of at least one of $r$ and $t$ rather than a constant to fully transform $\rho/\rho_{c}$ into self-similar variables}, so that we can study \textbf{self-similar} isothermal shocks. However, the form of such a function seems arbitrary.
+
+\section{Unsatisfactory numerical results}
+If we ignore all the ambiguity shown above and chose $\rho^{-1}_{c}=4\pi G t^{2}$ to do numerical calculations of the isothermal MHD/HD shocks in our self-similar model, more difficulties occur at least for the construction of complete converging shock solutions. 
+
+Due to the unsettled issues above, we do not fully understand the nature of isothermal shock, therefore, the most conservative solution is to use the same requirement with that of adiabatic shocks, i.e. i) the upstream flow speed should be higher than the downstream flow speed, ii) the temperature of the downstream side should be higher than that of the upstream side, iii) the upstream side should be supersonic while the downstream side subsonic. 
+
+Under these three requirements, \textbf{by now, all the numerical trials that I made have failed to construct any complete isothermal MHD/HD converging shock solution}. The features of self-similar isothermal converging shocks under this conservation law with such a special $\rho_{c}$ have been shown in my last report on September 8. According to these known features and properties of the asymptotic solutions near the origin (i.e. LP-type solution, void solution and free-fall solution), it can be concluded that there is no complete shock solution that crosses the MSCL/SCL smoothly twice. As for possible complete solutions which involve free-fall solutions and cross the MSCL/SCL smoothly only once, I cannot say for sure that they do not exist but I really did not find them.
+
+\bibliographystyle{mnras}
+\bibliography{ref} 
+
+\label{lastpage}
+\end{document}

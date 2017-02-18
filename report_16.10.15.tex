@@ -1,0 +1,286 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath}
+\usepackage{amsfonts}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+%\usepackage{morefloats}% A pacakge which enables this text to contain more figures and tables.
+\usepackage{grffile}% A pacakge which changes the algorithm to check for known extensions, so that we can insert pdf figures into this text.
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Report on October 15]{The isothermal MHD shock condition considering temperature discontinuity across the shock front}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Bo-Yuan Liu]{Bo-Yuan Liu$^{1}$\thanks{E-mail: liu-by13@mails.tsinghua.edu.cn}
+\\
+% List of institutions
+$^{1}$Department of Physics, Tsinghua University, Beijing, China(PRC)\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+\begin{abstract}
+In Section~\ref{s1} I derived the isothermal MHD/HD shock condition that considers temperature discontinuity across the shock front (according to our last conversation on phone) and showed the qualitative features of the possible solutions obtained from this new shock condition. In Section~\ref{s2}, I discussed the case in which properties of the downstream side is given for our former shock condition, and interpreted some numerical results meant for outgoing (expanding) shocks. I will further verify the findings in Section~\ref{s1} numerically and do more numerical trials for outgoing shocks calculated from our former shock condition . 
+\end{abstract}
+\begin{keywords}
+MHD -- shock waves -- stars: formation -- supernovae: general -- ISM: clouds
+\end{keywords}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+
+\section{Analytical derivation and qualitative analysis}
+\label{s1}
+We start at the radial Euler equation in our quasi-spherical isothermal model 
+\begin{gather}
+\rho\left(\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial r}\right)=-a^{2}\frac{\partial \rho}{\partial r}\ ,i.e.\notag\\
+\frac{\partial u}{\partial t}=-\frac{\partial}{\partial r}\left(\frac{u^{2}}{2}\right)-a^{2}\frac{\partial}{\partial r}\left(\mathrm{ln}\rho\right)\label{e1}\ ,
+\end{gather}
+in which the terms for gravity and magnetic field are dropped for simplicity. Along the stream line, $\partial u/\partial t=0$, and we can integrate the right hand side of equation~(\ref{e1}) across the shock front $r_{s}$ from $r_{1}<r_{s}$ to $r_{2}>r_{s}$ as\footnote{We note $f(r_{i})$ as $f_{i}$ for short, where $i=1,\ 2$ and $f=a,\ u,\ \rho,\ B$.}
+\begin{gather}
+\frac{u_{2}^{2}}{2}-\frac{u_{1}^{2}}{2}+A(r_{1},\ r_{2})=0\label{e2}\ ,\\
+A(r_{1},\ r_{2})=\int_{r_{1}}^{r_{2}}a^{2}\frac{d\mathrm{ln}\rho}{dr}dr\label{e3}\ .
+\end{gather}
+For $A(r_{1},\ r_{2})$, we can apply integration by parts, i.e.
+\begin{align}
+A(r_{1},\ r_{2})=\left(a^{2}\mathrm{ln}\rho\right)\mid_{r_{1}}^{r_{2}}-\int_{r_{1}}^{r_{2}}\frac{da^{2}}{dr}\mathrm{ln}\rho dr\label{e4},
+\end{align}
+where $a^{2}(r)=a_{1}^{2}+\left(a_{2}^{2}-a_{1}^{2}\right)\theta(r-r_{s})$, considering the temperature discontinuity across the shock front ($\theta(r)$ is the step function). Then we have
+\begin{gather}
+\frac{d a^{2}}{dr}=\left(a_{2}^{2}-a_{1}^{2}\right)\delta(r-r_{s})\label{e5}\ ,\\
+\int_{r_{1}}^{r_{2}}\frac{da^{2}}{dr}\mathrm{ln}\rho dr=\left(a_{2}^{2}-a_{1}^{2}\right)\frac{\mathrm{ln}\rho_{2}+\mathrm{ln}\rho_{1}}{2}\label{e6}\ ,
+\end{gather}
+which is then combined with equations~(\ref{e2}) and (\ref{e4}) to give the final conservation equation
+\begin{gather}
+\frac{u_{2}^{2}}{2}-\frac{u_{1}^{2}}{2}+\frac{\left(a_{2}^{2}+a_{1}^{2}\right)}{2}\mathrm{ln}\left(\frac{\rho_{2}}{\rho_{1}}\right)+\frac{B_{2}^{2}}{4\pi\rho_{2}}-\frac{B_{1}^{2}}{4\pi\rho_{1}}=0\label{e7}\ ,
+\end{gather}
+where we have added back the magnetic pressure term, and it is shown that the reference density $\rho_{0}$ does not appear in this equation, which is the biggest advantage of this approach, although integration~(\ref{e6}) may need to be validated.
+
+Now, recall the cubic equation (40) of my draft for the mechanical MHD shock condition
+\begin{gather}
+X^{3}+\tau^{2}X^{2}\beta_{1}-\left(1+\beta_{1}+\beta_{1}M_{1}^{2}\right)X+M_{1}^{2}\beta_{1}=0\ ,\label{e8}
+\end{gather}
+where 
+\begin{gather}
+\begin{split}
+&\tau=a_{j}/a_{i}=x_{si}/x_{sj}\ ,
+\ M_{1}=v_{i}-x_{si}\ ,
+\ \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ ,\\
+&X=\alpha_{j}/\alpha_{i}=(v_{i}-x_{si})/[\tau (v_{j}-x_{sj})]\ .
+%\\
+%&M_{1}=v_{i}-x_{si}\ ,
+%\qquad \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ .
+\end{split}\label{e9}
+\end{gather}
+We further set $(i,\ j)=(1,\ 2)$, knowing that $\rho_{2}/\rho_{1}=\alpha_{2}/\alpha_{1}$, we can write equation~(\ref{e7}) in self-similar variables by formulae~(\ref{e9}) as
+\begin{gather}
+\frac{M_{1}^{2}}{2}\left(\frac{1}{X^{2}}-1\right)+\frac{1+\tau^{2}}{2}\mathrm{ln}X+\frac{2(X-1)}{\beta_{1}}=0\label{e10}\ ,
+\end{gather}
+which is then combined with equation~(\ref{e8}) to eliminate $\tau$ and give the complete isothermal MHD shock condition
+\begin{gather}
+\mathrm{ln}X=\left[M_{1}^{2}\beta_{1}\left(X^{2}-1\right)-4X^{2}\left(X-1\right)\right]\notag\\
+\qquad\cdot \left[\beta_{1}X\left(X+1\right)+M_{1}^{2}\beta_{1}(X-1)-X\left(X^{2}-1\right)\right]^{-1}\label{e11}\ .
+\end{gather}
+For simplicity, we first consider the pure hydrodynamic case with $\beta_{1}\rightarrow+\infty$ (i.e. no magnetic field), then equation~(\ref{e11}) reduces to
+\begin{gather}
+F_{M_{1}}(X)=\frac{M_{1}^{2}\left(X^{2}-1\right)}{X^{2}+X+M_{1}^{2}(X-1)}-\mathrm{ln}X=0\label{e12}\ .
+\end{gather}
+We note the solution of equation~(\ref{e12}) as $X_{*}\neq 1$\footnote{It will be shown later that equation~(\ref{e12}) always has only one solution whatever $M_{1}$ is.}.
+
+We also want to know whether the relation between the temperatures across the shock front is correct or not and whether the upstream is in the supersonic region while the downstream in the subsonic region. From equation~(\ref{e8}) and formulae~(\ref{e9}), we have
+\begin{gather}
+\tau^{2}=\frac{X-1}{X}\left(\frac{M_{1}^{2}}{X}-\frac{1+X}{\beta_{1}}\right)+\frac{1}{X}\ ,\label{e13}\\
+M_{2}^{2}=\left(v_{2}-x_{s2}\right)^{2}=\frac{M_{1}^{2}}{X^{2}\tau^{2}} \label{e14}\ .
+\end{gather}
+Usually, i) if the shock is the propagation of heating and compression (instead of cooling and inflation), we have $\tau>1$ given the upstream while $\tau<1$ given the downstream. Besides, ii) when upstream is known, we require that $X_{*}>1$, $M_{1}^{2}>1$ and $M_{2}^{2}<1$ (i.e. the shock `crosses' the MSCL/SCL), and when the downstream is known, we have $X_{*}<1$ and $M_{1}^{2}<1<M_{2}^{2}$. Keeping these requirements in mind, we define the following functions of $X$ with parameter $M_{1}$ for the simpler case of no magnetic field (i.e. $\beta_{1}\rightarrow+\infty$):
+\begin{gather}
+G_{M_{1}}(X)=\tau^{2}-1=\frac{(X-1)M_{1}^{2}}{X^{2}}+\frac{1-X}{X}\label{e15}\ ,\\
+H_{M_{1}}(X)=M_{2}^{2}-1=\frac{M_{1}^{2}}{\left[G_{M_{1}}(X)+1\right]X^{2}}-1\label{e16}\ .
+\end{gather}
+Then the above requirements can be expressed by the following statements:
+\begin{gather}
+\text{If }M_{1}^{2}>1,\notag\\
+X_{*}>1\ ,\quad G_{M_{1}}(X_{*})>0\ ,\quad H_{M_{1}}(X_{*})<0\ ;\label{e17}\\
+\text{if }M_{1}^{2}<1,\notag\\
+X_{*}<1\ ,\quad G_{M_{1}}(X_{*})<0\ ,\quad H_{M_{1}}(X_{*})>0\ .\label{e18}
+\end{gather}
+
+We can evaluate the features of possible solutions through plots of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ (see Figure~\ref{1} for $M_{1}^{2}<1$ and Figure~\ref{2} for $M_{1}^{2}>1$). It turns out that $F_{M_{1}(X)}$ always has only one zero point (i.e. $X_{*}$) no matter what $M_{1}^{2}$ is, which is preferred. However, for both the case $M_{1}^{2}>1$ and $M_{1}^{2}<1$, only requirements ii) are met, while requirement i) is violated, that is to say, when $M_{1}^{2}>1$, we always have $X_{*}>1$, $H_{M_{1}}(X_{*})<0$, while $G_{M_{1}}(X_{*})<0$, and when $M_{1}^{2}<1$, we always have $X_{*}>0$, $H_{M_{1}}(X_{*})>0$ while $G_{M_{1}}(X_{*})>0$. The conclusion is that \textbf{under such a new isothermal HD shock condition, we get rid of the problematic `two to one' relation but can only have shocks which go along with the cooling and inflation of the gas}.
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{F_X_1}
+\caption{Plots of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ with $M_{1}^{2}=0.5<1$, in which the zero point of $F_{M_{1}}(X)$ corresponds to $X_{*}<1$, and $H_{M_{1}}(X_{*})>0$ while $G_{M_{1}}(X_{*})>0$. These features remain unchanged for all $M_{1}^{2}<1$.}
+\label{1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\columnwidth]{F_X_2}
+\caption{Plots of $F_{M_{1}}(X)$, $G_{M_{1}}(X)$ and $H_{M_{1}}(X)$ with $M_{1}^{2}=1.5>1$, in which the zero point of $F_{M_{1}}(X)$ corresponds to $X_{*}>1$, and $H_{M_{1}}(X_{*})<0$ while $G_{M_{1}}(X_{*})<0$. These features remain unchanged for all $M_{1}^{2}>1$. Figure~\ref{n1} shows an example in our self-similar quasi-spherical model of the case that the upstream is known with $M_{1}^{2}>1$.}
+\label{2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{shock22}
+\caption{A $-v$ versus $x$ diagram corresponding to the case of Figure~\ref{2} for illustration, in which we integrate from $x_{*}(u)$ as Type 1 eigensolution near the SCL to different $x_{su}$s as the upstream side and generate shocks under our `new' isothermal HD shock condition. Obviously, the Shocks shown here have $M_{2}<1$ and $\tau^{2}<1$. S1 and S2 correspond to two different initial values for solving the transcendental equation~(\ref{e10}) which have no physical meaning.}
+\label{n1}
+\end{figure}
+
+%\section{Numerical trials}
+
+
+
+\section{The former shock condition: when properties of the downstream side are given}
+\label{s2}
+In this section, I apply the analysis of Yu-Kai to our self-similar solutions obtained by the former shock condition (i.e. Condition 2) based on the $\mathcal{P}$ versus $\mathcal{V}$ diagram when properties of the downstream side are given. The analysis is quite similar to that of my former report (September 8) for the case in which properties of the upstream side are given. The first step is to write $\mathcal{P}$ and $\mathcal{V}$ in self-similar parameters $\tau$ and $X$. In our self-similar model, if $(i,\ j)=(1,\ 2)$, from formulae~(\ref{e9}), we have 
+\begin{gather}
+\tau=\frac{a_{2}}{a_{1}}\ ,\qquad X=\frac{\alpha_{2}}{\alpha_{1}}=\frac{\rho_{2}}{\rho_{1}}\ ,\label{e41}
+\end{gather}
+while following Yu-Kai's definitions,
+\begin{align}
+\mathcal{V}=\frac{\rho_{1}}{\rho_{2}}=\frac{u_{2}}{u_{1}}=\frac{1}{X}\ ,\qquad\mathcal{P}=\frac{p_{2}}{p_{1}}=\frac{a_{2}^{2}}{a_{1}^{2}}\frac{\rho_{2}}{\rho_{1}}=\frac{\tau^{2}}{\mathcal{V}}\ .\label{e42}
+\end{align}
+Finally, $\tau^{2}=\mathcal{PV}$, and $X=1/\mathcal{V}$.
+
+The second step is to know how the $\mathcal{P}$ versus $\mathcal{V}$ diagram reflects the qualitative features of our self-similar solutions. Given $\rho_{1}$ and $p_{1}$, we obtain $\rho_{1}$ and $p_{2}$ from certain point $(\mathcal{V}_{*},\ \mathcal{P}_{*})$ in the $\mathcal{P}$ versus $\mathcal{V}$ diagram (see Figure~\ref{3}-\ref{6}). This point is the intersection point of the blue dashed straight line named `conservation' as 
+\begin{align}
+-\frac{\mathcal{P}-1}{\mathcal{V}-1}=R_{1}=\frac{u_{1}^{2}}{a_{1}^{2}}\label{e43}
+\end{align}
+(denoting mass and momentum conservation) and the blue solid curve `shock isothermal' 
+\begin{align}
+\mathcal{P}=\frac{(\mathcal{V}+1)/2+\xi_{1}}{(\mathcal{V}+1)/2+\mathcal{V}\mathrm{ln}\mathcal{V}+\xi_{1}\mathcal{V}}=F_{\xi_{1}}(\mathcal{V})\ ,\label{e44}
+\end{align}
+where $R_{1}$ should be smaller than 1 if properties of the downstream is known (the dotted curve `SCL' corresponds to $R_{1}=1$), and $\xi_{1}=\mathrm{ln}(\rho_{0}/\rho_{1})=-\mathrm{ln}\alpha_{1}$. The values of $\xi_{1}$ and $R_{1}$ determine the outcomes of the diagram. On the $\mathcal{P}$ versus $\mathcal{V}$ diagram, we also plot the red solid curve `isothermal' as $\mathcal{P}=1/\mathcal{V}$ and the green solid curve `cross' as $\mathcal{P}=\mathcal{V}/|2\mathcal{V}-1|$ (which has a pole at $\mathcal{V}=0.5$) to evaluate the values of $\tau$ and $R_{2}=u_{2}^{2}/a_{2}^{2}$ from the position of $(\mathcal{P}_{*},\ \mathcal{V}_{*})$. The reasoning is as follows.
+\begin{align}
+R_{2}=\frac{u_{2}^{2}}{a_{2}^{2}}=\frac{u_{1}^{2}}{a_{1}^{2}}\left(\frac{a_{1}}{a_{2}}\right)^{2}\left(\frac{u_{2}}{u_{1}}\right)^{2}=\frac{\mathcal{V}(\mathcal{P}-1)}{\mathcal{P}(1-\mathcal{V})}\ ,\label{e45}
+\end{align}
+therefore, $R_{2}>1$ is equivalent to $(2\mathcal{V}-1)\mathcal{P}>\mathcal{V}$, which means that the upstream side is in the supersonic region. When properties of the downstream is given, we require that i) $X=u_{1}/u_{2}<1$, i.e $|u_{s}-u_{u}|>|u_{s}-u_{d}|$. We may further by physical considerations require that ii) $\tau^{2}<1$ (i.e. downstream temperature is higher than upstream temperature: $a_{2}>a_{1}$) and iii) $R_{2}>1$ (i.e. flow of the upstream side is supersonic: $u_{2}/a_{2}>1$, and the shock `crosses' the SCL on the $-v$ versus $x$ plane). These requirements can be shown by formulae~(\ref{e42}) and (\ref{e45}) equivalent to
+\begin{align}
+\mathrm{i)}&\ \mathcal{V}_{*}>1\, \label{e46}\\
+\mathrm{ii)}&\ \mathcal{P}_{*}<\frac{1}{\mathcal{V}_{*}}\ ,\label{e47}\\
+\mathrm{iii)}&\ \mathcal{P}_{*}>\frac{\mathcal{V}_{*}}{|2\mathcal{V}_{*}-1|}\ .\label{e48}
+\end{align}
+The above inequalities illustrate the relation between qualitative features of the shock embodied by self-similar parameters (i.e. $\tau$ and $X$) with the position of $(\mathcal{P}_{*},\ \mathcal{V}_{*})$. 
+
+The third step is to know how quantitative properties of self-similar solutions (i.e. $x_{*}(d)$ and $x_{sd}$) are related to the values of $\xi_{1}=-\mathrm{ln}\alpha_{1}$ and $R_{1}$, which tell us the shape of `shock isothermal' curve and possible intersection point(s) on the line named `conservation'. We know that $\alpha\rightarrow A/x^{2}$ as $x\rightarrow+\infty$ and generally $\alpha_{1}$ decreases as $x_{sd}$ increases, therefore, $\xi_{1}$ increases as $x_{sd}$ increases, and the shape of `shock isothermal' curve varies from Figure~\ref{3}, \ref{4} to Figure~\ref{5} then to Figure~\ref{6}. As for $R_{1}$, we have $R_{1}^{1/2}=u_{1}/a_{1}=x_{sd}-v_{d}<1$, and $R_{1}\rightarrow 1$ as $x_{sd}$ gets closer and closer to the SCL.
+
+We can divided the problem into 3 cases according to the value of $\xi_{1}$: Situation A with $\xi_{1}>-0.807$ (Figure~\ref{6}), Situation B with $-1<\xi_{1}<-0.807$ (Figure~\ref{5}) and Situation C with $\xi_{1}<-1$ (Figure~\ref{3} and \ref{4}). 
+
+We find that for Situation A and B, given $x_{sd}$, we have only one solution but the obtained shocks cannot meet requirements~ii) and iii). \textbf{If requirement iii) is necessary, there is no valid expanding shock when $x_{sd}$ is too large (i.e. $\xi_{1}$ is too large)}. 
+
+For Situation C, we tend to find two solutions given $x_{sd}$, and this case can be further divided into to two sub-cases according to the value of $R_{1}$. If $R_{1}$ is close to 1, both two solutions meet all the three requirements, as shown in Figure~\ref{4}. However, we must have very small $x_{sd}$ close to the SCL to construct such Shocks in our self-similar quasi-spherical model, which means that the inner part of the Shock must be the free-fall solution. By now, I haven't explored such (possible) Shocks yet. If $R_{1}$ is much smaller than 1, one of the two solutions meets requirement iii) but violates requirement ii), while the other violates both requirements ii) and iii), as shown in Figure~\ref{3}. \textbf{If we release the restriction  that the shock is the propagation of heating and compression (i.e. the physical meaning of requirement~(\ref{e47})), Situation C can also produce valid Shocks, and we can avoid the `two to one' relation by ruling out the solution that violates requirement~iii)}. Some numerical results are shown in Figure~\ref{7} and \ref{8}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{P-V_4.pdf}
+\caption{(Situation C) $\mathcal{P}$ versus $\mathcal{V}$ diagram for $\xi_{1}=-1.2<-1$ and $R_{1}=0.35$ with two poles $0<\mathcal{V}_{p1}<0.5$ and $1<\mathcal{V}_{p2}$. We find two intersection points $1<\mathcal{V}_{*}(1)<\mathcal{V}_{*}(2)$ of the blue solid curve `shock isothermal' and the blue dashed line `conservation' above the red solid curve `isothermal', of which $\mathcal{V}_{*}(1)$ is above the green solid curve `cross' and $\mathcal{V}_{*}(2)$ is below `cross' (see requirements~(\ref{e47}) and (\ref{e48})). $\mathcal{V}_{*}(1)$ corresponds to a shock with $a_{2}>a_{1}$ and $R_{2}>1$ which violates requirement ii), while $\mathcal{V}_{*}(2)$ corresponds to a shock with $a_{2}>a_{1}$ and $R_{2}<1$ which violates both requirements ii) and iii). Examples of this case are shown in Figure~\ref{7} and \ref{8}.}
+\label{3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{P-V_5.pdf}
+\caption{(Situation C) $\mathcal{P}$ versus $\mathcal{V}$ diagram for $\xi_{1}=-1.2<-1$ and $R_{1}=0.9$ with two poles $0<\mathcal{V}_{p1}<0.5$ and $1<\mathcal{V}_{p2}$. We find two intersection points $1<\mathcal{V}_{*}(1)<\mathcal{V}_{*}(2)$ of the blue solid curve `shock isothermal' and the blue dashed line `conservation' below the red solid curve `isothermal' and the green solid curve `cross'. These intersection points corresponds to shocks with $a_{2}<a_{1}$, and $R_{2}<1$ which meet all the three requirements~(\ref{e46})-(\ref{e48}). By now, I have not found examples for this case.}
+\label{4}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{P-V_6.pdf}
+\caption{(Situation B) $\mathcal{P}$ versus $\mathcal{V}$ diagram for $-1<\xi_{1}=-0.9<-0.807$ and $R_{1}=0.5$ with two poles $0<\mathcal{V}_{p1}<0.5$ and $0.5<\mathcal{V}_{p2}<1$. We find only one intersection point $\mathcal{V}_{*}>1$ of the blue solid curve `shock isothermal' and the blue dashed line `conservation' above red solid curve `isothermal' (i.e. $a_{2}>a_{1}$) and below the green solid curve `cross' (i.e. $R_{2}<1$). The corresponding shock violates both requirements ii) and iii).}
+\label{5}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{P-V_7.pdf}
+\caption{(Situation A) $\mathcal{P}$ versus $\mathcal{V}$ diagram for $\xi_{1}=-0.5>-0.807$ and $R_{1}=0.5$ with no pole. Features of the intersection point and the relevant shock is the same with Situation B shown in Figure~\ref{5}.}
+\label{6}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{shock20}
+\caption{A $-v$ versus $x$ diagram corresponding to the case of Figure~\ref{4} for illustration, in which we integrate from $x_{*}(d)$ near the SCL as Type 1 eigensolution to different $x_{sd}$s as the downstream side and add shocks. All the $x_{sd}$s shown here should belong to the case of Figure~\ref{3}, while for $x_{sd}=0.8$ and $x_{sd}=1.0$, we did not find the second solution. This is due to improper choices of the initial points to solve the set of transcendental equations numerically.}
+\label{7}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{shock21}
+\caption{A $-v$ versus $x$ diagram corresponding to the case of Figure~\ref{3} (and \ref{5}, \ref{6}) for illustration, in which we integrate from $x_{0}=10^{-10}$ near the origin as LP-type solutions with $D=e^{9}$ to different $x_{sd}$s as the downstream side and add shocks. For $x_{sd}\leq 0.9$ shown here, we are in the case of Figure~\ref{3}, while for $x_{sd}=1.0$, we might be in the case of Figure~\ref{5} or \ref{6}. Again, for $x_{sd}=0.6$ and $x_{sd}=0.7$, we did not find the second solution due to improper choices of the initial points.}
+\label{8}
+\end{figure}
+
+\bibliographystyle{mnras}
+\bibliography{ref} 
+
+\label{lastpage}
+\end{document}

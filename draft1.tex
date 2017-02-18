@@ -1,0 +1,1411 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath}
+\usepackage{amsfonts}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+%\usepackage{morefloats}% A pacakge which enables this text to contain more figures and tables.
+\usepackage{grffile}% A pacakge which changes the algorithm to check for known extensions, so that we can insert pdf figures into this text.
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+\font\eightrm=cmr8 scaled 1000 \font\sevenrm=cmr7 scaled 1000
+\def\gsim{\;\lower4pt\hbox{${\buildrel\displaystyle >\over\sim}$}\;}
+\def\lsim{\;\lower4pt\hbox{${\buildrel\displaystyle <\over\sim}$}\;}
+\def\grls{\;\lower4pt\hbox{${\buildrel\displaystyle >\over <}$}\;}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+%April      14,   2016  (Thursday)  very early morning, THCA
+%                                   afternoon, THCA
+%                                   conversation with Liu BoYuan
+%                                   upstream and downstream reversed
+%                                   color in figures
+%                                   Keep in mind of further changes
+%                                   after 2016 March 10
+%                                random package is still a trouble
+%                                afternoon, evening  THCA
+%                                  night THCA
+%April      15,   2016  (Friday)   very early morning, THCA
+%                                   wechat Zhou ZiQi before noon
+%                                  lecture in the afternoon
+%                                  dinner Brian Schmidt ...
+%                                  Lecture Brian Schmidt
+%April      16,   2016  (Saturday)  very early morning, THCA
+%                                   morning
+%                                   afternoon, evening THCA
+%                                   night THCA
+%April      17,   2016  (Sunday)   very early morning, THCA
+%                                  KaiLun completed Tsinghua Phys Exam
+%                                  for 2 hours...100 points
+%                                  morning, THCA
+%                                  afternoon, evening THCA
+%April      20,   2016  (Wednesday)   very early morning, THCA
+%                                  evening, night THCA
+%April      24,   2016  (Sunday)   very early morning, THCA
+%                                  Tsinghua 105 anniversary
+%                                  afternoon, evening THCA
+%                                  night THCA
+%April      25,   2016  (Monday)   very early morning, THCA
+%                                  morning, noon, 6 Teaching Building
+%                                  B301; after the graduate lecture
+%                                  afternoon, evening THCA
+%April      27,   2016  (Wednesday) very early morning, THCA
+%                                   evening, night THCA
+%April      28,   2016  (Thursday)  very early morning, THCA
+%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Spherical converging isothermal MHD shocks with self-gravity]{Self-similar
+  converging magnetohydrodynamic shocks in a quasi-spherical
+ isothermal
+%magneto-fluid
+ gas with self-gravity}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Bo-Yuan Liu]{Bo-Yuan Liu$^{1}$\thanks{E-mail: liu-by13@mails.tsinghua.edu.cn}, Yu-Qing Lou$^{1, 2}$
+\\
+% List of institutions
+$^{1}$Department of Physics, Tsinghua University, Beijing 100084, China (PRC)\\
+$^{2}$Tsinghua Center for Astrophysics (THCA), Tsinghua University, Beijing 100084, China (PRC)\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received 2016; in original form 2016}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+We investigated self-similar isothermal magneto-hydrodynamic (MHD) solutions for outgoing or converging envelopes connected by converging isothermal MHD shocks with different core states under quasi-spherical symmetry through a time-reversal operation to the solution space, and discussed possible astrophysical applications of these (self-similar) converging isothermal MHD shock solutions (Shocks). With the introduction of a random traverse magnetic field following the ideal MHD approximation, we developed the MHD version of the self-similar isothermal hydrodynamic (HD) converging shock solutions found by \citet{lou2014self}. 
+%Coherent definitions of the upstream and the downstream based on the propagation direction of the shock front and the second law of thermodynamics is applied, by which both one-temperature and two-temperature (perpendicular isothermal MHD) shock conditions are specified. 
+Detailed analysis on the time-reversal operation and the new solution space is conducted, based on which we constructed three classes of isothermal MHD converging shock solutions according to the upstream properties near the core, i.e. Class I to III solutions are characterised by MHD Larson-Penston (LP) type, converging MHD void and MHD free-fall collapse asymptotic solution \citep{yuLou2006}, respectively. We could also construct twin converging isothermal MHD shock solutions and isothermal MHD converging-shock-rebound-void-expansion-shock (CSRVES) solutions. Despite the versatile behaviours (e.g. winds, outflows, explosions, fall-backs, accretions, collapses, rebounds) of the quasi-spherical system, common properties of our converging isotheraml MHD shock solutions are summarised, which enable us to put forward an overall guideline to construction of expected solutions and identify the general effect of converging isothermal MHD shocks as reversing or enhancing the speed of the outer outgoing or converging envelope and compression of the fluid. As examples, we delineated processes involving such converging isothermal MHD shocks for star formation in magnetised molecular clouds, pre-explosion states and explosions of core-collapse supernovae. The predictions of our model agree well with other much more sophisticated simulations. With the clearness of solution spaces and the consideration of magnetic fields, our model serves as an useful theoretical tool for understanding the roles played by converging shocks as well as magnetic fields in broad contexts of astrophysics. 
+%(e.g. molecular clouds, stars, planets, compact heavenly bodies, planetary nebulae, supernovae, supernovae remnants, globular clusters, galactic bugles, hollow cavity or bubbles, and clusters of galaxies). 
+
+
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+MHD -- shock waves -- stars: formation -- supernovae: general -- ISM: clouds
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+%\textit{I use Italic words to reply to your questions particularly, while some of the corrections (which are non-trivial) in the main body of the text take the style }\texttt{corrections}.
+
+%\textit{I wonder whether it is necessary to include a section on solutions with converging MHD voids. \citet{lou2014self} has a section on voids, but it is merely a literature review of theoretical models for expanding voids. And no quantitative result nor complete physical scenario is provided, which makes this section seems extra. May 6 2016}
+
+%\textit{I wrote a similar briefer review on voids. I think that our isothermal model is too simple to give complete scenarios regarding Class II converging isothermal MHD shock solutions, and the main concerns of our work are magnetic fields and shocks. So at last I just studied the effect of magnetic fields on construction of such self-similar isothermal converging void solutions.}
+
+%\textit{P.S. Is this paper too long? When shall we submit it? Frankly speaking, I am a little bit anxious now. I have given up the opportunity of doing research abroad this summer to finish this work in time. If it cannot be accepted before I apply for phD positions, I will be of no competitive advantage... You know better the schedule of us. Do we need to hurry now? I know you are always busy. I would appreciate it if you spare some time to check my draft so that we can accomplish this work. June 25 2016}
+
+\section{Introduction}
+Converging shocks with quasi-spherical symmetry can play important roles in many astrophysical processes, e.g. the `double-detonation' Type Ia supernovae of sub-Chandrasekhar mass white dwarfs \citep{fink2007double, fink2010double} and the star formation by collapse of shock-compressed density fluctuations under self-gravity \citep{klessen2001formation}. Simulations for progenitor evolutions in the former case have been performed regarding different detonation set-ups of the He-shell \citep{fink2007double}, as well as different initial core mass and shell mass \citep{fink2010double}. Cylindrical and spherical shocks which may ignite a detonation wave in the deflagration to detonation transition (DDT) are also investigated both analytically and numerically by \citet{kushnir2012}, whose results can be applied to supernovae explosion by setting the criterion of denotation in terms of the shock speed at certain radius from the perspective of ignition mechanism. 
+
+In the literature of hydrodynamics, the cylindrically or spherically symmetric converging shock problem in an ideal polytropic gas (inviscid, non-radiating, non-heat-conducting) without self-gravity is referred to as the `Guderley problem'. Here the so-called ideal polytropic gas is defined from the perspective of thermodynamics: For an ideal gas (whose internal energy per unit mass $e$ depends only on the temperature $T$) with the equation of state $p=\left(k_{B}/\mu\right)\cdot T\rho=R\cdot T\rho$, where $p$ is the pressure, $\rho$ is the mass density, $k_{B}$ is the Boltzmann constant, and $\mu$ is the average mass of one gas molecule, we have the entropy per unit mass $S=c_{v}(T)\mathrm{ln}\left[ p\rho^{-\gamma}/\left(\gamma-1\right)\right]+S_{0}$, where $c_{v}(T)=R/\left(\gamma-1\right)$ is the isometric heat capacity per unit mass, and $\gamma=\gamma(T)=1+R\left(dT/de\right)>1$ is a dimensionless quantity as a function of $T$ \citep{SFSW}. When $\gamma$ as well as $c_{v}$ is constant, since it is only the variance of the entropy that is concerned, for conciseness, we can further define the effective entropy as $s=\mathrm{ln}\left(p/\rho^{\gamma}\right)$. Usually, polytropic gas corresponds to the case in which $\gamma$ is constant (i.e. the polytropic index) and the effective entropy $s$ is conserved, thus, it has the feature that $p=K\rho^{\gamma}$, where $K=\mathrm{exp}(s)$ is a positive constant. Self-similarity method has been applied to the problem as reviewed by \citet{meyer1982selfsimilar}, whose work considers isentropic and non-isentropic self-similar waves, imploding and exploding in the framework of \citet{guderley1942powerful} with several similarity parameters and critical points. \citet{lazarus1981self} explored the parameter space of such problems regrading the self-similar solutions of converging shocks (non-isentropic) and collapsing cavities (isentropic) with arbitrary adiabatic exponent $\gamma>1$ in the equation of state $p=K\rho^{\gamma}$, where $p$ is the pressure, $\rho$ is the mass density, and $K$ is a constant when the (effective) entropy is conserved. Self-similar imploding relativistic waves have been studied as the relativistic generalisation of the Newtonian Guderley problem  by \citet{hidalgo2005self}. Expanding shocks delineated by self-similar solutions are also intensively investigated. For instance, \citet{pan2006self} studied the relativistic shocks emerging from stars with polytropic envelopes and \citet{oren2009discrete} further introduced density perturbations to the former solutions for a strong explosion. Their solutions describe the situation of explosion events (e.g. gamma-ray bursts and supernovae) relevant in very optically thick media such as neutron stars. Generally speaking, the self-similar solutions mentioned above can be divided into two types by the properties of the density profile \citep{oren2009discrete}. Type I solution follows the global conservation laws of hydrodynamics and has finite energy, while Type II solution with a steep density profile is characterised by properties near a singular point known as the `sonic point' which is caused by the rapid acceleration of the shock \citep{pan2006self}. For these models where the self-gravity is absent, it is the spatial symmetry, the equation state and the restriction on the evolution that determine the behaviour of self-similar solutions. It is also shown that self-similarity method is powerful when states far away from the initial and boundary conditions of the system are considered.
+
+Self-similar solutions for a spherically symmetric isothermal hydrodynamic (HD) system with self-gravity are also valuable. For example, the well-known outflow solution with $\rho\propto r^{-2}$ and $v=3.3c$, where $\rho$ is the mass density, $r$ is the radius, $v$ is the velocity of the fluid, and $c$ is the speed of sound, as $t\rightarrow 0$ or $r\rightarrow\infty$ by \citet{larson1969numerical} and \citet{penston1969dynamics} (the LP-type solution) can be applied to the outside-in collapse of star formation after a time-reversal operation. Besides, a free-fall inner envelope with $\rho\propto r^{-3/2}$ as $t\rightarrow\infty$ or $r\rightarrow 0$ can be connected to the static or nearly static outer envelope similar to that of the LP solution \citep{shu1977self}, which is known as the expansion-wave collapse solution (EWCS) describing a self-similar inside-out collapse. Another progress regarding such a system is made by \citet{hunter1977collapse} through his invention of a matching method in density-velocity (as dimensionless parameters after the self-similar transformation of variables) phase diagrams and exploration of new self-similar solutions for the inner envelope other than free-fall solutions. Moreover, \citet{whitworth1985self} enlarged the discrete solutions found by former authors with the concept of weak discontinuities across the sonic critical line (SCL) which divides the solution space into the subsonic region and the supersonic region. In the same work, two types of sonic points (saddle points and nodal points) on the SCL are also defined related to the stability of solutions crossing it. The studies mentioned above constructed self-similar solutions by connecting different asymptotic solutions with numerical integrations of the same set of non-linear ordinary differential equations (ODEs) derived from the original non-linear HD partial differential equations (PDEs) through the self-similar transformation. As a standard research of this type, \citet{lou2004envelope} further explored the `semi-complete solution space' and constructed envelope expansion core collapse (EECC) solutions which feature concurrent interior core collapse and exterior envelope expansion pertinent to proto-planetary nebula and certain evolution phase of galaxy clusters.
+
+More importantly, it is possible to add shocks into isothermal self-similar solutions with self-gravity and spherical symmetry by certain shock conditions. The shock can be used to connect different asymptotic solutions which cannot be connected merely by numerical integrations and alter the accretion rate as well as other parameters in the centre \citep{tsai1995protostellar}. Such self-similar isothermal hydrodynamic shock solutions\footnote{Sometimes, for conciseness, we use the word `Shock' representing the phrase `shock solution' to indicate the whole self-similar solution involving shock(s), while the word `shock' means simply the shock itself.} were intensively studied in the context of astrophysics, e.g. the photo-ionization stellar wind in planetary nebulas \citep{chevalier1997expansion}, the self-similar champagne flows in $\mathrm{H_{II}}$ regions \citep{shu2002self}, the dynamical evolution phase of younger stellar objects \citep{shen2004shocked}, the dynamical connection between the asymptotic giant branch to proto-planetary nebula phase \citep{bian2005spherical}, and the voids in surrounding envelopes for hot bubbles in the interstellar medium as well as supernovae remnants \citep{lou2009dynamic}, in that such shock solutions can accommodate dynamical processes of outflows, inflows, subsonic oscillations, free-fall core collapse and voids \citep{bian2005spherical, lou2009dynamic}. The temperatures in the regions behind and ahead the shock front can be the same or different from each other, and the shock conditions are derived from the conservation of mass and momentum. 
+%with proper entropy variations. 
+
+Additionally, in a more complicated case with a random magnetic field, isothermal shock solutions for magneto-hydrodynamic (MHD) gas were worked out by \citet{yuLou2006}. Moreover, the state of the gas is not limited to be isothermal. In general, self-similar shock solutions were also constructed in an ordinary conventional or general polytropic gas \citep{lou2006self, lou2006new, lou2012dynamic, hu2008self, lou2008self} or in the MHD version of that \citep{wang2008dynamic, lou2010general}. Despite the abundance of aforementioned literatures, only expansion shocks are investigated in these models, while self-similar converging shocks are less thoroughly studied.
+
+As a key reference of the present work, \citet{lou2014self} derived several self-similar converging HD shock solutions for an isothermal spherically symmetric ordinary gas and analysed their applications on star formation, supernovae and collapsing voids. Since magnetic fields play important roles in a variety of astrophysical environments (e.g. dramatically increasing mass-to-flux ratio related to static field supporting, ambipolar diffusion, and $\text{Alfv}\mathrm{\acute{e}}\text{nic}$ motion during star formation in magnetised molecular clouds \citep{mckee2007theory,crutcher1999magnetic}), it would be more realistic to take them into account. In the light of this, the aim of the present study is to construct self-similar converging isothermal MHD shock solutions by connecting different self-similar solutions of an isothermal magneto-fluid under quasi-spherical symmetry as shown in \cite{yuLou2005} with converging isothermal MHD shocks. Some solutions may serve as the MHD counterparts of those in \citet{lou2014self}. In this way, we may better appreciate relevant astrophysical processes in consideration of a random traverse magnetic field under the ideal MHD approximation. Following the propagation direction of the shock
+%(as the positive direction)
+, we define the region behind the shock front as the downstream, while that ahead the shock front as the upstream. It will be shown later in Section~\ref{s3.1} that due to the nature of our self-similar method, the upstream is also the side of the shock front through which the gas enters, i.e. the so-called \textit{front side} in \citet{SFSW}, while the downstream the \textit{back side}. Unlike the case of \citet{lou2014self}, this definition is independent of the time-reversal operation. Besides, we assume that generally speaking, these isothermal MHD shocks are triggered by fluctuations of the environment which suddenly compress and heat the gas in certain region of the system\footnote{For converging shocks in a quasi-spherical system involved in the present study, heating and compression occur in some outer spherical shell.}. This region is exactly the initial downstream side on whose boundary the shock emerges and propagates toward the upstream side. Therefore, the temperature of the downstream side (i.e. where the shock front comes from) should be higher than that of the upstream side (where the shock front goes toward). Time-reversal operation $t\rightarrow -t$ (see Section~\ref{s2.2} for details) is performed to construct such converging isothermal MHD shocks under an extended version of the isothermal MHD shock conditions in \citet{yuLou2006} which are meant for `outgoing' isothermal MHD shocks, however, with different correspondences between the downstream or upstream and the inner or outer region of the solution space. Without special annotation, any result in this paper is displayed in the solution space after the time-reversal operation (i.e. the new solution space)
+%, while the physical meanings could be attained in the relations between self-similar variables before the time-reversal operation (the old solutions space) and concrete physical quantities through the same form of self-similar MHD transformation as that of \citet{yuLou2005} and \citet{yuLou2006}. 
+.
+
+%This paper is structured as followings: 
+The basic MHD model formulation for our converging isothermal MHD shock problem including MHD PDEs, the self-similar MHD transformation as well as the ODEs reduced from it, the time-reversal operation and known asymptotic solutions are contained in Section \ref{s2}. One-temperature and two-temperature isothermal MHD shock conditions are presented in Section \ref{s3}. Results of self-similar isothermal MHD void solutions, three classes of converging isothermal MHD shock solutions and twin converging isothermal MHD shock solutions calculated by numerical integrations with the standard 4-order Runge-Kutta method are displayed in Section \ref{s4}, \ref{s5} and Appendix~\ref{a4}. Discussions on the general empirical guideline that could be given in search of such converging isothermal MHD shock solutions and some astrophysical applications are included in Section \ref{s6}. 
+
+%\footnote{in which the strength of the magnetic field is proportional to the gas density, and thus, characterised by an important magnetic parameter $\lambda$ defined in equation (\ref{e5})}
+
+\section{The basic MHD model}
+\label{s2}
+\subsection{From PDEs to ODEs}
+\label{s2.1}
+The magnetic field in this paper is a tangled traverse magnetic field, whose effect is embodied by the magnetic pressure and tension force terms in the equation of radial component momentum conservation. To reach the quasi-spherical symmetry, some terms of the original MHD momentum equations are ignored (see Appendix C in \citet{yuLou2005} for details), despite that in practice these terms may break the quasi-spherical symmetry\footnote{Our model is based on the randomness of the transverse magnetic field which presupposes that contributions of these terms cancel each other or are negligible on certain scales.}. In the spherical polar coordinates $(r, \theta,\phi)$, with the magnetic field delineated by an average $\langle B^{2}_{||}\rangle$, where $B_{||}=(B_{\theta}^{2}+B_{\phi}^{2})^{1/2}$ stands for the component parallel to the isothermal MHD shock front (i.e. tangent to the sphere surface), we adopt a specific equation of state for an isothermal ideal gas $p=a^{2}\rho$, where $p$ is the pressure, $\rho$ is the mass density, and $a=\left(k_{B}T/\mu\right)^{1/2}$ is the isothermal sound speed, and write down the following MHD PDEs:
+\begin{gather}
+\frac{\partial\rho}{\partial t}+\frac{1}{r^{2}}\frac{\partial
+  \left(r^{2}\rho u\right)}{\partial r}=0\ ,\label{e1}\\
+\frac{\partial M}{\partial r}=4\pi\rho r^{2},
+ \qquad\qquad \frac{\partial M}
+  {\partial t}+u\frac{\partial M}{\partial r}=0\ ,\label{e2}\\
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial r}=-\frac{a^{2}}{\rho}\frac{\partial \rho}
+ {\partial r}-\frac{GM}{r^{2}}-\frac{1}{8\pi\rho}
+ \frac{\partial}{\partial r}\langle B^{2}_{||}\rangle
+ -\frac{\langle B^{2}_{||}\rangle}{4\pi\rho r}\ ,\label{e3}
+\end{gather}
+where PDEs (\ref{e1}) and (\ref{e2}) represent conservation of mass, PDE (\ref{e3}) stands for MHD radial momentum conservation, $u(r,\ t)$ is the radial flow speed, $M(r,\ t)$ is the mass enclosed within radius $r$ at time $t$, and $G=6.67\times 10^{-8}~\rmn{g}^{-1}\cdot\rmn{cm}^{3}\cdot\rmn{s}^{-2}$ is the universal gravitational constant. 
+%Unlike the generalized version of our model, i.e. the quasi-spherical MHD model of a general polytropic magneto-fluid \citep{wang2008dynamic}, here we do not explicitly include the equation of effective entropy conservation 
+%\begin{gather}
+%\left(\frac{\partial}{\partial t}+u\frac{\partial}{\partial r}\right)\left(\mathrm{ln}\frac{p}{\rho^{\gamma}}\right)=0\ ,\label{ex1}
+%\end{gather}
+%where $\gamma$ is the polytropic index. Actually, in our model, only when $\gamma\rightarrow 1$, the effective entropy $s=\mathrm{ln}\left(p/\rho^{\gamma}\right)\rightarrow 2\mathrm{ln}a$ is conserved, in which case (, for regions other than near the shock front), our model actually describes an adiabatic process which meanwhile has a constant temperature. If we discard the requirement of effective entropy conservation, $\gamma$ becomes an adjustable parameter which also denotes the ratio of the isobaric heat capacity and the isometric heat capacity (e.g. $\gamma=4/3$ for the relativistic perfect gas and $\gamma=5/3$ for the non-relativistic perfect gas), and the isothermal sound speed $a=A/\gamma^{1/2}\neq A$, where $A$ is the adiabatic sound speed.
+
+With the ideal MHD approximation of infinite conductivity (see Appendix \ref{a1}), we can show that \citep{yuLou2006} %{\bf You may want cite proper book references for ideal MHD.} \textit{I have never read a book which presents this equation explicitly. I would cite Yu et al. 2006 here.}
+\begin{equation}
+B_{||}/(\rho r)=\mathrm{const.}\label{e4}
+\end{equation}
+from which we further introduce the dimensionless
+ parameter $\lambda$ by
+\begin{equation}
+\lambda\equiv B^{2}_{||}/
+  \left(16\pi^{2}G\rho^{2} r^{2}\right)\ .\label{e5}
+\end{equation}
+%{\bf (Yu et al. 2006)?}\textit{Yes.}
+
+We define the dimensionless independent self-similar variable as $x\equiv r/(at)$ and perform the following self-similar MHD transformation to PDEs (\ref{e1})-(\ref{e3}):
+\begin{gather}
+\begin{split}
+&\rho(r,\ t)=\frac{\alpha(x)}{4\pi Gt^{2}},
+ \qquad\quad M(r,\ t)=\frac{a^{3}t}{G}m(x)\ ,\\
+&u(r,\ t)=av(x), \qquad\quad B_{||}(r,\ t)=\frac{ab(x)}{\sqrt{G}t}\ ,
+\end{split}\label{e6}
+\end{gather}
+where $\alpha(x)\geq 0$, $m(x)$, $v(x)$ and $b(x)$ are the reduced dimensionless variables as functions of $x$ for the mass density, the enclosed mass, the radial flow speed and the transverse magnetic field strength, respectively. From flux conservation integral (\ref{e5}) , we have $b(x)=\sqrt{\lambda}\alpha x$. Similarly, the $\text{Alfv}\mathrm{\acute{e}}\text{n}$ wave speed defined as $v_{A}\equiv B_{||}/\sqrt{4\pi\rho}$ can be expressed with dimensionless variables and the isothermal sound speed: $v_{A}=\sqrt{\lambda\alpha}\cdot xa$.
+
+It follows that PDEs (\ref{e2}) become
+\begin{equation}
+m'=x^{2}\alpha, \qquad\quad (v-x)m'+m=0\ ,\label{e7}
+\end{equation}
+where the prime stands for the derivative with respect to $x$.
+These two nonlinear ODEs can be further combined to give
+\begin{equation}
+m=(x-v)x^{2}\alpha\ , \qquad\qquad
+ \left[x^{2}\alpha(x-v)\right]'=x^{2}\alpha\ ,\label{e8}
+\end{equation}
+the first one of which indicates that the solutions of $v$ are restricted in the upper-right region with respect to the straight line $x-v=0$ in the $-v$ versus $x$ plane due to the physical requirement of positive enclosed mass, i.e. $m(x)\geq 0$, when $t>0$. In Section \ref{s4}, solutions which hit the $x-v=0$ line can be regarded as MHD void solutions with a central void in expansion (without the time-reversal operation) or contraction (after the time-reversal operation) surrounded by a dynamic envelope. And the straight line $x-v=0$ is referred to as the zero mass line (ZML).
+
+%It turns out that equation  
+PDE (\ref{e1}) can be reduced to
+\begin{equation}
+v'+(v-x)\alpha'/\alpha=2(x-v)/x\ ,\label{e9}
+\end{equation}
+while by ODE (\ref{e8}) and the self-similar MHD transformation, PDE (\ref{e3}) (multiplied by a factor of $t/a$ on both sides) takes the form 
+\begin{equation}
+(v-x)v'=-\alpha'\left(1/\alpha+\lambda x^{2}\right)-2\lambda\alpha x-\alpha (x-v)\ .\label{e10}
+\end{equation}
+
+Through simple algebra, with ODEs (\ref{e9}) and (\ref{e10}), we derive the final two coupled non-linear MHD ODEs (which are applied to numerical integrations by the Runge-Kutta method in Section \ref{s4}, \ref{s5} and Appendix~\ref{a4}) as followings:
+\begin{gather}
+\left[(x-v)^{2}-\left(1+\lambda\alpha x^{2}\right)\right]v'=(x-v)
+ \left[\alpha (x-v)-\frac{2}{x}\right]\ ,\label{e11}\\
+\left[(x-v)^{2}-\left(1+\lambda\alpha x^{2}\right)\right]\alpha'=(x-v)\left[\alpha^{2}-\frac{2\alpha}{x}
+ \left(x-v\right)\right]\notag\\
+\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad +2\lambda\alpha^{2}x\ .\label{e12}
+\end{gather}
+%Checked to be consistent with Yu et al. (2006). 2016 April 14
+
+The above two coupled non-linear ODEs can be written in the compact forms of $F_{x}(x,\ v,\ \alpha)v'=F_{v}(x,\ v,\ \alpha), \quad F_{x}(x,\ v,\ \alpha)\alpha'=F_{\alpha}(x,\ v,\ \alpha)$ with three functionals $F_x$, $F_{v}$, and $F_{\alpha}$ naturally defined. Apparently, these ODEs have singularity in the case that $F_{x}=0$\footnote{It is equivalent to the equation $a^{2}(v-x)^{2}=a^{2}+v_{A}^{2}$ which is related to the fast magneto-sonic condition.}, where we must require that $F_{v}=F_{\alpha}=0$, simultaneously in order to have finite smooth solutions in a consistent manner across the magnetosonic critical line/curve (MSCL/MSCC) specified by
+\begin{equation}
+ x-v=2/(\alpha x)\ , \qquad\quad
+ x-v+2\lambda x=(x-v)^{3}\ ,\label{e13}
+\end{equation}
+on which detailed analysis can be found in \citet{yuLou2005}. 
+
+\subsection{Time-reversal operation}
+\label{s2.2}
+As for the time-reversal operation $t\rightarrow -t$, it is shown from the definition of $x$ that $x\rightarrow -x$. Besides, by additional variable transformation $v\rightarrow -v$ (with $\alpha$ and $b$ unchanged), from ODEs~(\ref{e8}), it turns out that $m\rightarrow -m$, and the forms of ODEs (\ref{e7})-(\ref{e13}) are reserved, which offers great convenience to our model analysis. Now we regard $x$, $v$, $\alpha$, $m$ and $b$ as variables after the time-reversal operation (the new solution space), and note the original self-similar dimensionless variables as $\widetilde{x}$, $\widetilde{v}$, $\widetilde{\alpha}$, $\widetilde{m}$ and $\widetilde{b}$ (the old solution space). 
+%{\bf Exact point?} \textit{I do not fully understand your question. These notations are meant for convenience, since in most part of the paper we deal with the variables in the new solution space, and it is natural to give them the simplest form while label the variables in the old solution space (e.g. with a hat).} 
+Following the relations between the two solution spaces, i.e. $\widetilde{x}=-x$, $\widetilde{v}=-v$, $\widetilde{\alpha}=\alpha$, $\widetilde{m}=-m$, and $\widetilde{b}=b$\footnote{The expression of the $\text{Alfv}\mathrm{\acute{e}}\text{n}$ wave speed $v_{A}=\sqrt{\lambda\alpha}x\cdot a$ remains unchanged after the reversal operation. So does the requirement that $m\geq 0$, in that when $t<0$, for $M(r,\ t)\geq 0$, we must have $-m=\widetilde{m}\leq 0$.}, we note down the complete self-similar transformation that indicates the relations between physical quantities and self-similar variables in both the new and the old solution space with $r=at\widetilde{x}=-atx$:
+\begin{gather}
+\begin{split}
+&\rho=\frac{\widetilde{\alpha}}{4\pi Gt^{2}}=\frac{\alpha}{4\pi Gt^{2}}\ ,\quad M=\frac{a^{3}t}{G}\widetilde{m}=-\frac{a^{3}t}{G}m\ ,\\
+&u=a\widetilde{v}=-av\ ,\quad B_{||}=\frac{a\widetilde{b}}{\sqrt{G}t}=\frac{ab}{\sqrt{G}t}\ ,
+\end{split}\label{ex3}
+\end{gather}
+by which we obtain physical interpretations of our self-similar MHD (shock) solutions in the new solution space when $t<0$ (i.e. $x>0$), while in the old solution space when $t>0$ (i.e. $\widetilde{x}>0$).
+
+
+Actually, some types of solutions are named by their physical interpretations in the old solution space, say the EWCS and the free-fall collapse solution. The problem is that the interpretations are different or even unrealistic in the new solution space. In this paper, we reserve the name `EWCS' and `free-fall collapse' from the perspective of features of the self-similar solution itself (which remain unchanged in the new solution space compared with those in the old solution space), instead of their physical meanings. In fact, after the time-reversal operation, the so-called EWCS means converging-wave-core-expansion and the nominal free-fall collapse solution indicates free-expansion.
+
+In fact, our definitions of the upstream and the downstream of the isothermal MHD shock are purely from the perspective of emergence and propagation of shocks, and, therefore, independent of the time-reversal operation. Such definitions leave the physical meanings unchanged, however, imply that correspondences between the upstream side and the downstream side with different parts of the solution space will reverse after the time-reversal operation (,in that we shift from the old solution space to the new solution space). That is to say, for converging isothermal MHD shock solutions in the new solution space, $-\infty<t<0$, $0<x<+\infty$, and the part that comes from near the origin $x=-\widetilde{x}=-r/(at)\rightarrow 0_{+}$ as $r\rightarrow 0$ or $t\rightarrow -\infty$ corresponds to the upstream side, while the part that comes from the infinity $x\rightarrow +\infty$ as $r\rightarrow +\infty$ or $t\rightarrow 0_{-}$ corresponds to the downstream side, since converging shocks propagate towards the centre and the increase of $x$ in such a case means that we go from the past to the future (with a larger $t$ and smaller $|t|$) or from the inner part to the outer part (with a larger $r$).
+
+%{\bf Need a clarification for the text and the two footnotes. 2016 April 15} \textit{The point here is that I want to separate the time-reversal operation with the definitions of the upstream and the downstream and let the latter be a purely physical statement regardless of what models we construct and what operations we do to our models.}
+
+\subsection{Known asymptotic solutions}
+Only given certain asymptotic isothermal MHD solution near certain value of $x$ (e.g. $x\rightarrow 0_{+}$, $x\rightarrow +\infty$, and near the MSCL) to provide the initial condition, could numerical integrations be conducted. This section lists the asymptotic solutions of \citet{yuLou2005} and \citet{yuLou2006} without presenting relevant derivations in detail. Generally speaking, there are three methods of attaining asymptotic solutions: Taylor or Laurent expansion, retaining proper terms in the MHD ODEs (balance of dominant terms), and the L'Hospital's rule.
+
+In the limit of $x\rightarrow +\infty$, assuming that $v\rightarrow V$, while $\alpha\rightarrow A/x^{2}$, using Laurent expansion, from the MHD ODEs (\ref{e11}) and (\ref{e12}), we have
+\begin{gather}
+v(x)=V+\frac{2-A}{x}+\frac{V}{x^{2}}\notag \\
+ + \frac{(A/6-1)(A-2)+2V^{2}/3+A(2-A)\lambda/3}{x^{3}}
+ + \ldots\ ,\label{e14}\\
+\alpha(x)=\frac{A}{x^{2}}+\frac{A(2-A)}{2x^{4}}
+ +\frac{A(4-A)V}{3x^{5}}\notag \\
+ +\frac{A(A-3)(A/2-1)-(A-6)AV^{2}/4+A^{2}(2-A)\lambda/4}{x^{6}}
+ +\ldots\ ,\label{e15}\\
+b^{2}(x)=\frac{A^{2}\lambda}{x^{2}}+\frac{A^{2}(2-A)\lambda}{x^{4}}
+ +\frac{A^{2}(2-A)^{2}\lambda}{4x^{6}}+\ldots\ ,
+\end{gather}
+where A and V are two constants of integration, referred to as the mass parameter and the velocity parameter, respectively. This is called the large-$x$ asymptotic solution that is the form taken by all isothermal MHD (shock) solutions as they reach the region with sufficiently large $x$ of the solution space.
+
+%{\bf BoYuan: have you checked these results independently?}\textit{Yes, of course.}
+
+The central MHD free-fall collapse for $x\rightarrow 0_{+}$ and $v,\alpha\rightarrow \infty$ corresponds to the asymptotic MHD solution\footnote{For the leading terms, equation~(\ref{e9}) reduces to $\alpha v'+v\alpha'+2v\alpha/x=0$, and equation~(\ref{e10}) reduces to $vv'=\alpha v$, which leads to $v\alpha=-m_{0}/x^2$, knowing that $m\sim -x^{2}v\alpha$ (as $x\rightarrow 0_{+}$ and $v,\alpha\rightarrow \infty$) from equation~(\ref{e8}).
+%\textit{By now, I have only been able to derive the leading terms of this asymptotic solution. I am trying to use the principal term balance method to obtain other terms, but it seems too complicated.}
+}:
+\begin{gather}
+v(x)=-\left(\frac{2m_{0}}{x}\right)^{1/2}
+ -\frac{3}{4}\sqrt{\frac{2x}{m_{0}}}\mathrm{ln}x
+ -2Lx^{1/2}+\ldots\ ,\label{e16}\\
+\alpha(x)=\left(\frac{m_{0}}{2x^{3}}\right)^{1/2}
+ -\frac{3}{8}\sqrt{\frac{2}{xm_{0}}}\mathrm{ln}x
+ -Lx^{-1/2}+\ldots\ ,\label{e17}\\
+b^{2}(x)=\frac{m_{0}\lambda}{2x}+\ldots\ ,
+\end{gather}
+where $m_{0}$ is a constant standing for the central accretion rate and $L$ is also a constant.
+
+The central LP-type MHD asymptotic solution as $x\rightarrow 0_{+}$ is worked out by taking Taylor expansions of $v$ and $\alpha$ in the MHD ODEs (\ref{e11}) and (\ref{e12}), under the assumption that $v\propto x$ and $\alpha\rightarrow D$, viz.
+\begin{gather}
+v(x)= \frac{2}{3}x+\frac{1}{5}\left(\frac{2}{27}
+ -\frac{D}{9}-\frac{2D\lambda}{3}\right)x^{3}+\ldots\ ,\\
+\alpha(x)=D+\frac{1}{2}\left(\frac{2D}{9}-\frac{D^{2}}{3}
+ -2D^{2}\lambda\right)x^{2}+\ldots\ ,\\
+b^{2}(x)=\lambda D^{2}x^{2}+\ldots\ ,
+\end{gather}
+where $D$ is an integration constant called the central reduced density parameter.
+%Checked against Yu et al. (2006)   2016 April 15
+
+%{\bf Stop here.  2016 April 15}
+
+The novel MHD asymptotic solution as $x\rightarrow 0_{+}$ that exists only when the magnetic field is strong enough ($\lambda>4$) takes the form \citep{yuLou2006}
+\begin{gather}
+v(x)=Hx+\ldots\ ,\label{e23}\\
+\alpha(x)=Kx^{-\eta}+\ldots\ ,\label{e24}
+\end{gather}
+where $K$ is a constant, while $H$ and $\eta$ are solved by substituting expressions~(\ref{e23}) and (\ref{e24}) into the MHD ODEs (\ref{e11}) and (\ref{e12})\footnote{This time, MHD ODEs (\ref{e11}) and (\ref{e12}) are simplified by $F_{x}\rightarrow -\lambda\alpha x^{2}$, $F_{v}\rightarrow \left( x-v\right)^{2}\alpha $, and $F_{\alpha}\rightarrow (x-v)\alpha^{2}+2\lambda x\alpha^{2}$.} to be
+\begin{gather}
+H=\frac{1}{2}\left[2-\lambda\pm
+ \left(\lambda^{2}-4\lambda\right)^{1/2}\right]<0\ ,\label{e25}\\
+ \eta=\frac{1-H+2\lambda}{\lambda}\ ,
+ \qquad \text{with} \qquad 2\leq\eta\leq 3\ . \label{e26}
+\end{gather}
+Then we have
+\begin{equation}
+b^{2}(x)=\frac{K^{2}\lambda}{x^{2(\eta-1)}}+\ldots
+\end{equation}
+%{\bf (Yu et al. 2006).}
+
+As for the MHD solutions smoothly across the MSCL, we need to know the $v'$ and $\alpha'$ at the very point $x_{*}$ on the MSCL and take integrations from another point $x_{*}+dx$ immediately next to $x_{*}$ with the asymptotic solution $v(x_{*}+dx)=v(x_{*})+v'\cdot dx, \quad \alpha(x_{*}+dx)=\alpha(x_{*})+\alpha'\cdot dx$ as the approximated initial condition. $v(x_{*})$ and $\alpha(x_{*})$ are given by equations~(\ref{e13}), together with $F_x=0$. Here we note $v(x_{*})$ as $v$, $\alpha(x_{*})$ as $\alpha$, and $x_{*}$ as $x$, for short. The first two 1-order derivatives $v'$ and $\alpha'$ are calculated from the following equations by the L'Hospital's rule (see Appendix \ref{a2} for their derivations):
+\begin{gather}
+\left[ (v-x)-\frac{x\lambda}{(v-x)^{2}}\right]\left(v'\right)^{2}
+ +(x-v)v'-\frac{v}{x^{2}}=0\ ,\label{e28}\\
+\alpha'=\frac{2}{x}\left[\frac{v'}
+ {(x-v)^{2}}-\frac{2}{x(x-v)}\right]\ .\label{e29}
+\end{gather}
+%Checked to be correct.  2016 April 16 Saturday
+%equation (B6) is incorrect as confirmed by Liu Bo Yuan
+%                         2016 April 25
+The two roots of quadratic equation~(\ref{e28}) correspond respectively to two types of possible solutions named Type 1 and Type 2 eigensolution across the MSCL, since given $v'$, $\alpha'$ is completely determined from equation~(\ref{e29}). We follow the definition of \citet{yuLou2006} that the eigensolution with a smaller absolute value of $v'$ belongs to Type 1 as the `secondary direction', while that with a larger belongs to Type 2 as the `primary direction'. It is known that such eigensolutions may be unstable. %{\bf in terms of what?}
+To be more concrete, from the perspective of numerical integrations, unstable eigensolutions across the MSCL are likely to hit the MSCL again with an improper choice of $dx$, in which case the singularities of MHD ODEs (\ref{e11}) and (\ref{e12}) may cause oscillations near the MSCL and the properties of the solutions when they finally `escape' from the unstable region near the MSCL are unpredictable. Analytical explanations of the stability of eigensolutions across the MSCL can be found in Appendix A of \citet{yuLou2005}, according to whose analysis, for a point $x$ (i.e. $x_{*}$) within the range of $0<x<\sqrt{1+2\lambda}$\footnote{$\sqrt{1+2\lambda}$ is the intersection point of the MSCL and the $x$ axis in the $-v$ versus $x$ diagram (, i.e. $v=0$).} (as a saddle point), eigensolutions are stable%{\bf in terms of what?}\textit{see the argument above}
+, while for a point within the range of $\sqrt{1+2\lambda}<x<+\infty$ (as a nodal point), the primary direction is unstable, and the secondary direction is neutral stable. The properties of solutions crossing the MSCL depend crucially on the sign and magnitude of $dx$. In this paper, we only use Type 1 eigensolutions because they are always (at least neutral) stable, and the values of $dx$ are chosen carefully to be small enough with specific signs for the accuracy and expected solution properties considerations. 
+
+%{\bf In general, all footnotes should contain standard
+%  and complete sentences.    2016 April 16 }
+
+%{\bf Stop here. 2016 April 16}
+
+\section{Perpendicular isothermal MHD shock conditions}
+\label{s3}
+We only consider the simplest isothermal MHD shock waves, in which case the velocities of both the isothermal MHD shock front and the gas are perpendicular to the traverse magnetic field. In the shock co-moving framework of reference, the physical variables of both sides of the isothermal MHD shock $(\rho_{1}, u_{1}, B_{1}, p_{1})$ and $(\rho_{2}, u_{2}, B_{2}, p_{2})$ are connected by the following equations for conservation of mass, momentum and magnetic flux \citep{yuLou2006}:
+\begin{gather}
+\rho_{2}u_{2}=\rho_{1}u_{1}\ ,\label{e30}\\
+p_{2}+B_{2}^{2}/(8\pi)+\rho_{2}u_{2}^{2}
+ =p_{1}+B_{1}^{2}/(8\pi)+\rho_{1}u_{1}^{2}\ ,\label{e31}\\
+B_{2}u_{2}=B_{1}u_{2}\ ,\label{e32}
+\end{gather}
+%{\bf Typo corrected at the end of \eqref{e31}; square removed.}
+These isothermal MHD shock equations enable us to calculate $(\rho_{2}, u_{2}, B_{2}, p_{2})$ from $(\rho_{1}, u_{1}, B_{1}, p_{1})$ .
+%{\bf or the other way around} \textit{This is not the case. By my definition, the subscript `1' denotes the side whose properties are known, while `2' unknown.}. 
+We further define $M_{1}\equiv u_{1}/a_{1}$ and $\beta_{1}\equiv 8\pi p_{1}/\left(B_{1}^{2}\right)=2a_{1}^{2}/v_{A1}^{2}$. 
+%{\bf Explicit definition of Alfv\'en speed?} \textit{Yes, see the paragraph below the self-similar transformation (\ref{e6})}
+
+It is necessary to point out that unlike previous studies regarding polytropic gas \citep{lou2006self,wang2008dynamic},  here we do not include the equation for (dynamical) MHD energy (i.e. kinetic energy, internal energy and energy of the magnetic field) conservation across the shock front 
+\begin{gather}
+\frac{\rho_{2} u_{2}^{3}}{2}+\frac{\gamma p_{2} u_{2}}{\gamma-1}+\frac{B_{2}^{2}u_{2}}{4\pi}=\frac{\rho_{1} u_{1}^{3}}{2}+\frac{\gamma p_{1} u_{1}}{\gamma-1}+\frac{B_{1}^{2}u_{1}}{4\pi}\ ,\label{ex2}
+\end{gather}
+because it is of less significance in our isothermal model. Actually, equation~(\ref{ex2}) is based on the presupposition that gas (at least around the shock layer) is isentropic/adiabatic (of no `entropy source')\footnote{The word `isentropic' means simply that there is no external entropy source, while the word `adiabatic' means that the entropy of any small portion of the gas is invariant, which is equivalent to the `isentropic' case without heat conduction among different parts of the gas.}, i.e. $\partial S/\partial t+{\bf{u}} \cdot\nabla S=\partial S/\partial t+u\partial S/\partial r=0$, in which there is no heat flux, and that is why we use the qualifier `dynamical'. The general form of equation~(\ref{ex2}) with heat flux will be 
+\begin{gather}
+\frac{\rho_{2} u_{2}^{3}}{2}+\frac{\gamma p_{2} u_{2}}{\gamma-1}+\frac{B_{2}^{2}u_{2}}{4\pi}+F_{2}\notag\\
+\qquad=\frac{\rho_{1} u_{1}^{3}}{2}+\frac{\gamma p_{1} u_{1}}{\gamma-1}+\frac{B_{1}^{2}u_{1}}{4\pi}+F_{1}\ ,\label{ex4} 
+\end{gather}
+where $F_{i}=-\kappa_{i} \nabla T_{i}$ is the heat flux, $\kappa_{i}$ is the coefficient of heat conduction, $T_{i}$ is the temperature $(i=1\ ,2)$, and the equation for isentropic (i.e. `entropy source-free') condition becomes $\rho T\left(\partial S/\partial t+{\bf{u}} \cdot\nabla S\right)=\nabla\cdot \left(\kappa\nabla T\right)$\footnote{This equation means that the entropy variation at any position in of the gas $\partial S/\partial t$ is completely determined by the entropy flux term $\mathbf{u}\cdot \nabla S$ and the heat flux term $\nabla\cdot \left(\kappa\nabla T\right)$ that embody local properties of the gas.}. We have already assumed that different parts (which are free of shocks) of the system share the same invariant temperature, this approximation can be validated in two cases: (1) Every small element of the gas is in constant contact with a large heat reservoir of certain temperature (e.g. provided by radiation transfer, cosmic rays, and chemical reaction). In such a case, the assumption that the system is isentropic does not hold. Besides, the mechanisms of the heat reservoir may also play important roles in the emergence and propagation of the shock, so that energy conservation across the shock front is not necessary. (2) The gas can be regarded as isentropic (with very high heat conductivity), i.e. without any external entropy source due to any heat reservoir. In such a case, the temperature is not exactly a constant but has a small fluctuation $\delta T$ which gives the heat flux $-\kappa \nabla \delta T$. Our approximation is that $\delta T\rightarrow 0$, $\kappa\rightarrow+\infty$, while $-\kappa \nabla \delta T$ is a finite non-zero term which ensures that the entropy of the gas varies properly to maintain the isothermal equation of state $p=a^{2}\rho$. Since heat conduction is efficient here, it should be allowed that non-zero heat flux exists across the shock front, i.e. $F_{2}-F_{1}\neq 0$, and the values of $F_{1}$ and $F_{2}$ (which would not be calculated explicitly in our work) are non-zero and consistent with the results from equation~(\ref{e30})-(\ref{e32}). In both cases, we do not consider MHD energy conservation explicitly in our shock conditions.
+
+Note that, when $\gamma\rightarrow 1$, equation~(\ref{ex2}) is badly formulated because the terms involving $1/(\gamma-1)$ are problematic. Through comparison with the MHD shock conditions in the quasi-spherical MHD model of a general polytropic magneto-fluid \citep{wang2008dynamic}, we can show that in our model, if the effective entropy is conserved, we must have $\gamma\rightarrow 1$, and only one-temperature isothermal MHD shocks conserve (dynamically) MHD energy, while two-temperature shocks break (dynamical) MHD energy conservation (see Appendix~\ref{a5} for details). The point here is that the isothermal MHD shocks in this paper can be accompanied by some processes (e.g. heat conduction, chemical reaction, nuclear fusion and radiation transfer) that alter the (dynamical) MHD energies of both sides of the shock front, unless $\gamma\rightarrow 1$ and we are dealing with one-temperature isothermal MHD shocks.
+
+
+\subsection{The one-temperature isothermal MHD shock condition}
+\label{s3.1}
+For the one-temperature case, in which $a_{1}=a_{2}$, the results are
+\begin{gather}
+u_{1}/u_{2}=B_{2}/B_{1}=p_{2}/p_{1}
+ =\rho_{2}/\rho_{1}=X\ ,\label{e33}
+\end{gather}
+where $X$ is a positive root of the quadratic equation (see appendix \ref{a3} for the derivation):
+\begin{equation}
+f_{I}(X)=X^{2}+(\beta_{1}+1)X-\beta_{1}M_{1}^{2}=0\ .\label{e34}
+\end{equation}
+This equation has only one positive root for $X$ of physical sense. 
+
+By now, it is not determined whether the downstream properties are given or the upstream properties are given, so we use the notation $(i,\ j)$ to obtain general expressions. $(i,\ j)=(d,\ u)$ means that the downstream properties are known, while $(i,\ j)=(u,\ d)$ the upstream. With the self-similar MHD transformation and the above formulae~(\ref{e33}), we have
+\begin{gather}
+\begin{split}
+&u_{2}=u_{j}-u_{s}\ , \qquad u_{1}=u_{i}-u_{s}\ ,\\
+&u_{i}=a_{i}v_{i}\ , \qquad u_{j}=a_{j}v_{j}\ ,\\
+&a_{1}=a_{i}\ , \qquad a_{2}=a_{j}\ ,\\
+&u_{s}=a_{i}x_{si}=a_{j}x_{sj}\ , \qquad X=\rho_{2}/\rho_{1}=\rho_{j}/\rho_{i}\ ,
+\end{split}\label{e35}
+\end{gather}
+where $u_{s}=dr_{s}/dt$ ($r_{s}$ is the position of the shock front) is the speed of the isothermal MHD shock front. Note that all physical isothermal MHD (shock) solutions are restricted in the upper-right region with respect to the straight line $x-v=0$ in the $-v$ versus $x$ plane, i.e. we always have $x-v>0$. Therefore, it turns out that $u_{1}=u_{i}-u_{s}=a_{i}\left(v_{i}-x_{si}\right)<0$, which means that in the region before the shock (i.e. upstream: $i=u$), the gas flows relative to the shock front in a direction anti-parallel to the propagation direction of the shock (i.e. $-\widehat{r}$ after the time-reversal operation), so the gas in this region enters the shock front as the shock propagate into it, that is why we call it the \textit{front side}. Similarly, we can show that in the region after the shock (i.e. downstream), the gas leaves the shock front as the shock moves forward, that is why it is called the \textit{back side}.
+
+Besides, we have $a_{i}=a_{j}=a, \quad x_{si}=x_{sj}=x_{s}$ for the one-temperature isothermal MHD shock case, then we arrive at the following expressions for the relations among self-similar dimensionless variables:
+\begin{gather}
+\begin{split}
+&X=\alpha_{j}/\alpha_{i}=(v_{i}-x_{s})/(v_{j}-x_{s})\ ,\\
+&M_{1}=v_{i}-x_{s}\ , \qquad \beta_{1}
+ =2/(\lambda x^{2}_{s}\alpha_{i})\ .
+\end{split}\label{e36}
+\end{gather}
+
+Physically, we require that the upstream flow speed relative to the shock speed must exceed the upstream fast magneto-sonic speed, i.e. $a^{2}(v_{u}-x_{s})^{2}>a^{2}+v^{2}_{Au}$. This requirement is consistent with the natural requirement for shock propagation that the upstream flow speed must exceed the downstream flow speed in the shock co-moving coordinates \citep{FM}, i.e. $|u_{u}-u_{s}|>|u_{d}-u_{s}|$.
+
+%{\bf Need to be very careful and systematic in wording and statements.}
+
+When $(i,\ j)=(u,\ d)$, since $v_{A}/a=\sqrt{\lambda\alpha}\cdot x$, the aforementioned requirement is equivalent to $f_{I}(X=1)<0$, that is to say, $M_{1}^{2}>1+2/\beta_{1}$, which further means that the positive root of equation (\ref{e34}) $X>1$. And $X>1$ is exactly the natural requirement for shock propagation as $(i,\ j)=(u,\ d)$ (see formulae~(\ref{e33}), (\ref{e35}) and (\ref{e36})).
+
+While if $f_{I}(X=1)>0$, i.e. $M_{1}^{2}<1+2/\beta_{1}$, and we have the positive root $X<1$, the case that $(i,\ j)=(u,\ d)$ is ruled out. Therefore, $(i,\ j)=(d,\ u)$ is necessary to ensure that the equivalent form of the above requirement becomes $M_{2}^{2}>1+2/\beta_{2}$ (and $X<1$), where the definitions of $M_{2}$ and $\beta_{2}$ are similar to those of $M_{1}$ and $\beta_{1}$, i.e. $M_{2}\equiv u_{2}/a_{2}=M_{1}/X$ and $\beta_{2}\equiv 8\pi p_{2}/\left(B_{2}^{2}\right)=\beta_{1}/X$. Note that $X<1$, it is easily shown by formulae~(\ref{e36}) and quadratic equation~(\ref{e34}) that the requirement is met: $M_{2}^{2}=M^{2}_{1}/X^{2}=(1+1/X)/\beta_{1}+1/X>1+2X/\beta_{1}=1+2/\beta_{2}$.
+
+%{\bf Please be consistent with notation style including subscripts.}
+
+%{\bf Please explain the rationale very clear for constructing converging isothermal MHD shocks. }
+
+To sum up, when $(i,\ j)=(u,\ d)$, we require that $X>1$, and when $(i,\ j)=(d,\ u)$, we require that $X<1$.
+
+\subsection{The two-temperature isothermal MHD shock conditions}
+\label{s3.2}
+For the two-temperature isothermal MHD shock case, we perform the self-similar MHD transformation to equations (\ref{e30}) and (\ref{e31}) by equations (\ref{e35}), which gives
+\begin{gather}
+\alpha_{i}(v_{i}-x_{si})a_{i}=\alpha_{j}(v_{j}-x_{sj})a_{j}\ ,\\
+a^{2}_{i}\left[ \lambda \alpha_{i}^{2} x_{si}^{2}/2+\alpha_{i}+\alpha_{i}(v_{i}-x_{si})^{2}\right]\notag\\
+ \qquad\qquad \quad =a^{2}_{j}\left[ \lambda \alpha_{j}^{2}
+ x_{sj}^{2}/2+\alpha_{j}+\alpha_{j}(v_{i}-x_{sj})^{2}\right]\ .
+ \label{e38}
+\end{gather}
+Then following the definitions of $M_{1}$ and $\beta_{1}$ , it can be shown by means similar to that of the last section that
+\begin{gather}
+\begin{split}
+&\tau=a_{j}/a_{i}=x_{si}/x_{sj}\ ,
+\ M_{1}=v_{i}-x_{si}\ ,
+\ \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ ,\\
+&X=\alpha_{j}/\alpha_{i}=(v_{i}-x_{si})/[\tau (v_{j}-x_{sj})]\ ,
+%\\
+%&M_{1}=v_{i}-x_{si}\ ,
+%\qquad \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ ,
+\end{split}\label{e39}
+\end{gather}
+where $X$ is a positive root of the following cubic equation (see appendix \ref{a3} for the derivation):
+\begin{gather}
+f_{II}(X)=X^{3}+\beta_{1}\tau^{2} X^{2}
+ -(1+\beta_{1}
+ +\beta_{1} M_{1}^{2}) X+\beta_{1}M_{1}^{2}=0. \label{e40}
+\end{gather}
+
+When $(i,\ j)=(u,\ d)$, we still require that $X>1$, because by formulae~(\ref{e39}), $X>1$ simply means that $|u_{u}-u_{s}|>|u_{d}-u_{s}|$, where $|u_{u}-u_{s}|$ and $|u_{d}-u_{s}|$ are the upstream flow speed and the downstream flow speed relative to the shock front. This is a natural requirement for shock propagation \citep{FM}. Meanwhile, since the temperature of the downstream $T_{d}=a_{d}^{2}\mu/k_{B}$ is higher than that of the upstream $T_{u}=a_{u}^{2}\mu/k_{B}$, we further require that $\tau=a_{d}/a_{u}>1$. 
+%{\bf at constant volume?} \textit{The proportional constant is the heat capacity `at constant volume' per unit mass.}
+
+%{\bf Adjustment of notation systematically and correctly. }
+
+It can be shown that when $\tau>1$, the cubic equation (\ref{e40}) may have two positive roots both larger than 1, or have no real root larger than 1 (see Appendix~\ref{a3}). In the former case, we regard the shock solutions constructed by applying the smaller $X>1$ of these two valid roots as satisfying Type 1 two-temperature isothermal MHD shock condition, while the larger $X>1$ Type 2, given the downstream information. In the latter case of no real roots, it is impossible to construct converging isothermal MHD shocks with given $\tau$ and $x_{su}$. 
+
+%{\bf Why is this? Please clarify specifically.  2016 April 16} \textit{See the argument in the paragraph for $(i,\ j)=(u,\ d)$. }
+
+When $(i,\ j)=(d,\ u)$, for the same reason mentioned in the case of $(i,\ j)=(u,\ d)$, on the contrary, we require that $\tau<1$ and $X<1$. Then the cubic equation (\ref{e40}) has only one positive root smaller than 1 when $\tau<1$ (see Appendix~\ref{a3}). We call this simpler case in which information of the downstream is given as the ordinary two-temperature isothermal MHD shock condition, since it is the only condition used by \citet{yuLou2006}. Detailed derivations and analysis of the cubic equation (\ref{e40}) is included in appendix \ref{a3}.
+
+Now we know that given properties of the upstream, we can calculate the properties of two different types of downstream by Type 1 and 2 two-temperature isothermal MHD shock condition, while given those of the downstream, we can obtain only one type of upstream by the so-called ordinary two-temperature isothermal MHD shock condition, which implies an interesting `two to one' relation between the upstream and the downstream. Such a relation is not a sign of mistakes. We further verified that even with this `two to one' feature, these shock conditions are indeed reversible, i.e. if we calculate two types of downstream from certain upstream, and than calculate two types of upstream from these two types of downstream individually, the results are exactly the same with the initial upstream that we use. As $\tau\rightarrow 1$, Type 1 two-temperature isothermal MHD shock condition tends to produce trivial results (i.e. $X\rightarrow 1$: no shock at all), while results of Type 2 two-temperature isothermal MHD shock condition reduce to those of the one-temperature isothermal MHD shock solution\footnote{A stochastic interpretation %{\bf Meaning or implication?} 
+of this fact is that two vital effects or features of the isothermal MHD shock is compression and heating of the gas, of which the former is mainly embodied by one-temperature isothermal MHD shock condition and Type 2 two-temperature isothermal MHD shock condition, while the latter Type 1 two-temperature isothermal MHD shock condition when $\tau$ is small. For large $\tau$ near its upper bound, the two types of conditions become the same and the effects are mixed for each type.}. Numerical investigations show that the upstream side locates in the MHD supersonic region, i.e. the right upper region in the $-v$ versus $x$ plane separated from the MHD subsonic region by the MSCL\footnote{This fact can be regarded as the MHD counterpart of the outcome in a non-magnetised ideal gas that the shock front always moves with supersonic speed as observed from the \textit{front side} (i.e. the upstream) \citep{SFSW}.}. Immediately after the shock, the downstream side following Type 1 condition only locates in the supersonic region, while that following Type 2 conditions the subsonic region. Besides, given $x_{*}(u)$ and $x_{su}$ (or $x_{sd}$), $\tau$ has an upper bound due to our isothermal MHD shock conditions, and at this very upper bound of $\tau$, the two types of downstream coincide with each other and touch, interestingly, the MSCL, so they are always separated by the MSCL.
+
+Finally, the complete picture is that given $x_{*}(u)$ and $x_{su}$ (or $x_{sd}$), when $\tau$ decreases from its upper bound to 1, immediately after the shock, starting from the MSCL, the two types of downstream are increasingly separated, and the one that follows Type 1 two-temperature isothermal MHD shock condition becomes trivial when $\tau=1$, while the one by Type 2 two-temperature isothermal MHD shock condition reduces to that of certain one-temperature isothermal MHD shock solution. 
+%Moreover, numerical investigation shows that with good choices of $\gamma>1$, $\tau$ and $x_{su}$/$x_{sd}$, both Type 1 and Type 2 two temperature shock condition can produce some results that do not break (dynamical) MHD energy conservation prescribed by equation~(\ref{ex2}).
+
+% stop here, April 30, 2016: be careful about the sequence of `MHD' and `converging'.
+
+\section{Self-similar isothermal MHD void solutions}
+\label{s4}
+The MHD void solution occurs when the zero mass line (ZML) $x-v=0$ is hit at certain point $x_{1}$ (called the void boundary), where the dimensionless density $\alpha$ drops from $\alpha_{0}$ to 0. The region with $x<x_{1}$ corresponds to a void region in which $\alpha$, $v$, $m$ and $b$ all vanish. Since a type of converging isothermal MHD Shocks in \citet{lou2014self} is constructed from void solutions, it is necessary to attain the MHD version of these solutions before constructing pertinent converging isothermal MHD Shocks. For the case of a weak magnetic field, we set $\lambda=0.1$.
+
+To construct void MHD solutions, the void boundary $x_{1}$ as well as the meeting point $x_{m}$ is chosen at first. Then we integrate from $x_{1}=v(x_{1})$ to $x_{m}$ with different $\alpha_{0}$ values, which produces different $(v,\alpha)$ pairs to form a locus in the $v$ versus $\alpha$ phase diagram. Meanwhile, we also perform integrations from different $x_{*}$s on the MSCL to $x_{m}$ as Type 1 eigensolutions to plot another locus in the phase diagram. The intersection point of the two loci is a $(v,\alpha)$ pair corresponding further to certain $\alpha_{0}$ and $x_{*}$, which are parameters in demand for the construction of MHD void solutions. Usually, a series of diagrams are needed to obtain the values of $\alpha_{0}$ and $x_{*}$ precisely enough, given $x_{1}$ and $x_{m}$. 
+
+The aforementioned method is the velocity-density matching method first introduced by \citet{hunter1977collapse} and widely used in the present paper. The main spirit of it is to match the results of two sides, i.e. outward integration from certain point $x_{a}$ starting with certain type of asymptotic solution to a chosen meeting point $x_{m}$ and another inward integration from certain point $x_{b}$ starting with certain type of asymptotic solution to the same meeting point $x_{m}$, in the $v$ versus $\alpha$ phase diagram. Different types of asymptotic solutions have different parameter sets, say $S_{a}$ and $S_{b}$ for the outward integration and the inward integration, respectively ($x_{a}\in S_{a}$ and $x_{b}\in S_{b}$)\footnote{Note that if integrations from any side (outward or inward) involving shocks, parameters of the shock belong to the parameter set of that side.}. Only one parameter is left unspecified for each of $S_{a}$ and $S_{b}$, and it serves as the independent variable that generates the locus of that side. 
+%In the rest of this paper,
+From now on, for brevity, we would not describe this method in detail again, instead, when applying this method, we simply point out the types of asymptotic solutions used for inward and outward integrations, the meeting point $x_{m}$, the pre-specified parameters and the independent variables for the loci. Figure~\ref{1} is an example of the $\alpha$ versus $v$ phase diagrams in constructing MHD void solutions.
+
+We construct five (typical) MHD void solutions, whose information is summarized in Table~\ref{t1}, and their $-v$ versus $x$ plots are shown in Figure~\ref{2}. 
+
+\begin{table}
+  \centering
+  \caption{Information of five MHD void solutions with $\lambda=0.1$, where $x_{1}$ is the void boundary, $x_{*}$ is the starting point for integrations of Type 1 eigensolutions, $x_{m}$ is the meeting point for $\alpha$ versus $v$ phase diagram matching, and $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$ defined in the large-$x$ asymptotic solution~(\ref{e14}) and (\ref{e15}) as $x$ approaches the infinity, i.e. $\lim\limits_{x\rightarrow +\infty} v=V\approx v(x_{2})$, $\lim\limits_{x\rightarrow +\infty}\alpha x^{2}=A\approx \alpha(x_{2})x_{2}^{2}$. This is accurate enough if we only reserve three significant digits for the value of $V$ and four for that of $A$. L is the MHD solution label.}
+    \begin{tabular}{ccccccc}
+    \hline
+    $x_{1}$ & $x_{*}$ & $\alpha_{0}$ & $V$ & $A$ & L & $x_{m}$\\
+    \hline
+    0.85 & 2.5013 & 1.8004 & 2.31 & 5.583 & v1 & 1.5\\
+    0.4 & 2.2313 & 2.8406 & 1.98 & 5.021 & v2 & 0.7\\
+    0.04 & 2.1641 & 3.6487 & 1.89 & 4.870 & v3 & 0.5\\
+    0.004 & 0.8705 & 3401 & -0.548 & 1.418 & v4 & 0.1\\
+    0.002 & 0.8711 & 3485 & -0.546 & 1.420 & v5 & 0.1\\
+    \hline
+    \end{tabular}
+    \label{t1}
+\end{table}    
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lv_0.85}
+\caption{
+%{\bf Please use larger fonts!
+%  Provide sufficient information for the construction
+%  of such a solution. }
+An example of the locus pair to construct MHD void solutions for illustration, where $\lambda=0.1$, and the meeting point $x_{m}=1.5$. The locus marked by asterisks comes from outward integrations (labelled by `o') with a fixed void boundary $x_{1}=0.85$ and the dimensionless density at the void boundary $\alpha_{0}$ varying in the range of $1.45\sim 1.9$, while the locus marked by solid dots is produced by inward integrations (labelled by `i') with different starting points $x_{*}$s on the MSCL in the range of $2.4\sim 2.6$ as Type 1 eigensolutions.
+ % {\bf Please list all pertinent parameters! 2016 April 16} 
+ }
+\label{1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{void}
+\caption{
+%{\bf Please use larger fonts!}
+The $-v$ versus $x$ plots of five  MHD void solutions, with $\lambda=0.1$, whose information is contained in Table \ref{t1}, and the curve labels are consistent with the MHD solution labels. The pertinent parameters are listed in the form of tuples, i.e. (the curve/MHD solution label L, the void boundary $x_{1}$, the dimensionless density at the void boundary $\alpha_{0}$, the point at which the solution crosses the MSCL $x_{*}$): (v1, 0.85, 1.8004, 2.5013), (v2, 0.4, 2.8406, 2.2313), (v3, 0.04, 3.6487, 2.1641) and (v4, 0.004, 3401, 0.8705). The dash-dotted line corresponds to the zero mass line (ZML) $x-v=0$. The dashed line is the magnetosonic critical line (MSCL). }
+\label{2}
+\end{figure}
+
+
+\section{self-similar converging isothermal MHD shock solutions}
+\label{s5}
+Similar to outgoing isothermal MHD Shocks, in the new solution space, the upstream side (which comes from $x\rightarrow 0_{+}$ instead of $x\rightarrow +\infty$) locates in the MHD supersonic region, i.e. the right upper region in the $-v$ versus $x$ plane separated from the MHD subsonic region by the MSCL. As a result, except some MHD free-fall collapse solutions, all upstream solutions must cross the MSCL at least once. This additional requirement limits the diversity 
+%[and abundance] 
+of our converging isothermal MHD Shocks compared with outgoing isothermal MHD Shocks. For instance, we find that starting from the novel MHD asymptotic solution for high magnetic fields as delineated by formulae~(\ref{e23})-(\ref{e26}) near the origin (say, $x_{0}=10^{-50}$), the solution cannot cross the MSCL smoothly, whatever parameters we choose. Therefore, we are not able to construct isothermal converging MHD shock solutions involving such a type of asymptotic solutions.
+
+Besides, as mentioned in Section~\ref{s3.2}, downstream obtained by Type 2 two-temperature MHD shock condition locates in the subsonic region, and it must cross the MSCL again to reach the region with large $x$, which means that only one of the parameters $x_{su}$ (or $x_{sd}$) and $\tau$ is adjustable due to the requirement of crossing the MSCL smoothly, while there is no such a confinement for downstream from Type 2 two-temperature MHD shock condition. The point here is that Type 2 two-temperature MHD shock condition gives less arbitrary results and it would not become trivial when reduced to the one-temperature case. In the light of this, the present study only uses Type 2 two-temperature MHD shock condition. In such a case, the properties of the downstream is completely determined by the position at which the upstream solution crosses the MSCL (just before it is shocked) and either the position of the isothermal MHD shock (i.e. $x_{su}$ or $x_{sd}$) or the strength of the shock $\tau$. 
+
+The physical interpretations of the free-fall collapse solution and the EWCS are unclear (and even unrealistic) in the new solution space, though they can be used to construct isothermal MHD Shocks mathematically. We include the isothermal MHD shock solutions involving these asymptotic solutions (i.e. Class III isothermal MHD Shocks) in Appendix~\ref{a4}. In the following subsections, we present the first two classes of converging isothermal MHD Shocks (characterised by MHD Larson-Penston (LP) type and converging MHD void asymptotic solutions) and twin converging isothermal MHD Shocks, which have different inner parts connected to different outer envelopes, whose velocity and density profile are characterised by the velocity and mass parameters $V$ and $A$ defined in the large-$x$ solutoin~(\ref{e14}) and (\ref{e15}).
+
+\subsection{Class I converging isothermal MHD shock solutions}
+\label{s5.1}
+
+Class I converging isothermal MHD Shocks are constructed by connecting shocked MHD LP-type solutions following one-temperature or Type 2 two-temperature isothermal MHD shock condition with contracting envelopes under a weak magnetic field ($\lambda=0.1$). To be more specific, for each of the three MHD LP-type solutions described in \citet{yuLou2005}, knowing $x_{*}(1)$, with chosen $x_{sd}$ and meeting point $x_{m}$, outward integrations (as Type 1 eigensolutions) from $x_{*}(1)$ shocked at certain $x_{su}$ with different $\tau=x_{su}/x_{sd}$ values to $x_{m}$ are taken, while inward integrations from different $x_{*}(2)$s on the MSCL to $x_{m}$ as Type 1 eigensolutions are calculated, which leads to $\alpha$ versus $v$ diagrams, one of which is shown in Figure~\ref{3}, whose point of intersection denotes an isothermal MHD Shock. It is possible to construct many such solutions by choosing a variety of $x_{su}$s (see Section \ref{s6.1} for a guideline). However, for illustration, we only present three isothermal MHD Shocks for the three MHD LP-type solutions, respectively. Their information is contained in Table~\ref{t2}, while their properties portrayed by profiles of $v(x)$, $\alpha(x)$, $v_{A}(x)$, $b(x)$, and the reduced scaled density $R(x)=x^{2}\alpha(x)/D$ are shown systematically in Figures~\ref{4}-\ref{9}. 
+
+\begin{table}
+  \centering
+  \caption{Class I converging isothermal MHD Shocks with $\lambda=0.1$, where $x_{su}$ is the upstream shock position (at which the values of $v$ and $\alpha$ are known from outward integrations), $x_{sd}$ is the downstream shock position (at which the values of $v$ and $\alpha$ are calculated from those of the upstream side by one-temperature or Type 2 two-temperature isothermal MHD shock condition), $x_{*}(2)$ is the point at which the downstream integration crosses the MSCL, $\tau=x_{su}/x_{sd}$, and $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$. Values of the central reduced density parameter $D$ for LP-type solutions involved, the starting points $x_{*}(1)$s on the MSCL and the meeting points $x_{m}$s are (L, $\mathrm{ln}D$, $x_{*}(1)$, $x_{m}$): (a1, 8.15, 0.87, 1.25), (a2, 12.7, 1.16, 1.45), (a3, 1.29, 2.16, 3.7), where L is the MHD solution label.}
+    \begin{tabular}{ccccccc}
+    \hline
+    $x_{sd}$ & $x_{su}$ & $x_{*}(2)$ & $\tau$ & $V$ & $A$ & L\\
+    \hline
+    1.08 & 1.08 & 1.3288 & 1 & 0.509 & 2.651 & a1 \\
+    1.4 & 1.4289 & 1.5226 & 1.0207 & 0.889 & 3.204 & a2\\
+    3.5 & 6.9058 & 4.3552 & 1.9731 & 4.18 & 8.519 & a3\\
+    \hline
+    \end{tabular}
+    \label{t2}
+\end{table}    
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lc1_2.16}
+\caption{An example of the $\alpha$ versus $v$ diagrams for constructing Class I converging isothermal MHD shocks, with $\lambda=0.1$ and $x_{m}=3.7$. The upstream locus (marked by asterisks, labelled by `u') is formed by outward integrations starting from $x_{*}(1)=2.16$ involving shocks at $x_{ud}=3.5$ with different values of $\tau$ in the range of $1.2\sim 2.2$. $x_{*}(1)=2.16$ is where the MHD LP-type solution with the central density parameter $\mathrm{ln}D=1.29$ crosses the MSCL. The downstream locus (marked by solid dot, labelled by `d') is produced by inward integrations as Type 1 eigensolutions with different starting points $x_{*}(2)$s on the MSCL in the range of $4\sim 5$.}
+\label{3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x1_1}
+\caption{The $-v$ versus $x$ diagram of the first two Class I converging isothermal MHD Shocks with $\lambda=0.1$. The parameters of the pertinent inner MHD LP-type solutions and shock construction are listed in tuples (the curve/MHD solution label L, the central density parameter $\mathrm{ln}D$, the point at which the solution crosses the MSCL for the first time $x_{*}(1)$, the meeting point $x_{m}$): (a1, 8.15, 0.87, 1.25), (a2, 12.7, 1.16, 1.45). Information of these isothermal MHD shock solutions can be found in Table~\ref{t2}, since the curve labels here are consistent with the MHD solution labels. The dashed line corresponds to the MSCL.}
+\label{4}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x1_2}
+\caption{ 
+%{\bf It would be possible to produce a sequenceof converging MHD shocks. }\textit{I do not produce many solutions and only give some examples in this paper, because a general guideline to the construction of such converging isothermal MHD shock solutions is discussed in Section~\ref{s6.1}. }
+The $-v$ versus $x$ diagram of the third Class I converging isothermal MHD Shocks with $\lambda=0.1$, in which for the inner MHD LP-type solution involved, the central density parameter $\mathrm{ln}D=1.29$, the point at which the solution crosses the MSCL for the first time $x_{*}(1)=2.16$, and the meeting point $x_{m}=3.7$. Table~\ref{t2} contains the information of the pertinent isothermal MHD Shock, whose MHD solution label is consistent with the curve label a3 here. The dashed line corresponds to the MSCL.}
+\label{5}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{Ca(log)-x1}
+\caption{The $\alpha$ versus $x$ diagram of Class I converging isothermal MHD Shocks with $\lambda=0.1$, in which the $\alpha$ axis is in the logarithmic scale, and the curve/MHD solution labels (as well as parameters of the solutions) are consistent with those in Figures~\ref{4}-\ref{5} and Table~\ref{t2}. The dashed line corresponds to the MSCL. It is shown that the shocks compress the gas as $\alpha(x_{sd})>\alpha(x_{su})$.}
+\label{6}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{Cb(log)-x1}
+\caption{The $b$ versus $x$ diagram of Class I converging isothermal MHD Shocks with $\lambda=0.1$, in which the $b$ axis is in the logarithmic scale, and the curve/MHD solution labels (as well as parameters of the solutions) are consistent with those in Figures~\ref{4}-\ref{5} and Table~\ref{t2}.}
+\label{7}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{CR(log)-x1}
+\caption{The $R$ versus $x$ diagram of Class I converging isothermal MHD Shocks with $\lambda=0.1$, in which the $R$ axis is in the logarithmic scale, and the curve/MHD solution labels (as well as parameters of the solutions) are consistent with those in Figures~\ref{4}-\ref{5} and Table~\ref{t2}. 
+%It is shown that the shocks are able to `speed up' the collapse of the system as $R(x_{sd})>R(x_{su})$.
+}
+\label{8}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{CvA-x1}
+\caption{The $v_{A}/a$ versus $x$ diagram of Class I converging isothermal MHD Shocks with $\lambda=0.1$, in which the curve/MHD solution labels (as well as parameters of the solutions) are consistent with those in Figures~\ref{4}-\ref{5} and Table~\ref{t2}.}
+\label{9}
+\end{figure}
+
+\subsection{Class II converging isothermal MHD shock solutions}
+\label{s5.2}
+The Class II converging isothermal MHD Shock is constructed by connecting the MHD void solution (presented in section~\ref{s4}) with the outer contracting envelope. The method is similar with that of constructing Class I converging isothermal MHD Shocks, while the inner parts (i.e. $0<x<x_{*}(1)$) behind the outward integrations are delineated by MHD void solutions instead of MHD LP-type solutions, which produces $\alpha$ versus $v$ loci as shown in Figure~\ref{10}. Type 2 two-temperature isothermal MHD shock condition and Type 1 eigensolutions are applied to derive three such solutions whose information is shown in Table~\ref{t3}, and properties in Figure~\ref{11}-\ref{15}. 
+
+
+\begin{table}
+  \centering
+  \caption{Class II converging isothermal MHD Shocks with $\lambda=0.1$, where $x_{sd}$ is the downstream shock position, $x_{su}$ is the upstream shock position, $x_{*}(2)$ is the point at which the downstream integration crosses the MSCL 
+%\textit{The MSCL looks like a straight line when $\lambda$ is small, but it is not exactly a straight line.}
+, $\tau=x_{su}/x_{sd}$, and $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$. The void boundaries $x_{1}$s and values of the reduced density parameter $\alpha_{0}$ for relevant MHD void solutions, the starting point $x_{*}(1)$s and the meeting points $x_{m}$s are (L, $x_{1}$, $\alpha_{0}$, $x_{*}(1)$, $x_{m}$): (b1, 0.002, 3485, 0.8711, 1.3), (b2, 0.4, 2.8406, 2.2313, 4.2), (b3, 0.85, 1.8004, 2.5013, 4.7), where L is the MHD solution label.}
+    \begin{tabular}{ccccccc}
+    \hline
+    $x_{sd}$ & $x_{su}$ & $x_{*}(2)$ & $\tau$ & $V$ & $A$ & L\\
+    \hline
+    1.15 & 1.1611 & 1.4580 & 1.0097 & 0.766 & 3.020 & b1\\
+    4.0 & 9.2979 & 4.9878 & 2.3245 & 4.79 & 9.357 & b2\\
+    4.5 & 12.0048 & 5.5628 & 2.6773 & 5.33 & 10.08 & b3\\
+    \hline
+    \end{tabular}
+    \label{t3}
+\end{table}    
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lc2_0.8711}
+\caption{One pair of the $\alpha$ versus $v$ loci in search of the Class II converging isothermal MHD Shock with $\lambda=0.1$ and $x_{m}=1.3$. The upstream locus (marked by asterisks, labelled by `u') is formed by outward integrations starting from $x_{*}(1)=0.8711$ involving shocks at $x_{ud}=1.15$ with different values of $\tau$ in the range of $1.001\sim 1.02$. $x_{*}(1)=0.8711$ is where the MHD void solution with the void boundary $x_{1}=0.002$ and the dimensionless density $\alpha_{0}=3485$ at the void boundary crosses the MSCL. The downstream locus (marked by solid dot, labelled by `d') is produced by inward integrations as Type 1 eigensolutions with different starting points $x_{*}(2)$s on the MSCL in the range of $1.4\sim 1.5$.}
+\label{10}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x2_1}
+\caption{The $-v$ versus $x$ diagram of the first Class II converging isothermal MHD Shock with $\lambda=0.1$, in which for the inner MHD void solution involved, the void boundary $x_{1}=0.002$, the dimensionless density at the void boundary $\alpha_{0}=3485$, the point at which the solution crosses the MSCL for the first time $x_{*}(1)=0.8711$, and the meeting point $x_{m}=1.3$. Table~\ref{t3} contains the information of the pertinent isothermal MHD Shock, whose MHD solution label is consistent with the curve label b1 here. The dashed line corresponds to the MSCL, and the dashed dotted line is the ZML $v-x=0$.}
+\label{11}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x2_2}
+\caption{The $-v$ versus $x$ diagram of the second and the third Class II converging isothermal MHD Shock with $\lambda=0.1$. The parameters of the pertinent inner MHD void solutions and shock construction are listed in tuples (the curve/MHD solution label L, the void boundary $x_{1}$, the dimensionless density at the void boundary $\alpha_{0}$, the point at which the solution crosses the MSCL for the first time $x_{*}(1)$, the meeting point $x_{m}$): (b2, 0.4, 2.8406, 2.2313, 4.2), (b3, 0.85, 1.8004, 2.5013, 4.7). Information of these isothermal shock solutions can be found in Table~\ref{t3}. The dashed line corresponds to the MSCL, and the dashed dotted line is the ZML $v-x=0$.}
+\label{12}
+\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{Ca-x2}
+%\caption{The $\alpha-x$ diagram of Class II converging isothermal MHD Shocks with $\lambda=0.1$. The dashed line corresponds to the MSCL.}
+%\label{13}
+%\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{Cb-x2}
+%\caption{The $b-x$ diagram of Class II converging isothermal MHD Shocks with $\lambda=0.1$.}
+%\label{14}
+%\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{CvA-x2}
+\caption{The $v_{A}/a$ versus $x$ diagram of Class II converging isothermal MHD Shocks with $\lambda=0.1$, in which the curve/MHD solution labels (as well as parameters of the solutions) are consistent with those in Figures~\ref{11}-\ref{12} and Table~\ref{t3}.}
+\label{15}
+\end{figure}
+
+
+
+
+\subsection{Twin converging isothermal MHD shock solutions}
+\label{s5.5}
+In this section we construct three twin converging isothermal MHD Shocks with three isothermal MHD shock solutions chosen from the results of constructed Shocks (i.e. a1, b1 and c6, see Appendix~\ref{a4} for information of c6) as the upstream. The method remains the same, and Type 1 eigensolution is used to take the downstream integration. To avoid confusion with the notations of these already shocked upstream solutions, we note the starting point on the MSCL for the second isothermal MHD shock as $x_{*}(u)$ and the point at which the twin converging isothermal MHD Shock crosses the MSCL for the last time as $x_{*}(d)$\footnote{Actually, it is $x_{*}(d)$ and the type of eigensolution that determine the properties of the outer envelope (see Section~\ref{s6.1} and Figure~\ref{com}).}. The information of these MHD solutions are shown in Table~\ref{t6}, and relevant parameters in Figure~\ref{23}-\ref{26}.
+
+%  {\bf Make sure to switch upstream and downstream
+%  systematically and consistently throughout.
+%      2016 April 21 }\textit{It is done.}
+
+\begin{table}
+\centering
+\caption{Three twin converging isothermal MHD shock solutions with $\lambda=0.1$, where $x_{*}(d)$ is the point at which the solution crosses the MSCL for the last time, $x_{2}=500.0$ for calculating the values of the velocity and mass parameters $V$ and $A$. The upstream MHD solution label n-L denotes that the upstream of the Shock corresponds to the MHD solution with label L in Table~n.}
+\begin{tabular}{ccccccc}
+\hline
+$x_{sd}$ & $x_{su}$ & $\tau$ & $x_{*}(d)$ & $V$ & $A$ & n-L\\
+\hline
+2.0 & 2.3276 & 1.1638 & 2.4002 & 2.19 & 5.380 & \ref{t2}-a1\\
+2.5 & 3.4590 & 1.3836 & 3.1392 & 2.99 & 6.720 & \ref{t3}-b1\\
+2.7 & 3.9976 & 1.4806 & 3.3944 & 3.25 & 7.127 & \ref{t5}-c6\\
+\hline
+\end{tabular}
+\label{t6}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x5}
+\caption{The $-v$ versus $x$ diagram of twin converging isothermal MHD Shocks with $\lambda=0.1$ (the curve label, the upstream MHD solution label n-L, $x_{*}(u)$, $x_{m}$): (t1, \ref{t2}-a1, 1.3288, 2.1), (t2, \ref{t3}-b1, 1.4580, 2.7), (t3, \ref{t5}-c6, 1.5500, 3.0). See Table~\ref{t6} for more information. The dashed line corresponds to the MSCL.}
+\label{23}
+\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{Ca(log)-x5}
+%\caption{The $\alpha-x$ diagram of twin converging isothermal MHD Shocks with $\lambda=0.1$ and a log-scaled $\alpha$ axis. The dashed line corresponds to the MSCL.}
+%\label{24}
+%\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{Cb(log)-x5}
+%\caption{The $b-x$ diagram of twin converging isothermal MHD Shocks with $\lambda=0.1$. The $b$ axis is scaled by the log function.}
+%\label{25}
+%\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{CvA-x5}
+\caption{The $v_{A}/a$ versus $x$ diagram of twin converging isothermal MHD Shocks with $\lambda=0.1$, corresponding to Figure~\ref{23} and Table~\ref{t6}.}
+\label{26}
+\end{figure}
+
+
+\section{Summary and discussions}
+\label{s6}
+\subsection{General guideline to the construction of converging isothermal MHD shock solutions}
+\label{s6.1}
+It is known from the above results that the upstream of any converging isothermal MHD Shock (found through $\alpha$ versus $v$ phase diagrams) comes from certain point (which is referred as $x_{*}(u)$ for convenience) on the MSCL (as Type 1 eigensolutions), except for that in the Appendix \ref{s5.3.1}, which implies general properties of their phase diagrams. That is to say, we may find by numerical trials a general empirical guideline to the construction of such isothermal MHD shock solutions. 
+%(, at least for $\lambda=0.1$). 
+
+%By limited numerical exploration, it is illustrated that only when $x_{*}(u)<\sqrt{1+2\lambda}$, i.e. the starting point of upstream integration is smaller than the stagnation point of the MSCL, can one-temperature converging isothermal MHD Shocks exist. 
+For one-temperature isothermal MHD Shocks, as shown in Figure~\ref{lc1}, given $x_{m}$ and $x_{*}(u)$, with different $x_{s}$s, in the $\alpha$ versus $v$ phase plane, the locus of one-temperature upstream integrations is like a line with a positive slope which is always larger than the largest value (positive or negative) of the slope of (lines tangent to) the locus generated by downstream integrations with different $x_{*}(d)$s as the starting point, in the interested region (where downstream locus and upstream locus intersect with each other). Besides, for both the upstream locus and the downstream locus, the value of $v$ increases as $x_{s}$ and $x_{*}(d)$ increase. 
+ %{\bf Need a clarification.} \textit{The analysis of this section is completely based on numerical trials. And the intention is to give a general empirical guideline, since the solutions shown above are only examples and a guideline may help us construct any possible solution expected. I have added new contents to this section.}
+Therefore, in the case that the locus of one-temperature upstream is above that of downstream, it is possible to find a point of intersection as the values of $v$ decreases for both locus, which denotes smaller $x_{s}$ and $x_{*}(d)$, and vice versa. However, for sufficient large $x_{*}(u)$, we cannot find an intersection of the one-temperature upstream locus and the downstream locus even until $x_{s}$ shrinks back to $x_{*}(u)$, which means that there is no one-temperature isothermal MHD shock. 
+
+%As for $x_{*}(u)>\sqrt{1+2\lambda}$, it is impossible to find such a point until $x_{s}$ retreats to $x_{*}(u)$ itself.
+As for two-temperature isothermal MHD Shocks (under Type 2 two-temperature isothermal MHD shock condition), then chosen $x_{sd}$ as well as $x_{m}$, by increasing the value of $\tau=x_{su}/x_{sd}$ from 1, we have the locus of two-temperature upstream going down from larger $\alpha$ to smaller $\alpha$ with positive or negative slope whose absolute value is much larger than that of the locus of one-temperature isothermal MHD Shocks. Actually, these locus of two-temperature isothermal MHD Shocks start from the locus of one temperature isothermal MHD shocks, in that two-temperature isothermal MHD shocks reduce to one-temperature isothermal MHD shocks when $\tau\rightarrow 1$, as shown in Figure~\ref{lc1} and \ref{lc2}. As a result, intersections can only be found when the locus of one-temperature upstream is above that of downstream. This is true for sufficiently large $x_{*}(u)$. Moreover, it is necessary to point out that given $x_{*}(u)$ and $x_{sd}$, $\tau$ has an upper bound due to the isothermal MHD shock condition. This upper bound grows larger as $x_{sd}$ increases. Figure~\ref{lc1} and \ref{lc2} as well as other locus diagrams also indicate that for certain $x_{*}(u)$, as both $x_{sd}$ and $x_{*}(d)$ increase, the separation of the starting point of the two-temperature upstream locus with possible intersection point on the downstream locus becomes greater. Since the two-temperature upstream locus goes down by the rising upper-bound of $\tau$ with a speed higher than the rate of the increase of separation between the downstream locus and the one-temperature upstream locus, due to the increase of $x_{sd}$ as well as $x_{*}(d)$, we need larger $x_{sd}$ when the upper-bound of $\tau$ is not large enough for the two-temperature upstream locus to reach the downstream locus. Thus, given $x_{*}(u)$, a sufficiently large $x_{sd}$ is in demand to make an intersection of the two-temperature upstream locus and the downstream locus possible. The larger the $x_{sd}$ the larger the $\tau$ at the intersection point and the larger the corresponding $x_{*}(d)$. If $x_{*}(u)$ is not sufficiently large, there is also a lower bond of $x_{sd}$ which corresponds exactly to the intersection point of the one-temperature upstream locus and the downstream locus. In summary, when constructing two-temperature isothermal MHD shocks (in search of $x_{*}(d)$ and $\tau$), there is a lower bond of $x_{sd}$ which becomes larger as the value of $x_{*}(u)$ rises, and the final $\tau$ at the intersection point as well as $x_{*}(d)$ increases as $x_{sd}$ increases for any given $x_{*}(u)$. It is also shown in Table~\ref{t1}-\ref{t6} that given $\lambda$, the values of the velocity parameter $V$ and the mass parameter $A$ for large $x$ approaching the infinity are completely determined by $x_{*}(d)$ where the solution crosses the MSCL for the last time, and both $V$ and $A$ values increase as $x_{*}(d)$ increases. We also find by numerical explorations that for integrations from the same starting point $x_{*}$ at the MSCL/SCL to certain large $x_{2}$ where $v(x_{2})$ and $\alpha(x_{2})$ take approximately the asymptotic forms of equation~(\ref{e14}) and (\ref{e15}), the values of both $V$ and $A$ are smaller in the MHD model than those in the pure HD model as presented in Figure~\ref{com}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lc_1}
+\caption{A typical phase diagram where an one-temperature isothermal MHD shock can be found with $\lambda=0.1$, $x_{m}=1.25$ and $x_{*}(u)=0.87<\sqrt{1.2}=\sqrt{1+2\lambda}$. The downstream locus (`d'), one-temperature upstream locus (`u1'), two-temperature upstream locus 1 (`u2\_1') and two-temperature upstream locus 2 (`u2\_2') are marked by solid dots, asterisks, triangles and solid circles, respectively. For any two-temperature upstream locus, $x_{sd}$ is annotated at the starting point on the one-temperature upstream locus, while the approximate upper bond of $\tau$ are annotated at the relevant ending point.}
+\label{lc1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lc_2}
+\caption{A phase diagram in search of two-temperature isothermal MHD shocks with $\lambda=0.1$, $x_{m}=2.1$ and $x_{*}(u)=1.3288>\sqrt{1.2}=\sqrt{1+2\lambda}$. The downstream locus (`d'), one-temperature upstream locus (`u1'), two-temperature upstream locus 1 (`u2\_1') and two-temperature upstream locus 2 (`u2\_2') are marked by solid dots, asterisks, triangles and solid circles, respectively. For any two-temperature upstream locus, $x_{sd}$ is annotated at the starting point on the one-temperature upstream locus, while the approximate upper bond of $\tau$ are annotated at the relevant ending point.}
+\label{lc2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{com}
+\caption{The $v(x_{2})$ versus $x_{*}$ diagram (upper panel) and the $\alpha(x_{2})$ versus $x_{*}$ diagram (lower panel) for the MHD model with $\lambda=0.1$ and the HD model with $\lambda=0$, where $x_{*}$ is the starting point of the Type 1 eigensolution, and $x_{2}=20.0$ is the ending point for evaluating values of the velocity and mass parameters $V$ and $A$ as $v(x_{2})\approx V$ and $\alpha(x_{2})\approx A/x_{2}^{2}$. It is shown that the values of both $V$ and $A$ are smaller in the MHD model than those in the HD model. Besides, different from the case of the MHD model, there is an obvious tuning point $x_{*}=2$ on the curve of $v(x_{2})$ or $\alpha(x_{2})$ in the HD model, which has the same nature as the second turning points in Figure~\ref{lc4}, i.e. due to the definition of the two types of eigensolutions (see Footnote~\ref{f1} for details).}
+\label{com}
+\end{figure}
+
+To be more precise, the analysis above is limited in the case that $\lambda=0.1$ and the chosen meeting point $x_{m}$ is not too close to the origin. It is possible to evaluate the limitation of these conclusions in detail with further numerical explorations. Actually, the properties of the downstream locus formed by the results of backward integrations from different $x_{*}(d)$s (as Type 1 eigensolutions) are determined by the parameter $\lambda$ and the meeting point $x_{m}$. Generally speaking, the downstream locus has two `turning region (point)' (see Figure~\ref{lc3} and \ref{lc4}) which can be understood by the following delineations. Given certain $x_{m}$, there is a very $\lambda_{c}$. When $\lambda>\lambda_{c}$, $v$ is always an increasing function with respect to $x_{*}(d)$, and at the first turning region (point), $\alpha(v)$ shifts from an increasing function to a decreasing function. While $\lambda<\lambda_{c}$, as $x_{*}(d)$ increases, $v$ increases, except in a region (the first turning region), which leads to the `inward bending' of the locus, since $\alpha$ decreases as $v$ decreases in this case. The larger the $\lambda$, the smaller the first turning region, and when $\lambda$ exceeds $\lambda_{c}$, the first turning region shrinks to a point, which enables us to define a monotropic function $\alpha(v)$. During the `inward bending'
+stage, it is of likelihood that the integration hits the MSCL/SCL for larger $x_{*}(d)$, in that $v$ decreases as $x_{*}(d)$ increases. This is exactly the case that $\lambda=0$ and $x_{m}=0.5$, where the SCL is hit for certain $x_{*}(d)$ in the range of $1.8\sim 1.9$. If this does not happen, we come to the second turning point\footnote{This turning point is due to the definition of the two types of eigensolutions. Given $\lambda$, if the soltion crosses the MSCL/SCL at $x_{*}$, the quadratic equation~(\ref{e28}) have two roots which can be expressed explicitly by $x=x_{*}$ and $v=v(x_{*})$. Since $v(x_{*})$ is a function of $x_{*}$, these two roots are also functions of $x_{*}$ as $v'_{+}(x_{*})$ and $v'_{-}(x_{*})$. If there is a very $x_{*}^{t}$ for $|v'_{+}(x_{*}^{t})|=|v'_{-}(x_{*}^{t})|$, as Type 1 eigensolution has the smaller absolute value of $v'$ at the MSCL, its initial condition may vary following different functions (i.e. $v'_{+}(x_{*})$ or $v'_{-}(x_{*})$) with respect to $x_{*}$ before and after $x_{*}^{t}$. If so, for a parameter involving Type 1 eigensolutions (e.g. $v$ and $\alpha$ at certain meeting point $x_{m}$ calculated by integrations starting from the MSCL/SCL as Type 1 eigensolutions), a turning point would occur in the relevant parameter space corresponding to $x_{*}^{t}$.\label{f1}} around which the `inward bending' region ends for $\lambda<\lambda_{c}$, or the derivative of $\alpha(v)$ with respect to $v$ start to increase for $\lambda>\lambda_{c}$. The corresponding $x_{*}(d)$ for the second turning point increases as $\lambda$ increases and the sharpness of the `turning' lowers down. Besides, after the second turning point, there could be another upper bond for $x_{*}(d)$, where the backward integration hits the ZML $v=x$. Numerical results further shows that $\lambda_{c}$ decreases when $x_{m}$ becomes larger and the instruction proposed in the last two paragraphs can be applied to the case in which $\lambda>\lambda_{c}$. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{type1l_1}
+\caption{Examples of downstream loci with different $\lambda$ values and the same meeting point $x_{m}=0.5$ (label, marker, $\lambda$, starting $x_{*}^{s}(d)$, ending $x_{*}^{e}(d)$): (d1, solid dot, 0, 0.5, 1.75), (d2, asterisk, 0.06, 0.5, 2.0), (d3, square, 0.1, 0.5, 2.5), (d4, triangle, 1, 0.5, 3.0), (d5, solid circle, 10, 0.5, 7.0). Through numerical trails (which are not shown here), we find that $0.07<\lambda_{c}<0.08$ for $x_{m}=0.5$.}
+\label{lc3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{type1l_2}
+\caption{Examples of downstream loci with different $\lambda$ values and the same meeting point $x_{m}=1.0$, starting $x_{*}^{s}(d)=1.0$ and ending $x_{*}^{e}(d)=2.5$ (label, marker, $\lambda$): (d1, solid dot, 0), (d2, asterisk, $5\times 10^{-4}$), (d3, triangle, $2\times 10^{-3}$), (d4, solid circle, $0.01$). It is shown that $2\times 10^{-3}<\lambda_{c}<0.01$ for $x_{m}=1.0$, which  is smaller than that for $x_{m}=0.5$, and the corresponding $x_{*}(d)$ for the second turning point increases as $\lambda$ increases, while the sharpness of the `turning' lowers down.}
+\label{lc4}
+\end{figure}
+
+Another overall view on converging isothermal MHD shock solutions is that the consequence of the isothermal MHD shock is a larger $x_{*}(d)>x_{*}(u)$ at which the solution crosses the MSCL for the last time. As a result, if we consider the properties at large $x$, i.e. $t\rightarrow 0_{-}$, or $r\rightarrow +\infty$, the parameter for the velocity of this final or outer envelope $\lim\limits_{x\rightarrow +\infty}\widetilde{v}=-V$ decreases, while the parameter for the reduced density $\lim\limits_{x\rightarrow +\infty}x^{2}\alpha=A$ increases, due to the (contracting) isothermal MHD shock (see Figure~\ref{16} and Table~\ref{t4} for examples). If $-V$ varies from a positive value to a negative value after the isothermal MHD shock, the outer envelope changes from an expanding one to a contracting one, which indicates that for certain state $x\rightarrow 0_{+}$ in the early stage of evolution ($t\rightarrow -\infty$) or near the center ($r\rightarrow 0$) related to an expanding outer envelope, it is possible to connect it with a contracting outer envelope by an isothermal MHD shock. And for a state matched with a contracting outer envelope, it is possible to enhance the speed as well as density of the outer envelope by an isothermal MHD shock. The static envelope is also alterable and accessible in this way. 
+
+%Section~\ref{s6} uses Type 1 eigensolution instead of Type 2 eigensolution because the latter is unstable for nodal points with $x_{*}(u)>\sqrt{1+2\lambda}$(, while the former is neutral stable), which means that the solution can cross the MSCL not so smoothly. If the unstable part of the integration settles down quickly enough in a small region, the aberration from the ideal is negligible. However, this is not always the case, as shown in Figure~\ref{eigen}. In the light of this, we use Type 1 eiginsolution in section~\ref{s6} and advocate that cautious choice of Type 1 or Type 2 eigensolution should be made regarding the stability of the solution. 
+
+
+
+\subsection{Astrophysical applications}
+\label{s6.2}
+% {\bf Please complete with your later versions.
+%      2016 April 24 Sunday 105 Anniversary}
+\subsubsection{Converging isothermal MHD shocks for protostar formation}
+\label{s6.2.1}
+
+%{\bf Stop here.   2016 April 21 Thursday}
+
+Magnetic fields can play important roles in forming protostars. Simulations of the gravitational collapse in MHD turbulent molecular clouds by \citet{heitsch2001gravitational} indicate that magnetic fields can support the molecular clouds magneto-statically preventing it from collapse (subcritical), or merely delay and weaken the collapses of them (supercritical). Our converging isothermal MHD shock solutions do not correspond to the whole collapse process, however, can serve as the collapse-triggering mechanism related to the latter case, since the magnetic field in our quasi-spherically symmetric model is travese and random. Consider a quasi-spherical magnetised molecular cloud in a critical state which tends to collapse and form a core, a converging isothermal MHD shock can be generated by circumstance fluctuations (e.g. motions of gas triggered by outgoing shocks from nearby supernovae) and propagate towards the center, resulting in (turbulent) density enhancement and inward flow speed behind it, which causes further gravitational core collapse of the molecular cloud. 
+%The scenario corresponds exactly to Class I converging isothermal MHD shock solution whose inner region is delineated by the MHD LP-type solution.
+
+For such a grossly spherical magnetised molecular clouds with a size $\sim 0.29-0.39~\mathrm{pc}$ \citep{klessen2001formation}, the following parameters feature its properties:
+\begin{gather}
+t_{ff}=\sqrt{\frac{3\pi}{32G\rho_{0}}}\notag\\
+\qquad\sim 1.16\times 10^{6}~\mathrm{yr} \left(\frac{n}{10^{3}~\mathrm{cm^{-3}}}
+ \frac{\mu}{m_{H2}}\right)^{-1/2}\ ,\\
+\lambda_{J}=a\sqrt{\frac{\pi}{G\rho_{0}}}\sim 0.77~{\rm pc}\notag \\
+\qquad\times\left(\frac{a}{0.2~\mathrm{km\cdot s^{-1}}}\right)\left(\frac{n}{10^{3}~\mathrm{cm^{-3}}}
+ \frac{\mu}{m_{H2}}\right)^{-1/2}\ ,\\
+B=\sqrt{8\pi\rho_{0} a^{2}\frac{1}{\beta}}\sim 5.77~\mathrm{\mu G}\notag \\
+\qquad\times\left(\frac{a}{0.2~\mathrm{km\cdot s^{-1}}}\right)\left(\frac{n}{10^{3}~\mathrm{cm^{-3}}}
+\frac{\mu}{m_{H2}}\frac{1}{\beta}\right)^{1/2}\ ,\label{e43}
+\end{gather}
+where $t_{ff}$ is the free-fall time, $\lambda_{J}$ is the Jean's length, $B$ is an estimated magnetic field with $\beta$ as a dimensionless parameter characterising its strength 
+%{\bf Meaning?} 
+(i.e. the ratio of the thermal pressure $p_{th}=a^{2}\rho_{0}$ and the magnetic pressure $p_{m}=B^{2}/(8\pi)$), $\rho_{0}$ is the mean mass density of the molecular cloud, $n$ is the mean molecule number density, $\mu$ is the average mass of one molecule, $m_{H2}=3.32\times 10^{-24}~\mathrm{g}$ is the mass of a hydrogen molecule, $a=\left(k_{B}T/\mu\right)^{1/2}$ is the isothermal sound speed with the Boltzmann constant $k_{B}=1.381\times 10^{-16}~\mathrm{cm^{2}\cdot g\cdot s^{-2}\cdot K^{-1}}$, $T$ is the temperature, and $G=6.67\time 10^{-8}~\mathrm{cm^{3}\cdot g^{-1}\cdot s^{-2}}$ is the universal gravitational constant.
+
+To apply the Class I converging isothermal MHD shock solution to this cloud, we need to establish relations among the above parameters with self-similar variables. Assuming that the mass density is exactly $\rho_{0}$ at the centre initially as $t\rightarrow -\infty$, $r\rightarrow 0$, $x\rightarrow 0_{+}$, and $\alpha\rightarrow D$ for the MHD LP-type solution, the dynamic time scale $t_{0}$ of this MHD shock-collapse-triggering process, i.e. the time taken for the isothermal MHD shock to reach the centre can be speculated (from equations~(\ref{e6}) for the self-similar MHD transformation) by 
+\begin{gather}
+t_{0}=\sqrt{\frac{D}{4\pi G\rho_{0}}}\notag\\
+\qquad\sim 6\times 10^{5}~\mathrm{yr} \left(\frac{n}{10^{3}~\mathrm{cm^{-3}}}
+ \frac{\mu}{m_{H2}}\right)^{-1/2}\sqrt{D}\ .\label{e44}
+\end{gather}
+%{\bf Please make your statements consistent throughout.}
+During the time interval $-t_{0}\sim 0_{-}$, the shock front propagates towards the increasingly denser centre which forms the core of the protostar and compresses the inflow gas. It is natural to assume that the upstream (i.e. the inner part which has not been shocked yet) remains at temperature $T$ and has a sound speed $a(=a_{u}=a_{d}/\tau)$, then the radius at which the isothermal MHD shock appears and the enclosed mass defined by this radius are
+\begin{gather}
+r_{s}=a x_{su}t_{0}\sim 0.123~\mathrm{pc}\notag\\
+\qquad\times \left(\frac{a}{0.2~\mathrm{km\cdot s^{-1}}}\right)\left(\frac{n}{10^{3}~\mathrm{cm^{-3}}}\frac{\mu}{m_{H2}}\right)^{-\frac{1}{2}}x_{su}\sqrt{D}\ ,\label{e45}\\
+M_{s}=\frac{a^{3}t_{0}}{G}m(x_{su})\sim 1.14~M_{\sun}\left(\frac{a}{0.2~\mathrm{km\cdot s^{-1}}}\right)^{3}\notag\\
+\qquad\times \left(\frac{n}{10^{3}~\mathrm{cm^{-3}}}\frac{\mu}{m_{H2}}\right)^{-\frac{1}{2}}m\left(x_{su}\right)\sqrt{D}\ .\label{e46}
+\end{gather}
+Strictly speaking, according to the self-similar MHD transformation formula $\rho=\alpha/\left(4\pi Gt^{2}\right)$, the core density diverges as $t\rightarrow 0_{-}$, since as $x\rightarrow 0_{+}$, $\alpha\rightarrow D$. In fact, when the gas at the core is dense enough, nuclear reactions would occur, and our highly ideal isothermal MHD model is not applied to the core involving nuclear reactions. However, our model can delineate the evolution of the formation environment of the core in a much larger scale (compared with the core itself), based on the presumption that the feedback of the core (i.e. radiation produced by nuclear reactions) to its environment is negligible in this collapse-triggering process and the isothermal condition is valid. Behind the isothermal MHD shock, the outer envelope (i.e. $x\rightarrow +\infty$) is also contracting, whose speed and density profile may serve as indications for the rate and strength of the further core collapse process, which can be derived from the self-similar MHD transformation~(\ref{e6}) together with the large-$x$ asymptotic solution~(\ref{e14}) and (\ref{e15}):
+\begin{gather}
+u=a_{d}\widetilde{v}=-a_{d}v\sim -a_{d}V=-aV\tau\ , \label{e47}\\
+\rho=\frac{\alpha}{4\pi Gt^{2}}\sim \frac{A a_{d}^{2}}{4\pi Gr^{2}}=\frac{a^{2}}{4\pi Gr^{2}}A\tau^{2}\sim 477~\mathrm{g\cdot cm^{-3}}\notag\\
+\qquad\times\left(\frac{a}{0.2~\mathrm{km\cdot s^{-1}}}\right)^{2}\left(\frac{r}{10^{6}~\mathrm{cm}}\right)^{-2}A\tau^{2}\ .\label{e48}
+\end{gather} 
+
+As for the magnetic field strength, we have to calculate the parameter $\lambda$ defined in equation (\ref{e5}) from $\beta$. 
+%Actually, $\beta\equiv p_{th}/p_{m}$ is the ratio of the thermal pressure $p_{th}=\rho_{0}a^{2}$ and the magnetic pressure $p_{m}=B^{2}/8\pi$. 
+As a speculation method, initially, we assume that $B$ in equation (\ref{e43}) equals to $B_{||}$ in equation (\ref{e5}) at the very radius $r=\lambda_{J}$ corresponding to the Jeans length, which gives
+\begin{equation}
+\lambda=\frac{1}{2\pi^{2}\beta}\ .
+\end{equation}
+
+With aforementioned formulae, we further adopt an ideal parameter set in which $T\sim 10~\mathrm{K}$, $\mu\sim m_{H2}$, $a\sim 0.2~\mathrm{km\cdot s^{-1}}$, $n\sim 10^{5}~\mathrm{cm^{-3}}$, and $\beta\sim 0.507$. In this case ($\lambda\sim 0.1$), the magnetic field is not so strong but dominating ($\beta<1$), and it is an reasonable estimation that $B\sim 81~\mathrm{\mu G}$ compared with observational results (e.g. those of NGC 2024, OMCN-4 \citep{crutcher1999magnetic} or other molecular clouds \citep{bourke2001new}). Theoretically, parameters from any Class I converging isothermal MHD shock solution with $\lambda=0.1$ can be used to derive $t_{0}$ and $r_{s}$. Here we only consider a3 and work out its pure hydrodynamical counterparts a3' with the completely same method and the same $x_{sd}$ for comparison (see Figure~\ref{fa1}). The results of $t_{0}$, $r_{s}$ and $M_{s}$ by the same parameter set is listed in Table~\ref{ta1}. 
+
+It is shown that the dynamic time scale $t_{0}$ of the magneto-hydrodynamic (MHD) model is larger than that of the pure hydrodynamic (HD) model, and the spatial scale $r_{s}$ of the former is also slightly larger than that of the latter, while the enclosed mass of the former is smaller than that of the latter. Besides, $V\tau$ and $A\tau^{2}$ of the MHD solution are smaller than those of the HD solution by factors 37\% and 62\%, respectively. In both case, the shock and the outer envelope behind the shock travel supersonically. Therefore, our results agree well with the conclusions of \citet{heitsch2001gravitational} that the weakly magnetized turbulence can reduce the density enhancements behind shocks (as indicated by a smaller $A\tau^{2}$) and, thus, slow down (as revealed by a smaller $V\tau$ and, perhaps, a larger $t_{0}$) and weaken (as seen from a smaller $M_{s}$) the process of isolated collapse. This demonstrates that our highly idealized model does portray the supersonic large-scale shock-triggering process for the core collapse of protostar formation in magnetized molecular clouds.
+
+Other solutions produce unreasonable results, e.g. $r_{s}$s larger than the size of the molecular cloud. That is why we give up a1 and a2, despite that they may serve as counterparts of the converging HD shock solutions in \citet{lou2014self}. In fact, some calculation mistakes in Section 7.1 of \citet{lou2014self} caused a wrong choice of solution, i.e. actually, (following its definitions of symbols), $t_{0}\approx -7.91\times 10^{5}~\mathrm{yr} \times\sqrt{10}\approx -2.5\times 10^{6}~\mathrm{yr}$, and $r_{s}\approx 0.16~\mathrm{pc}\times \sqrt{10}\approx 0.51~\mathrm{pc}$, which contradicts its pre-supposition that the molecular cloud has a size$~0.2~\mathrm{pc}$.
+
+\begin{table}
+\centering
+\caption{Results of the Class I converging isothermal MHD shock solution a3 and its ordinary HD counterpart a3' with the same $x_{sd}=3.5$, both constructed by Type 1 eigensolutions. $\lambda=0.1$ for a3, while $\lambda=0$ for a3'. $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$. Note that the free-fall time scale $t_{ff}\sim 1.16\times 10^{5}~\mathrm{yr}$ in this case is at the same magnitude with $t_{0}$s for both the MHD and HD model, and the $r_{s}$s are also comparable, however, smaller than the size of the molecular cloud. While for solution a1 and a2, the initial spatial scales of the isothermal MHD shock are 0.78pc and 10.06pc, respectively, which tends to be unrealistic.} 
+\begin{tabular}{ccccc}
+\hline
+L & $t_{0}[\mathrm{10^{5}yr}]$ & $D$ & $x_{su}$ & $m(x_{su})$\\
+\hline
+a3 & 1.14 & 3.6328 & 6.9058 & 25.16\\
+a3' & 0.77 & 1.6658 & 8.8421 & 52.92\\
+\hline
+L & $r_{s}[\mathrm{pc}]$ & $M_{s}$[$M_{\sun}$] & $V\tau$ & $A\tau^{2}$ \\
+\hline
+a3 & 0.16 & 5.46 & 8.2476 & 33.1655\\
+a3' & 0.14 & 7.79 & 13.0862 & 86.4787\\
+\hline
+\end{tabular}
+\label{ta1}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{A-v-x1}
+\caption{The $-v$ versus $x$ diagram of a3 and a3'. The dashed line is the MSCL for $\lambda=0.1$ (MSCL), while the dashed dotted line corresponds to the sonic critical line for $\lambda=0$ (SCL). Given the same $x_{sd}$, the converging isothermal MHD shock has a smaller $\tau(a3)=1.9731$ than the ordinary converging isothermal HD shock $\tau(a3')=2.5263$. After the shock, for the MHD model a3, the velocity and mass parameters of the outer envelope $V=4.18$ and $A=8.519$, while for the HD model a3', $V=5.18$ and $A=13.55$ (calculated at the approximate infinity $x_{2}=500.0$). Other pertinent parameters are contained in Table~\ref{ta1}}
+\label{fa1}
+\end{figure}
+
+\subsubsection{Converging isothermal MHD shocks for supernovae}
+As mentioned by \citet{lou2014self}, spherical shock waves can be triggered in massive progenitors during implosion process in gravitational collapse by the impact of different gas layers and propagate to the centre with a shrinking shock front and enhancing shock strength, leaving non-linear disturbance behind, which may initiate supernovae explosion. With this picture in mind, our converging isothermal MHD shock solutions serve as illustrating examples for lots of theoretical possibilities of pre-supernovae evolution and supernovae explosion. 
+
+For Type Ia supernovae (SNIa) from thermal nuclear explosion, sub-Chandrasekhar mass white dwarfs are possible progenitors with a special explosion mechanism in which converging shocks are involved: If the accretion rate of the He-shell is low enough, the accreted He is accumulated instead of fused to C and O, which can generate violent detonations in the He-shell after reaching a critical amount of He \citep{fink2007double}. The detonation of He creates a converging shock which propagates towards the centre and may trigger the secondary detonation of the C-O core directly or delayed \citep{fink2010double}. The second converging shock emerges while the C-O core is ignited.
+This scenario seems relevant to our twin converging isothermal MHD shock solutions. Besides, according to \citet{wickramasinghe2000magnetism}, 5\%
+of all isolated white dwarfs have magnetic fields ranging from $\sim 3\times 10^{4}$ to $\sim 10^{9}$G, and 25\% of interacting binaries involve magnetic white dwarfs with fields in the range $\sim 10^{7}-10^{8}$G\footnote{These statistics might be out of date. The point here is that magnetic white dwarfs are not rare, especially in binary systems where SNIa occur.}. Therefore, it is of significance to investigate magnetic fields in SNIa explosions including those from sub-Chandrasekhar mass white dwarfs. Since the core of white dwarfs is supported by degenerate electrons whose evolution is better delineated by conventional or general polytropic process, our twin converging isothermal MHD shock solutions are not suited quantitatively to the `double-detonation' SNIa of sub-Chandrasekhar mass magnetic white dwarfs.  However, grossly speaking, we may expect the similar effects of the magnetic field as those for magnetised molecular clouds, i.e. larger time-scale and spatial scale, weaker density enhancement behind the shock as well as smaller enclosed mass defined by the emergence of the shock. It would be of considerable interest to study converging isothermal MHD shocks in conventional or general polytropic MHD model framework developed by \citet{wang2008dynamic} and \citep{lou2010general} to attain better understandings of the roles played by magnetic fields in SNIa explosions.
+
+%{\bf Astrophysical applications of strong
+% magnetic field solution!    2016 April 27}
+
+As to other types of supernovae (i.e. core-collapse supernovae) whose progenitors are more massive stars, the propagation of a converging shock may also emerge in the pre-explosion phase, and magnetic fields can play even more important roles, especially when rotation is taken into account. 
+
+For the presupernovae evolution, it is shown by \citet{akiyama2004magnetic} that even a relative modest initial rotation of the iron core (with a period of $\sim 6-31$s) would result in a very rapidly rotating protoneutron star and exponential growth of the magnetic field by the magnetorotational instability (MRI) (even to an order $10^{15}-10^{16}$G), which can power MHD bi-polar flow or jets related to the asymmetry of the core-collapse supernovae. \citet{heger2005presupernova} investigated the presupernovae evolution of differentially rotating massive stars including magnetic fields under consideration of magnetic braking, dynamo process in radiative, semiconvective and thermohaline regions, indicating that the magnetic torque would decrease the final rotation rate of the collapsing iron core. After the core bounce, the new born magnetar with a fast rotation rate and a strong magnetic field is also considered to be a possible power source of Type Ib/c supernovae \citep{Woosley2010,SNIc2013} and long duration gamma-ray bursts (GRBs) \citep{Metzger2011} through dipole emission, magnetic dissipation as well as magnetar winds and shocks, as it spins down and transports out rotational energy. 
+
+Our highly ideal spherically symmetric isothermal MHD model does not consider the rotation and may only provide sensible approximations to certain stage of the above scenario. That is to say, at the latest stage of presupernovae evolution, the dynamo effectively stops tracking the changing conditions and the field is frozen in \citep{heger2005presupernova}, as a result, our approximate random traverse magnetic field is applicable. Similar to the last section on magnetised molecular clouds, we use Class I converging isothermal MHD shock solution a1 with $\lambda=0.1$ to delineate the latest presupernovae evolution stage. Consider a quasi-spherical converging isothermal shock triggered during the latest stage of core collapse by the impact of different gas layers (and, perhaps, driven by MRI), it propagates towards the center, leaving behind compressed turbulent high-speed infall flows. This process is accompanied by the increase of core density and the bounce of the core would occur when the shock front `reaches' the center. As an example for illustration, for a typical progenitor with a mass $\sim 15~M_{\sun}$, on the onset of the latest stage, we have the central mass density $\rho_{0}=n\mu\sim 8.7\times 10^{9}~\mathrm{g\cdot cm^{-3}}$ and the assumed uniform temperature $T\sim 6.84\times 10^{9}~\mathrm{K}$ \citep{heger2005presupernova}. Then the isothermal sound speed is
+\begin{gather}
+a=(k_{B}T/\mu)^{1/2}=6.51\times 10^{3}~\mathrm{km\cdot s^{-1}}\ ,\label{e50}
+\end{gather}
+where $\mu=4m_{p}/3\approx 2m_{H_{2}}/3$ is the mean particle mass for a fully ionized helium gas and $m_{p}=1.67\times 10^{-24}~\mathrm{g}$ is the proton mass. Then by formula~(\ref{e44}), we derive the dynamic time scale of this process
+\begin{gather}
+t_{0}=\sqrt{\frac{D}{4\pi G\rho_{0}}}=0.689~\mathrm{s}\ ,
+\end{gather}
+where $D=e^{8.15}\approx 3463$ is the central reduced density parameter for a1. The dynamic scale $t_{0}=0.689~\mathrm{s}$ here is close to the death time $\sim 0.5~\mathrm{s}$ given by \citet{heger2005presupernova} and slightly larger than it, which can be explained by the same argument that the shock front never really reaches the centre and the bounce of the core would occur after a time interval shorter than $t_{0}$. From formulae~(\ref{e45}) and (\ref{e46}), the spatial scale of the shock $r_{s}$ and the enclosed mass defined by the emergence of the shock $M_{s}$ are
+\begin{gather}
+r_{s}=ax_{su}t_{0}=4.84\times 10^{8}~\mathrm{cm}\ ,\\
+M_{s}=\frac{a^{3}t_{0}}{G}m(x_{su})\sim 2.97~M_{\sun}\ , 
+\end{gather}
+where $x_{su}=x_{s}=1.08$, $m(x_{su})=2.0732$ for a1. Interestingly, $r_{s}$ and $M_{s}$ are also of the same order with $R_{smap}=1.2\times 10^{8}~\mathrm{cm}$ and $M_{samp}=1.3~M_{\sun}$ from \citet{heger2005presupernova}, respectively.
+
+Just before the bounce of the core, the shock front is very close to the centre and we can use the large-$x$ asymptotic solution~(\ref{e14}) and (\ref{e15}) to specify the infall flow speed as well as the density profile after the shock (i.e. the outer region other than the core), following formulae~(\ref{e47}) and (\ref{e48}):
+\begin{gather}
+u\sim -aV\tau=3.31\times 10^{3}~\mathrm{km\cdot s^{-1}}\ ,\\
+\rho\sim \frac{a^{2}}{4\pi Gr^{2}}A\tau^{2}=1.34\times 10^{8}~\mathrm{g\cdot cm^{-3}}\left(\frac{r}{10^{8}~\mathrm{cm}}\right)^{-2}\ ,
+\end{gather}
+where $\tau=1$ (one-temperature isothermal MHD converging shock), and the velocity and mass parameters for a1 $V=0.509$, $A=2.651$ (see Table~\ref{t2}). The infall flow speed exceeds the criterion infall speed $10^{3}~\mathrm{km\cdot s^{-1}}$ for the latest presupernovae phase of \citet{heger2005presupernova}, and the density at $r=R_{samp}=1.2\times 10^{8}~\mathrm{cm}$ is $\sim 9.3\times 10^{7}~\mathrm{g\cdot cm^{-3}}$ which is also of the same order with $\rho_{samp}=5\times 10^{7}~\mathrm{g\cdot cm^{-3}}$ given by \citet{heger2005presupernova}. Finally, the magnetic field strength and the parameter $\beta=p_{th}/p_{m}$ can be estimated by the combination of the frozen in condition~(\ref{5}) and the density profile formula~(\ref{e48}), given $A=2.651$, $\tau=1$ and $\lambda=0.1$, as
+\begin{gather}
+B\sim\frac{a^{2}}{r\sqrt{G}}A\tau^{2}\sqrt{\lambda}= 1.375\times 10^{15}~\mathrm{G}\left(\frac{r}{10^{6}~\mathrm{cm}}\right)^{-1}\ ,\\
+\beta=\frac{8\pi \rho a^{2}}{B^{2}}\sim \frac{2}{A\tau^{2}\lambda}=7.54\ .
+\end{gather}
+It is shown that for the typical radius of a neutron star $r\sim 10^{6}~\mathrm{cm}$, the magnetic field has a strength $\sim 1.375\times 10^{15}~\mathrm{G}$ of the same order with the prediction of MRI (see Figure 3 of \citet{akiyama2004magnetic}), and the parameter $\beta^{-1}=13.3\%$ also agrees well with that (above 10\%) from MRI \citep{akiyama2004magnetic}.
+
+The above analysis of a1 demonstrates that, despite the simpleness of our quasi-analytical model for an ideal non-rotating isothermal magnetofluid, the agreement with results from more complicated simulations with rotation is surprisingly good. Besides, it is possible to construct a sequence of converging MHD shock solutions under different values of $\lambda$ to produce different $\tau$, $V$ and $A$ values. However, the quasi-spherical symmetry, the random traverse magnetic field and the isothermal condition are great simplifications to the real physical process of presupernovae evolution, the agreement above merely implies that turbulence (instabilities) and shock waves in the context of MHD (which are the features shared by our model and other more complicated models) are of great importance to understand core-collapse supernovae 
+%compared with other mechanisms (e.g. nucleosynthesis and neutrino burst)
+, and our non-linear converging isothermal MHD shock solutions may provide important benchmarks for testing numerical codes for MHD under self-gravity.
+
+Beyond the presupernovae phase, we can also imagine the explosion itself by the void expansion solution with outgoing isothermal MHD shocks in the old solution space (see Section~\ref{s2.2} for the relations between the new solution space and the old solution space) to describe a MHD converging-shock-rebound-void-expansion-shock (CSRVES) process. Consider a converging isothermal MHD shock for a MHD LP-type solution approaching the centre as $t\rightarrow 0{-}$, the density $\rho\propto \alpha/t^{2}\rightarrow D/t^{2}$ at the centre is divergent, which is beyond the range of our simplified model, therefore, the isothermal MHD shock never really reaches the centre. It is supposed that other more complicated physical processes (e.g. nuclear burning, radiation pressure, degenerate materials, electrons and neutrinos) will be involved in a small central region to generate a rebounded outgoing isothermal MHD shock which breaks out of the stellar surface in the time scale $t_{break}$ and is followed by an expanding void. We assume that the spherical symmetry holds in this scenario. Similar to the theoretical model of wind-wind dynamic interaction for X-ray emissions from PNe where isothermal gas dynamics of central voids and surrounding envelopes with or without shocks are studied \citep{lou2009dynamic}, the after-rebound effective void here can be regarded as an inner wind zone in which wind heated by neutrinos expands freely from the surface of the protomagnetar into the cavity generated by the precedent rebound shock launched by neutrino heating or MHD forces \citep{Metzger2011}. We assume that whatever the rebound mechanism is, at the very instant when the rebound occurs, it mainly changes the velocity of the flow on the boundary of the small central region (which grossly becomes the void later), while the density $\rho_{b}$ of the fluid on the boundary as well as the properties of the outer envelope remain almost unchanged. Therefore, when constructing the after-rebound branch of any CSRVES solution in the old solution space (i.e. $\widetilde{x}$ and $\widetilde{v}$), we require that the dimensionless density $\widetilde{\alpha}_{0}$ on the boundary of the expanding MHD void equals to the central reduced density parameter $D$ of the MHD LP-type solution from the before-rebound branch to specify that $\rho_{b}^{before}\sim\rho_{b}^{after}$ (i.e. grossly speaking, $D=\lim\limits_{t\rightarrow 0_{-}}\alpha\sim \lim\limits_{t\rightarrow 0_{+}}^{r=\widetilde{x}_{1}ta}\widetilde{\alpha}=\widetilde{\alpha}_{0}$) and that the parameters of the outer envelope satisfy the relations that $-V=\widetilde{V}$ and $A=\widetilde{A}$.
+
+As an example, following the above analysis of presupernovae evolution with $\lambda=0.1$, we again use a1 (see Table~\ref{t2}) as the before-rebound branch (i.e. $t:-t_{0}\rightarrow 0_{-}$, $x:r/\left(at_{0}\right)\rightarrow +\infty$ for any fixed $r$), so that $\alpha_{0}=D=e^{8.15}\approx 3463$, $\widetilde{V}=-V=-0.509$, and $\widetilde{A}=A=2.651$. Then we construct the after-rebound branch (i.e. $t:0_{+}\rightarrow t_{break}$, $\widetilde{x}:+\infty\rightarrow r/\left(a\tau_{0}t_{break}\right)$\footnote{In fact, after the rebound, the sound speed shifts from $a$ to $\tau_{0} a$, where $\tau_{0}$ is the shock strength parameter of the before-rebound MHD shock solution. In our case, the shock of the before-rebound branch is an one-temperature isothermal converging MHD shock with $\tau_{0}=1$. Thus, the speed of sound remains unchanged.} for any fixed $r$) by applying the standard $\widetilde{\alpha}$ versus $\widetilde{v}$ phase diagram matching method to outward integrations from varying starting point $\widetilde{x}_{1}$ (with fixed $\widetilde{\alpha}_{0}$) and inward integrations from $\widetilde{x}_{2}=500.0$ (with constant $\widetilde{V}$ and $\widetilde{A}$) shocked at $\widetilde{x}_{su}$s by fixed $\widetilde{x}_{sd}=1.05$ and different values of $\tau=\widetilde{x}_{su}/\widetilde{x}_{sd}$ under Type 2 two-temperature isothermal MHD shock condition to a given meeting point $\widetilde{x}_{m}=0.8$, as shown in Figure~\ref{fa2}, which specifies that $\widetilde{x}_{1}=0.03195$, $\tau=1.4903$, and $\widetilde{x}_{su}=1.5648$. The results of the fluid velocity $-v=\widetilde{v}$, the radio of the $\text{Alfv}\mathrm{\acute{e}}\text{n}$ speed to the sound speed $v_{A}/a$, the density parameter $\alpha=\widetilde{\alpha}$ and the magnetic field parameter $b=\widetilde{b}$ as functions of $x$ or $\widetilde{x}$ are displayed in Figure~\ref{fa3} and \ref{fa4}. With these results, and the same set of parameters for the presupernovae evolution, we can speculate the expansion rate of the central void $u_{v}$ as well as the velocity $u_{s}$ of the outgoing isothermal MHD shock shortly after the rebound (i.e. the temperature does not drop too much):
+\begin{gather}
+u_{v}=a\widetilde{x}_{1}\sim 208~\mathrm{km\cdot s^{-1}}\ ,\\
+u_{s}=a\widetilde{x}_{su}\sim 1.02\times 10^{4}~\mathrm{km\cdot s^{-1}}\ .
+\end{gather}
+where the sound speed $a$ is approximately unchanged after the rebound given by formula~(\ref{e50}). Given the typical radius of such a $15~M_{\sun}$ progenitor $R_{s}\sim 10^{12}~\mathrm{cm}$, the time scale for the outgoing shock to break out of the stellar surface is $t_{break}\sim R_{s}/u_{s}\sim 10^{3}~\mathrm{s}$.
+
+An important feature of this scenario is that properties of the after-rebound branch isothermal MHD void expansion solution (i.e. the void boundary $\widetilde{x}_{1}$, the shock strength parameter $\tau$) are completely determined by the before-rebound branch LP-type MHD solution involving a converging isothermal MHD shock and the downstream shock position $\widetilde{x}_{sd}$. In our highly simplified isothermal model, it is difficult to use other asymptotic MHD solutions as the after-rebound branch, so the MHD void expansion solution is the best choice, however, does not provide any information of the new born central magnetar. Therefore, future study may focus on the converging shocks in the conventional or general polytropic MHD model \citep{wang2008dynamic, lou2010general}, where more asymptotic solutions, e.g. the MHD counterpart of the new ‘quasi-static’ solution with divergent mass density approaching the core and self-similar oscillations \citep{lou2006new}, can be found to delineate magnetars created in supernovae explosions.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lr1}
+\caption{Examples of the $\widetilde{\alpha}$ versus $\widetilde{v}$ loci in search of the after-rebound MHD void-expansion-shock solution with $\lambda=0.1$ and $\widetilde{x}_{m}=0.8$ in the old solution space. The upstream locus (marked by asterisks, labelled by `u') is formed by inward integrations starting from the large-$\widetilde{x}$ asymptotic MHD solution with the velocity and mass parameters $\widetilde{V}=-V=-0.509$, and $\widetilde{A}=A=2.651$ at the approximated infinity $\widetilde{x}_{2}=500.0$, involving shocks at $\widetilde{x}_{sd}=1.05$ with different values of $\tau$ in the range of $1.486\sim 1.488$. The downstream locus (marked by solid dot, labelled by `d') is produced by outward integrations with different starting points $\widetilde{x}_{1}$s on the ZML in the range of $0.02\sim 0.034$, given fixed dimensionless density $\alpha_{0}=D=e^{8.15}$. The final result of a series of such diagrams is that $\widetilde{x}_{1}=0.03195$, and $\tau=1.4903$ .}
+\label{fa2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{r-v-x1}
+\caption{The $-v$ versus $x$ diagram (upper left), $\widetilde{v}$ versus $\widetilde{x}$ diagram (upper right), $v_{A}/a$ versus $x$ diagram (lower left) and $v_{A}/a$ versus $\widetilde{x}$ diagram (lower right) of the exemplar CSRVES solution with $\lambda=0.1$. The dashed line is the MSCL, while the dashed dotted line corresponds to the ZML $\widetilde{x}=\widetilde{v}$. The left two diagrams of the before-rebound branch belong to the new solution space with $t<0$, while the right two of the after-bound branch in the old solution space with $t>0$. The two branches are connected at $x\rightarrow +\infty$ and $\widetilde{x}\rightarrow +\infty$ as $t\rightarrow 0_{-}$ and $t\rightarrow 0_{+}$ by the consistency that $-V=\widetilde{V}=-0.509$ and $A=\widetilde{A}=2.651$.}
+\label{fa3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{r-a-x1}
+\caption{The $a$ versus $x$ diagram (upper left), $\widetilde{a}$ versus $\widetilde{x}$ diagram (upper right), $b$ versus $x$ diagram (lower left) and $\widetilde{b}$ versus $\widetilde{x}$ diagram (lower right) of the exemplar CSRVES solution with $\lambda=0.1$. $\alpha$, $\widetilde{\alpha}$, $b$ and $\widetilde{b}$ axes are all in the logarithmic scale. The dashed line is the MSCL.}
+\label{fa4}
+\end{figure}
+
+\subsubsection{Contracting voids with converging isothermal MHD shocks}
+In broad contexts of astrophysics (e.g. $H_{II}$ regions formed around protostars, planetary nebulae, core collapse supernovae explosions and remnants), a central void (or cavity/bubble) of relatively low density may occur in contact with the massive outer envelope, when the central region provides sufficient pressure against the gravity to push outward materials at certain stage of evolution, during which process shocks may be involved. Later on the void may experience expansion or collapse regarding variances of the central pressure source and the environment. 
+
+During the past few years, in the framework of self-similar hydrodynamics and magetohydrodynamics for isothermal, conventional polytropic (CP) and general polytropic (GP) gas under self-gravity, since the zero mass line (i.e. $m(x_{1})=0$, where $m$ is the enclosed mass parameter and $x_{1}$ is the very value of the self-similar independent variable $x$ relevant to evolution of the void boundary) is a general structure in the solution space, self-similar solutions (with or without shocks) of voids connected to surrounding dense envelopes with inflows or outflows have been constructed for various astrophysical applications and compared with simulation and observation results \citep{hu2008self, lou2008self, lou2012dynamic, lou2010general, lou2009dynamic}.
+
+For instance, as described by the self-similar `champagne flow' shock solution for polytropic gas from \citet{hu2008self}, after the inner part of a certain cloud has fallen into a new-born protostar, a central expanding voids can be carved out by powerful stellar wind, and associated with outgoing shocks generated by intense and rapid UV photoionization of ambient medium surrounding the burning protostar. Besides, during the core collapse of a supernova progenitor, as central density becomes sufficiently high, neutrinos of relativistic energies are released when formation of neutrons occurs in the core. Since the neutrino opacity is extremely high in such an environment of high-density, the resulting neutrino pressure may become overwhelming and, together with radiation pressure and gas pressure, push the outer part to expand, in which process a central void starts to form \citep{lou2008self}. As the expansion lowers down the density, neutrinos escape during the decoupling, the left radiation field and plasma pressure may continue drive the expansion of the void \citep{lou2012dynamic}. This scenario were portrayed by self-similar void solutions for a relativistic gas (regrading neutrinos with negligible mass and photos in the high-density core) with the polytropic index $\gamma=4/3$ \citep{lou2008self}, for a CP gas \citep{lou2012dynamic} and for a GP magnetofluid \citep{lou2010general}. Moreover, for a planetary nebulae as the late phase of stellar evolution, the inner hot, fast, tenuous stellar wind involving a reverse shock forms a wind zone which can be regarded as an effective void expanding after a forward shock running into the massive outer AGB (slow) wind envelope. This process is shown properly described by self-similar isothermal void expansion solutions with outgoing shocks \citep{lou2009dynamic}. Such solutions can also be applied to a similar scenario in a larger scale for evolution of interstellar medium (ISM, e.g. $H_{II}$ region) around early-type stars or Wolf-Rayet stars whose wind zones also serve as effective voids.
+
+The aforementioned theoretical models show the powerfulness of self-similar approach for delineating voids, however only consider expanding voids. Actually, in the same astrophysical backgrounds, collapse or contraction of voids may also occur \citep{lou2014self} : For core collapse supernovae, when central neutrinos and radiation leak out through the outer
+envelope as density drops sufficiently, the pressure can be overwhelmed by gravity, resulting in central void contraction. For wind-supported voids in PH and ISM, when the central wind becomes weaker gradually, voids would start to shrink. Along with the central void contraction, converging shocks can also occur due to impacts among different layers of gas in the outer envelope. In the present work, through a time-reversal operation, we construct several self-similar isothermal MHD solutions whose centres are shrinking voids without (see Table~\ref{t1} and Figure~\ref{2}) and with (see Table~\ref{t3} and Figure~\ref{11}-\ref{15}) isothermal MHD converging shocks, which can be regarded as an extension of the previous work by \citet{lou2009dynamic} that investigated the isothermal gas dynamics of central voids and surrounding envelopes with or without shocks systematically. And our model is more realistic in consideration of a random traverse magnetic field. Here we focus on the effect of magnetic fields on construction of such self-similar isothermal (converging) void solutions. 
+%As mentioned in Section~\ref{s6.1}, all solutions except free-fall solutions in the new solution space are supposed to cross the MSCL/SCL at least once, and the point at which they cross the MSCL for the first time determines what isothermal MHD/HD shocks could be added to them. 
+For comparison, we construct the HD counter parts of self-similar isothermal MHD void solutions v1-v4 as v1'-v4', which start from the same $x_{1}$s and cross the SCL smoothly at $x'_{*}$s as Type 1 eigensolutions. The results of $x_{*}$ and the dimensionless density at the void boundary $\alpha_{0}$ of both MHD and HD models are shown in Table~\ref{t7}.
+
+We find that at the same void boundary $x_{1}$, the value of $\alpha_{0}$ are smaller in the HD model than that in the MHD model with $\lambda=0.1$. Besides, for both HD and MHD models, the value of $\alpha_{0}$ decreases as $x_{1}$ increases. So we may further infer that given the same value of $\alpha_{0}$, the corresponding $x_{1}$ in the MHD model would be larger than that in the HD model. As for $x_{*}$, there is no consistent difference between results of the two models at different $x_{1}$s. As illustrated by the self-similar transformation formulae (\ref{e6}), given certain temperature (i.e. speed of sound), $x_{1}$ is proportional to the speed of the boundary between the central void and the massive outer envelope (i.e. the void contacting or expanding rate), while $\alpha_{0}$ is proportional to the density difference (i.e. discontinuity) at the boundary (, since the density inside the void is negligible). So we conclude that for the same void contracting or expanding rate, the density discontinuity at the edge of the central void for a magnetized gas is more significant than that for an ordinary gas without magnetic fields, while for the same density discontinuity, the void would contract or expand faster in a magnetofluid than in an ordinary fluid. 
+\begin{table}
+\centering
+\caption{The results of $x_{*}$ and the dimensionless density at the void boundary $\alpha_{0}$ of self-similar isothermal void solutions in the MHD model with $\lambda=0.1$ and those in the HD model with $\lambda=0$, in which the void boundaries $x_{1}$s are the same for the two models. It is shown that at the same void boundary $x_{1}$, the value of $\alpha_{0}$ are smaller in the HD model than that in the MHD model with $\lambda=0$. As to $x_{*}$, there is no consistent difference between results of the two models at different $x_{1}$s.}
+\begin{tabular}{ccccc}
+\hline
+$\lambda=0.1$ & v1 & v2 & v3 & v4\\
+\hline
+$x_{1}$ & 0.85 & 0.4 & 0.04 & 0.004\\
+$\alpha_{0}$ & 1.8004 & 2.8406 & 3.6487 & 3401\\
+$x_{*}$ & 2.5013 & 2.2313 & 2.1641 & 0.8705\\
+\hline
+$\lambda=0$ & v1' & v2' & v3' & v4'\\
+\hline
+$x_{1}$ & 0.85 & 0.4 & 0.04 & 0.004\\
+$\alpha_{0}$ & 1.3216 & 1.5741 & 1.6649 & 1708\\
+$x_{*}$ & 2.4990 & 2.3610 & 2.3411 & 0.7388\\
+\hline
+\end{tabular}
+\label{t7}
+\end{table}
+
+\section*{Acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%{\bf New NSFC grant 2015.01 to 2018.12 and
+%MOST grant 2015.01 to 2019.12; waiting for more
+%specific info.  July 27, 2014 Sunday}
+
+This research was supported in part by
+ the Ministry of Science and Technology (MOST)
+ under the State Key Development Programme for
+ Basic Research grant 2012CB821800,
+ %  射电波段的前沿天体物理课题及FAST 早期科学研究 公示内容
+ % This work is partly supported by China Ministry of
+ % Science and Technology under State Key Development
+ % Program for Basic Research (2012CB821800).
+ by Tsinghua University Initiative Scientific Research
+% TISR
+ Programme 20111081008,
+%by the Special Endowment for Tsinghua College Talent
+% Programme from the Ministry of Education (MoE),
+ by
+% NSFC
+ the National Natural Science Foundation of China (NSFC)
+ grants 10373009, 10533020, 11073014, and 11473018
+ at Tsinghua Univ.,
+% the last one approved on August 21, 2014
+ by the Tsinghua Centre for Astrophysics (THCA),
+ and by the SRFDP 20050003088, 200800030071 and
+ 20110002110008 as well as 985 grants, and the
+ Yangtze Endowment
+% from the Ministry of Education (MoE)
+ and the Special Endowment for Tsinghua
+ College Talent (Tsinghua XueTang) Programme from
+ the Ministry of Education (MoE) at Tsinghua University.
+ %and successive AMD scholarships over the years
+% at Tsinghua University.
+%YQL acknowledges support of the China-Chile Scholarly
+% Exchange Program administered by the Chinese Academy of
+% Sciences South America Center for Astronomy (CASSACA).
+%also thanks the hospitality of Chinese Academy
+% of Sciences South America Center for Astronomy (CASSACA).
+% need a note from Zhong Wang
+
+\vskip 1.0cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+\bibliographystyle{mnras}
+\bibliography{ref} % if your bibtex file is called example.bib
+
+
+% Alternatively you could enter them by hand, like this:
+% This method is tedious and prone to error if you have lots of references
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\section{The ideal MHD approximation}
+\label{a1}
+The magnetic induction equation is
+\begin{gather}
+\frac{\partial \bf{B}}{\partial t}=\nabla\times \left(\bf{u}\times\bf{B}\right)+\frac{1}{4\pi\sigma}\nabla^{2} \bf{B}\ ,
+\end{gather}
+%{\bf Please boldface instead of arrow for vectors
+% throughout!       2016 April 21}
+where $\sigma$ is the electrical conductivity which is assumed to be infinite. Then we note down the following equations as three component forms:
+\begin{gather}
+\frac{\partial B_{r}}{\partial t}=\frac{1}{r\mathrm{sin}\theta}\frac{\partial}{\partial\theta}\left[\mathrm{sin}\theta \left(u_{r}B_{\theta}-u_{\theta}B_{r}\right)\right]\notag \\
+\quad \quad \quad -\frac{1}{r\mathrm{sin}\theta}\frac{\partial}{\partial\phi}\left(u_{\phi}B_{r}-u_{r}B_{\phi}\right)\ ,\label{ae2}\\
+\frac{\partial B_{\theta}}{\partial t}=\frac{1}{r\mathrm{sin}\theta}\frac{\partial}{\partial\phi}\left(u_{\theta}B_{\phi}-u_{\phi}B_{\theta}\right)-\frac{1}{r}\frac{\partial}{\partial r}\left[r\left(u_{r}B_{\theta}-u_{\theta}B_{r}\right)\right]\ ,\label{ae3}\\
+\frac{\partial B_{\phi}}{\partial t}=\frac{1}{r}\frac{\partial}{\partial r}\left[r\left(u_{\phi}B_{r}-u_{r}B_{\phi}\right)\right]-\frac{1}{r}\frac{\partial}{\partial\theta}\left(u_{\theta}B_{\phi}-u_{\phi}B_{\theta}\right)\ ,\label{ae4}
+\end{gather}
+where $u_{r}=u$ and $u_{\phi}\cong 0, \ \ u_{\theta}\cong 0$ by the presumed quasi-spherical symmetry.
+%Yu \& Lou (2005) PDEs (7)-(9). confirmed 2016 April 24 Sunday
+PDE (\ref{ae2}) takes the form
+\begin{gather}
+\frac{\partial B_{r}}{\partial t}=u_{r}\left(\nabla_{||}\cdot \bf{B_{||}}\right)+\left(\bf{B_{||}}\cdot\nabla\right)u_{r}\ ,
+\end{gather}
+where $\nabla_{||}=\left(1/r\right)\partial_{\theta}\widehat{\theta}+\left[1/\left(r\mathrm{sin}\theta\right)\right]\partial_{\phi}\widehat{\phi}$. 
+%Correct but clumsy.
+This PDE can be combined with the divergence free condition $\nabla\cdot \bf{B}=0$ and multiplied with a factor $r^{4}B_{r}$ on both sides to give
+\begin{equation}
+\frac{1}{2}\frac{D}{Dt}\left[\left( r^{2}B_{r}\right)^{2}\right]=r^{4}B_{r}\left(\bf{B_{||}}\cdot\nabla\right)u_{r}\ ,
+\end{equation}
+where $D/Dt=\partial_{t}+u_{r}\partial_{r}$. PDEs (\ref{ae3}) and (\ref{ae4}) can be multiplied with $1/B_{\theta}$ and $1/B_{\phi}$ respectively, which end up with
+\begin{gather}
+\frac{D}{Dt}\mathrm{ln}\left(\frac{B_{\theta}}{r}\right)=-\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}u_{r}\right)\ ,\label{ae7}\\
+\frac{D}{Dt}\mathrm{ln}\left(\frac{B_{\phi}}{r}\right)=-\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}u_{r}\right)\ .\label{ae8}
+\end{gather}
+
+Since the equation for mass conservation, i.e. PDE (\ref{e1}) can be written in a similar form
+\begin{equation}
+\frac{D}{Dt}\mathrm{ln}\rho=-\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}u_{r}\right)\ ,\label{ae9}
+\end{equation}
+we can conclude from PDEs (\ref{ae7})-(\ref{ae9}) that
+\begin{equation}
+\frac{B_{\theta}}{r\rho}=const.\ , \quad \frac{B_{\phi}}{r\rho}=const.\ , \quad \frac{B_{||}}{r\rho}=const.\ ,
+\end{equation}
+which is exactly the frozen-in condition for the magnetic flux and relates the random transverse magnetic field with the mass density $\rho$ \citep{yuLou2005}.
+%{\bf (see Yu \& Lou 2005 for more details).
+%This is in fact the frozen-in condition for
+% the magnetic flux and relate the random
+% transverse magnetic field with the mass
+% density $\rho$. }
+
+\section{Equations for calculating eigensolutions across the MSCL}
+\label{a2}
+Equation (\ref{e28}) is obtained by the L'Hospital rule from equation (\ref{e11}) in the form of 
+\begin{equation}
+\left(\frac{\partial F_{x}}{\partial x}+\frac{\partial F_{x}}{\partial v}v'+\frac{\partial F_{x}}{\partial \alpha}\alpha'\right) v'=\frac{\partial F_{v}}{\partial x}+\frac{\partial F_{v}}{\partial v}v'+\frac{\partial F_{v}}{\partial \alpha}\alpha'\ .\label{be1}
+\end{equation}
+Using the following six equations
+\begin{gather}
+\frac{\partial F_{x}}{\partial x}=2(x-v)-2x\lambda\alpha\ ,\\
+\frac{\partial F_{x}}{\partial v}=-2(x-v)\ ,\\
+\frac{\partial F_{x}}{\partial \alpha}=-\lambda x^{2}\ ,\\
+\frac{\partial F_{v}}{\partial x}=(x-v)\left[2\alpha+\frac{2}{x^{2}}\right]-\frac{2}{x}\ ,\\
+\frac{\partial F_{v}}{\partial v}=-2(x-v)\alpha+\frac{2}{x}\ ,\\
+\frac{\partial F_{v}}{\partial \alpha}=(x-v)^{2}\ ,
+\end{gather}
+%{\bf $(B6)$ should be
+%$\frac{\partial F_{v}}{\partial v}=-2(x-v)\alpha+2/x$?
+%Email sent to BoYuan Liu.  2016 April 25. Confirmed. }
+together with two PDEs (\ref{e9}) and (\ref{e13}) to eliminate $\alpha$ and $\alpha'$ in ODE (\ref{be1}), we then obtain equation (\ref{e28}).
+
+As for equation (\ref{e29}), it is derived by combination of two ODEs (\ref{e9}) and (\ref{e13}) to eliminate $\alpha$.
+
+\section{Analysis of isothermal MHD shock conditions}
+\label{a3}
+With the definitions that $\beta_{1}\equiv 8\pi p_{1}/(B_{1}^{2})$ and $M_{1}\equiv u_{1}/a_{1}$ at hand, and a substitution of expressions (\ref{e33}) into equation (\ref{e31}), we readily derive 
+\begin{equation}
+Xp_{1}+X^{2}p_{1}/\beta_{1}+p_{1}M_{1}^{2}/X=p_{1}+p_{1}/\beta_{1}+p_{1}M_{1}^{2}\ ,
+\end{equation}
+which, after removing the common factor $p_{1}$, becomes
+\begin{equation}
+(X-1)+(X-1)(X+1)/\beta_{1}=M^{2}_{1}(X-1)/X\ .\label{ce2}
+\end{equation}
+Here, $X=1$ would be a trivial solution. Then by removing the common factor $X-1\neq 0$, algebraic equation (\ref{ce2}) gives
+\begin{equation}
+1+(X+1)/\beta_{1}=M^{2}_{1}/X\ ,
+\end{equation}
+which is equivalent to equation (\ref{e34}) in the main text.
+
+Similarly, equation (\ref{e40}) for two-temperature isothermal MHD shock conditions can be obtained by substituting formulae (\ref{e39}) into equation (\ref{e38}). The original form appears as
+\begin{equation}
+X^{2}a_{i}^{2}/\beta_{1}+\tau^{2}X a_{i}^{2}+M_{1}^{2}a_{i}^{2}/X=a_{i}^{2}/\beta_{1}+a_{i}^{2}+a_{i}^{2}M_{1}^{2}\ .
+\end{equation}
+
+It is known that $f_{II}(X\rightarrow +\infty)\rightarrow +\infty$, $f_{II}(X\rightarrow -\infty)\rightarrow -\infty$, and $f_{II}(X=0)=\beta_{1}M_{1}^{2}>0$, the cubic equation (\ref{e40}) has at least one negative (real) root.
+
+When $\tau<1$, $f_{II}(X=1)=\beta_{1}\left(\tau^{2}-1\right)<0$. Apparently, equation (\ref{e40}) has three real roots of which one is positive and smaller than 1, while the other positve one is greater than 1.
+
+When $\tau>1$, $f_{II}(X=1)>0$, further analysis is needed to draw meaningful conclusions. We take differentiation of $f_{II}(X)$ with respect to $X$ as $f'_{II}(X)=df_{II}/dX$:
+\begin{equation}
+f'_{II}(X)=3X^{2}+2\beta_{1}\tau^{2}X-\left(1+\beta_{1}+\beta_{1}M_{1}^{2}\right)\ ,
+\end{equation}
+from which we can easily find two roots for $f'_{II}(X)=0$:
+\begin{equation}
+X_{\pm}=\{ -\beta_{1}\tau^{2}\pm \left[ \beta_{1}^{2}\tau^{4}+3\left(1+\beta_{1}+\beta_{1}M_{1}^{2}\right)\right]^{1/2}\}/3\ .
+\end{equation}
+%Checked to be correct based on results in this Appendix C.
+%                       2016 April 24 Sunday
+For $f_{II}(X_{+})>0$, there is no real root for $f_{II}(X)=0$ other than the aforementioned negative root. For $f_{II}(X_{+}\leq 0)$ 
+%{\bf Should be $f_{II}(X_{+})\leq 0$?} \textit{Yes. Do you mean that I should not include the case that $f_{II}(X_{+})=0$? But it corresponds exactly to the upper bound of $\tau$ (see Section~\ref{s6.1}), where Type 1 and Type 2 two-temperature isothermal MHD shock conditions become the same.}
+, there are two positive real roots to make $f_{II}(X)=0$ (including the repeated root). In the latter case, the two positive roots are either both larger than 1 or both smaller than 1 beacuse $f_{II}(X=1)>0$. From above analysis, we arrive at the conclusion in Section \ref{s3.2} that the cubic equation (\ref{e40}) may have two positive roots both larger than 1, or have no real root larger than 1.
+
+
+\section{Comparison to the MHD shock conditions in a general polytropic magneto-fluid}
+\label{a5}
+This section shows how the equations for MHD shock conditions reduce from their general forms in a (sphericall symmetric) general polytropic magneto-fluid (under self-gravity) of \citet{wang2008dynamic} to those in an isothermal magneto-fluid of the present paper when $\gamma\rightarrow 1$.
+
+The self-similar transformation in \citet{wang2008dynamic} (formulae (7)) is
+\begin{gather}
+\begin{split}
+r&=k^{\frac{1}{2}}t^{n}x\ ,\quad u=k^{\frac{1}{2}}t^{n-1}v\ ,\quad \rho=\frac{\alpha}{4\pi Gt^{2}}\ ,\\
+p&=\frac{kt^{2n-4}}{4\pi G}\beta\ ,\quad M=\frac{k^{\frac{3}{2}}t^{3n-2}m}{(3n-2)G}\ ,\quad \langle B^{2}_{t}\rangle=\frac{kt^{2n-4}}{G}\omega\ ,
+\end{split}\label{ee1}
+\end{gather}
+where the definitions of $u$, $\rho$, $p$ and $M$ are
+the same with our work and the $B_{t}$ here is just the $B_{\parallel}$ in equation~(\ref{e3}). 
+
+We further know from the MHD PDEs/ODEs that (equations (11) and (12) in \citet{wang2008dynamic}) 
+\begin{gather}
+\omega=h\alpha^{2}x^{2}\ ,\quad \beta=\alpha^{\gamma}m^{q}\ ,\label{ee2}
+\end{gather}
+where $\gamma$ is the polytropic index and $q=2(n+\gamma-2)/(3n-2)$. For the polytropic MHD model in \citet{wang2008dynamic}, the effective entropy is conserved, if meanwhile the gas is isothermal, i.e. $p=a^{2}\rho$, to reduce to our isothermal model, we must have $n=1$, $k=A^{2}=\gamma a^{2}$, $h=\lambda$, $\omega=b$, and $\alpha^{\gamma}m^{q}=\alpha/\gamma$, which means that $\gamma\rightarrow 1$ and $q=0$, where $A$ is the adiabatic sound speed, $a$ is the isothermal sound speed and $\lambda$ is the dimensionless parameter that characterises the strength of the magnetic field in our isothermal MHD model defined in formula~(\ref{e5}).
+
+The shock conditions expressed by physical quantities are (expressions (17)-(20) in \citet{wang2008dynamic}\footnote{It here uses a pair of square brackets outside each expression enclosed to denote the difference between the upstream (marked by sub-script `u') and downstream (marked by subscript `d') quantities, as has been done conventionally for shock analyses.})
+\begin{gather}
+\left[\rho\left(u_{s}-u\right)\right]_{u}^{d}=0\ ,\label{ee3}\\
+\left[p+\rho\left(u_{s}-u\right)^{2}+\frac{\langle B_{t}^{2}\rangle}{8\pi}\right]_{u}^{d}=0\ ,\label{ee4}\\
+\left[\left(u_{s}-u\right)^{2}\langle B_{t}^{2}\rangle\right]_{u}^{d}=0\ ,\label{ee6}\\
+\left[\frac{\rho\left(u_{s}-u\right)^{3}}{2}+\frac{\gamma p\left(u_{s}-u\right)}{\gamma-1}+\frac{\langle B_{t}^{2}\rangle}{4\pi}\left(u_{s}-u\right)\right]_{u}^{d}=0\ ,\label{ee5}
+\end{gather}
+of which equations~(\ref{ee3})-(\ref{ee6}) are equivalent to equations~(\ref{e30})-(\ref{e32}), and euqation~(\ref{ee5}) equivalent to equation~(\ref{ex2}) for (dynamical) MHD energy conservation (which is not well formulated as $\gamma\rightarrow 1$, since the second term $\gamma p\left(u_{s}-u\right)/(\gamma-1)$ diverges). MHD/HD energy conservation is not considered in the isothermal models of \citet{lou2014self}, \citet{yuLou2006} and the present work. The following derivations will show that in the isothermal MHD model with $\gamma\rightarrow 1$, MHD energy is conserved (dynamically) only when both sides of the shock have the same temperature.
+
+By formulae~(\ref{ee1}) and (\ref{ee2}), from equations~(\ref{ee3})-(\ref{ee5}), we obtain the shock conditions in self-similar variables of the general polytropic MHD model (formulae~(64) in \citet{wang2008dynamic}):
+\begin{gather}
+\alpha_{1}\Gamma_{1}=\alpha_{2}\Gamma_{2}\ ,\label{ee7}\\
+\alpha_{1}^{2-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+\alpha_{1}\Gamma_{1}^{2}+\frac{h\alpha_{1}^{2}}{2}=left(\alpha_{2},\ x_{2},\ \Gamma_{2})\ ,\label{ee8}\\
+\Gamma_{1}^{2}+\frac{2\gamma}{\gamma-1}\alpha_{1}^{1-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+2h\alpha_{1}=left(\alpha_{2},\ x_{2},\ \Gamma_{2})\ ,\label{ee9}
+\end{gather}
+where $left(\alpha_{2},\ x_{2},\ \Gamma_{2})$ denotes the formula on the left side of the equal sign with $\alpha_{1}$, $x_{1}$ and $\Gamma_{1}$ replaced by $\alpha_{2}$, $x_{2}$ and $\Gamma_{2}$, $\Gamma_{i}=n-v_{i}/x_{i}$, and $\tau=\sqrt{k_{2}/k_{1}}=x_{1}/x_{2}$, since $u_{s}=dr_{s}/dt=nk_{i}^{1/2}t^{n-1}x_{i}$ ($i=1,\ 2$). And it is necessay to point out that equations~(\ref{ee7})-(\ref{ee9}) correspond to equations~(\ref{ee3}), (\ref{ee4}) and (\ref{ee5}), respectively, while equation~(\ref{ee6}) has been combined with equation~(\ref{ee3}) to give $h_{1}=h_{2}=h$. We can further eliminate $\alpha_{2}$ in equations~(\ref{ee8}) and (\ref{ee9}) by equation~(\ref{ee7}) to give (equations~(65) in \citet{wang2008dynamic})
+\begin{gather}
+\alpha_{1}^{2-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+\alpha_{1}\Gamma_{1}^{2}+\frac{h\alpha_{1}^{2}}{2}\notag\\
+=\frac{\left(\alpha_{1}\Gamma_{1}\right)^{2-n+\frac{3nq}{2}}}{\Gamma_{2}^{2-n+\frac{(3n-2)q}{2}}}x_{2}^{3q-2}+\alpha_{1}\Gamma_{1}\Gamma_{2}+\frac{h\alpha_{1}^{2}\Gamma_{1}^{2}}{2\Gamma_{2}^{2}}\ ,\label{ee10}\\
+\frac{2\gamma}{(\gamma-1)}\alpha_{1}^{1-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q}+\Gamma_{1}^{2}+2h\alpha_{1}\notag\\
+=\frac{2\gamma}{(\gamma-1)}\frac{\left(\alpha_{1}\Gamma_{1}\right)^{1-n+\frac{3nq}{2}}}{\Gamma_{2}^{1-n+\frac{(3n-2)q}{2}}}x_{2}^{3q-2}+\Gamma_{2}^{2}+2h\frac{\alpha_{1}\Gamma_{1}}{\Gamma_{2}}\ ,\label{ee11}
+\end{gather}
+of which equation~(\ref{ee11}) can be regarded to embody (dynamical) MHD energy conservation since it is directly related to equation~(\ref{ee5}) which, as mentioned above, cannot be included in the $\gamma\rightarrow 1$ isothermal model in a straight forward manner, while equation~(\ref{ee6}) corresponds to momentum conservation.
+
+Now, recall the cubic equation~(\ref{e40}) and the quadric equation~(\ref{e34}) for the two-temperature and one-temperature isothermal MHD shock conditions
+\begin{gather}
+X^{3}+\tau^{2}X^{2}\beta_{1}-\left(1+\beta_{1}+\beta_{1}M_{1}^{2}\right)X+M_{1}^{2}\beta_{1}=0\ ,\label{ee12}\\
+X^{2}+\left(\beta_{1}+1\right)X-\beta_{1}M_{1}^{2}=0\ ,\label{ee13}
+\end{gather}
+where (formulae~(\ref{e39}))
+\begin{gather}
+\begin{split}
+&\tau=a_{j}/a_{i}=x_{si}/x_{sj}\ ,
+\ M_{1}=v_{i}-x_{si}\ ,
+\ \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ ,\\
+&X=\alpha_{j}/\alpha_{i}=(v_{i}-x_{si})/[\tau (v_{j}-x_{sj})]\ .
+%\\
+%&M_{1}=v_{i}-x_{si}\ ,
+%\qquad \beta_{1}=2/(\lambda x^{2}_{si}\alpha_{i})\ .
+\end{split}\label{ee14}
+\end{gather}
+Our goal is to find the relations among equations~(\ref{ee10})-(\ref{ee11}) and equations~(\ref{ee12})-(\ref{ee13}). For the relations among the variables of these two groups of equations, when we set $(i,\ j)=(1,\ 2)$\footnote{To be consistent, we also have $x_{s1}=x_{1}$ and $x_{s2}=x_{2}$.} in formulae~(\ref{ee14}), as $\gamma\rightarrow 1$, $n\rightarrow 1$, $q\rightarrow 0$, $k=a^{2}$, and $h=\lambda$, it turns out that
+\begin{gather}
+\beta_{1}=\frac{2}{hx_{1}^{2}\alpha_{1}}\ ,\quad M_{1}=-x_{1}\Gamma_{1}\ ,\quad X=\frac{\Gamma_{1}}{\Gamma_{2}}\ .\label{ee15}
+\end{gather}
+Then through simple algebra and equations~(\ref{ee15}), the reduced (isothermal) version of equation~(\ref{ee10})
+\begin{gather}
+\alpha_{1}x_{1}^{-2}+\alpha_{1}\Gamma_{1}^{2}+\frac{h\alpha_{1}^{2}}{2}\notag\\
+-\frac{\alpha_{1}\Gamma_{1}}{\Gamma_{2}}\left(\frac{x_{1}}{\tau}\right)^{-2}-\alpha_{1}\Gamma_{1}\Gamma_{2}-\frac{h\alpha_{1}^{2}\Gamma_{1}^{2}}{2\Gamma_{2}^{2}}=0 \label{ee16}
+\end{gather}
+can be easily put into the form
+\begin{gather}
+\alpha_{1}x_{1}^{-2}\lbrace 1+\left(x_{1}\Gamma_{1}\right)^{2}+\frac{h\alpha_{1}x_{1}^{2}}{2}\notag\\
+-\tau^{2}\frac{\Gamma_{1}}{\Gamma_{2}}-\left(x_{1}\Gamma_{1}\right)^{2}\frac{\Gamma_{2}}{\Gamma_{1}}-\frac{h\alpha_{1}x_{1}^{2}}{2}\left(\frac{\Gamma_{1}}{\Gamma_{2}}\right)^{2}\rbrace=0\ ,i.e.\notag\\
+1+M_{1}^{2}+\frac{1}{\beta_{1}}-\tau^{2}X-\frac{M_{1}^{2}}{X}-\frac{1}{\beta_{1}}X^{2}=0\ ,\label{ee17}
+\end{gather}
+which is exactly equation~(\ref{ee12}) for the two-temperature isothermal MHD shock conditions divided by $-X\beta_{1}$. Here we do not consider equation~(\ref{ee11}) for (dynamical) MHD energy conservation at all. So the conclusion is that for two-temperature isothermal MHD shocks, MHD energy does not conserve (dynamically).
+
+Actually, we can eliminate $x_{2}$ in equations~(\ref{ee10}) and (\ref{ee11}) to give (see equations~(66) and (67) in \citet{wang2008dynamic})
+\begin{gather}
+\lbrace \frac{(\gamma+1)}{2\gamma}\Gamma_{2}^{2}-\left(\alpha_{1}^{1-n+\frac{3nq}{2}}x_{1}^{3q-2}\Gamma_{1}^{q-1}+\frac{\gamma-1}{2\gamma}\Gamma_{1}+\frac{h\alpha_{1}}{2\Gamma_{1}}\right)\Gamma_{2}\notag\\
+-\frac{2-\gamma}{2\gamma}h\alpha_{1}\rbrace \left(\Gamma_{2}-\Gamma_{1}\right)=0\ ,\label{ee18}
+\end{gather}
+which can be reduced to the isothermal version as $\gamma\rightarrow 1$, $n\rightarrow 1$, and $q\rightarrow 0$:
+\begin{gather}
+\left[\Gamma_{2}^{2}-\left(x_{1}^{-2}\Gamma_{1}^{-1}+\frac{h\alpha_{1}}{2\Gamma_{1}}\right)\Gamma_{2}-\frac{h\alpha_{1}}{2}\right]\left(\Gamma_{2}-\Gamma_{1}\right)=0\ .\label{ee19}
+\end{gather}
+By equations~(\ref{ee15}), we can write this equation~(\ref{ee19}) as
+\begin{gather}
+\left[\left(\Gamma_{1}x_{1}\right)^{2}\left(\frac{\Gamma_{2}}{\Gamma_{1}}\right)^{2}-\left(1+\frac{h\alpha_{1}x_{1}^{2}}{2}\right)\frac{\Gamma_{2}}{\Gamma_{1}}-\frac{h\alpha_{1}x_{1}^{2}}{2}\right]\notag\\
+\times \left(1-\frac{\Gamma_{1}}{\Gamma_{2}}\right)\Gamma_{2}x_{1}^{-2}=0\ , i.e.\notag\\
+\left[M_{1}^{2}\frac{1}{X^{2}}-\left(1+\frac{1}{\beta_{1}}\right)\frac{1}{X}-\frac{1}{\beta_{1}}\right](1-X)=0\ ,\label{ee20}
+\end{gather}
+which is exactly equation~(\ref{ee13}) multiplied by a factor $(X-1)/\left(X^{2}\beta_{1}\right)$, and we can throw away the factor $\left(1-X\right)$, since $X=1$ gives trivial results. This outcome indicates that if we take into account (dynamical) MHD energy conservation by combining equations~(\ref{ee10}) and (\ref{ee11}) to attain equation~(\ref{ee18}), the MHD shock condition in the general polytropic model will reduce to the one-temperature shock condition in the isothermal model under $\gamma\rightarrow 1$. We finally conclude that equation~(\ref{ee5}) for (dynamical) MHD energy conservation in the general polytropic model is consistent with the very restriction that $a_{1}=a_{2}$ (i.e. $\left(k_{B}T_{u}/\mu\right)^{1/2}=a_{u}=a_{d}=\left(k_{B}T_{d}/\mu\right)^{1/2}$, $T_{u}=T_{d}$: both sides of the shock have the same temperature) in the $\gamma\rightarrow 1$ isothermal model. 
+
+\section{Class III converging isothermal MHD shock solutions}
+\label{a4}
+
+%{\bf The issue here is the physical scenario of free-fall
+% solution after time reversal.   2016 April 27 Wednesday}
+
+Excluding the MHD EWCS, MHD free-fall collapse solutions can be divided into two groups. MHD solutions in Group 1 do not cross the MSCL, while those in Group 2 cross the MSCL twice. In this section, we investigate converging isothermal MHD Shocks relevant to these two groups of MHD free-fall collapse solutions separately.  
+
+\subsubsection{MHD solutions crossing the MSCL once}
+\label{s5.3.1}
+We connect central MHD free-fall collapse solutions of Group 1 with outer envelopes by taking backward integrations (as Type 1 eigensolutions) from various $x_{*}$s to near the origin $x_{0}=10^{-10}$ (at which we infer the approximate central accretion rate $m_{0}\approx m(x_{0})$ as demonstrated by the leading terms in the small-$x$ asymptotic solution~(\ref{e16})-(\ref{e17})) involving isothermal MHD shocks at certain $x_{sd}$ with parameters of the downstream and the ordinary two-temperature isothermal MHD shock condition. Five such MHD solutions are shown in Figure~\ref{16} and \ref{17}. The parameters of these MHD shock solutions are contained in Table~\ref{t4}.
+
+We also construct three converging isothermal MHD shock solutions with the upstream parameters from the EWCS (whose $m_{0}\sim 1.0328$ for $\lambda=0.1$), i.e. the magnetostatic outer envelope, as shown in Table~\ref{tse} and Figure~\ref{se}. 
+
+\begin{table}
+\centering
+\caption{Five Class III converging isothermal MHD shock solutions constructed by Group 1 MHD free-fall collapse solutions with $\lambda=0.1$, where $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$.}
+\begin{tabular}{ccccccc}
+\hline
+$x_{sd}$ & $x_{su}$ & $x_{*}$ & $V$ & $A$ & $m_{0}$ & L\\
+\hline
+0.35 & 0.4 & 0.9 & -0.472 & 1.491 & 1.0945 & c1\\
+0.4 & 0.45 & 1.0 & -0.225 & 1.746 & 1.0804 & c2\\
+0.45 & 0.5 & $\sqrt{1.2}$ & 0 & 2.0 & 1.0656 & c3\\
+0.5 & 0.6 & 1.2 & 0.235 & 2.288 & 1.3586 & c4\\
+0.6 & 0.7 & 1.3 & 0.449 & 2.569 & 1.3352 & c5\\
+\hline
+\end{tabular}
+\label{t4}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x3.1}
+\caption{The $-v$ versus $x$ diagram of Class III converging isothermal MHD Shocks relevant to Group 1 MHD free-fall collapse solutions with $\lambda=0.1$. The parameters of the pertinent inner MHD free-fall collapse solutions and the outer envelopes involving shocks are contained in Table~\ref{t4}. The dotted lines are non-shock MHD free-fall collapse solutions with the velocity and mass parameters $V_{0}$ and $A_{0}$ at the approximate infinity $x_{2}=500.0$ (the curve/MHD solution label L, $V_{0}$, $A_{0}$): (c1, -3.46, 0.3404), (c2, -3.18, 0.3695), (c3, -2.95, 0.3961), (c4, -2.85, 0.5071), (c5, -2.40, 0.5950). The dashed line is the MSCL.}
+\label{16}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{CvA-x3.1}
+\caption{The $v_{A}/a$ versus $x$ diagram of Class III converging isothermal MHD Shocks relevant to Group 1 MHD free-fall collapse solutions with $\lambda=0.1$, corresponding to Figure~\ref{16} and Table~\ref{t4}.}
+\label{17}
+\end{figure}
+
+\begin{table}
+\centering
+\caption{Three Class III converging isothermal MHD shock solutions constructed by the EWSC with $\lambda=0.1$, where $x_{2}=500.0$ for calculating approximately the values of the velocity and mass parameters $V$ and $A$. We use Type 1 eigensolutions starting from the MSCL both at $\sqrt{1+2\lambda}$ (to integrate outwards as the magnetostatic envelope of EWCS involving shocks at $x_{su}$ to $x_{m}$) and $x_{*}$ (to integrate backwards to $x_{m}$).}
+\begin{tabular}{ccccccc}
+\hline
+$x_{sd}$ & $x_{su}$ & $x_{*}$ & $\tau$ & $V$ & $A$ & L\\
+\hline
+1.6 & 1.7313 & 1.9724 & 1.0821 & 1.63 & 4.415 & s1 \\
+1.7 & 1.8945 & 2.1478 & 1.1144 & 1.87 & 4.833 & s2 \\
+1.8 & 2.0753 & 2.3297 & 1.1529 & 2.10 & 5.233 & s3 \\
+\hline
+\end{tabular}
+\label{tse}
+\end{table}
+
+%{\bf Stop here.  2016 April 17}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x_se}
+\caption{The $-v$ versus $x$ diagram of three Class III converging isothermal MHD Shocks relevant to the EWSC with $\lambda=0.1$ and parameters (the curve/MHD solution label L, the meeting point $x_{m}$): (s1, 1.7), (s2, 1.8), (s3, 1.9) (see Table~\ref{tse} for more information). The dashed dotted line is the non-shock EWCS. The dashed line is the MSCL.}
+\label{se}
+\end{figure}
+
+%{\bf Stop here. 2016 April 17 Sunday}
+
+\subsubsection{MHD solutions crossing the MSCL more than once}
+\label{s5.3.2}
+Three converging isothermal MHD Shocks are constructed with three Group 2 MHD free-fall collapse solutions crossing the MSCL at $x_{*}(1)$ and $x_{*}(2)$ \citep{yuLou2005}, respectively. Chosen $x_{sd}$, outward integrations (as Type 1 eigensolutions) from $x_{*}(2)$ to certain meeting point $x_{m}$ which experiences shocks at $x_{su}$ under Type 2 two-temperature isothermal MHD shock condition with different values of $\tau$ are taken to match with inward integrations from different $x_{*}(3)$s at $x_{m}$, which produces $\alpha$ versus $v$ loci as shown in Figure~\ref{18}. The information of these converging isothermal MHD Shocks is displayed in Table~\ref{t5}, and the properties in Figure~\ref{19}-\ref{22}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{lc3_1.165}
+\caption{Examples of the $\alpha$ versus $v$ locus in search of the Class III converging isothermal MHD Shock involving the Group 2 MHD free-fall collapse solutions with $\lambda=0.1$ and $x_{m}=2.3$. The upstream locus (marked by asterisks, labelled by `u') is formed by outward integrations starting from $x_{*}(2)=1.165$ involving shocks at $x_{ud}=2.2$ with different values of $\tau$ in the range of $1.246\sim 1.3$. $x_{*}(2)=1.165$ is where the MHD free-fall collapse solution that crosses the MSCL first at $x_{*}(1)=1.2\times 10^{-6}$ with the central accretion rate $m_{0}=2.399\times 10^{-6}$ crosses the MSCL for the second time. The downstream locus (marked by solid dot, labelled by `d') is produced by inward integrations as Type 1 eigensolutions with different starting points $x_{*}(3)$s on the MSCL in the range of $2.88\sim 3$.}
+\label{18}
+\end{figure}
+
+\begin{table}
+\centering
+\caption{Three Class III converging isothermal MHD shock solutions constructed by Group 2 MHD free-fall collapse solutions with $\lambda=0.1$, where $x_{2}=500.0$ for calculating approximately the values of V and A.}
+\begin{tabular}{ccccccc}
+\hline
+$x_{sd}$ & $x_{su}$ & $\tau$ & $x_{*}(3)$ & V & A & L\\
+\hline
+1.2 & 1.2223 & 1.0186 & 1.5500 & 0.939 & 3.282 & c6\\
+2.2 & 2.8534 & 1.2970 & 2.8931 & 2.74 & 6.306 & c7\\
+3.0 & 4.8954 & 1.6318 & 3.7296 & 3.58 & 7.634  & c8\\
+\hline
+\end{tabular}
+\label{t5}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{C-v-x3.2}
+\caption{The $-v$ versus $x$ diagram of Class III converging isothermal MHD Shocks relevant to Group 2 MHD free-fall collapse solutions with $\lambda=0.1$ and parameters (the curve/MHD solution label L, number of the stagnation point (i.e. at which $v=0$) N, the point at which the MHD free-fall collapse solution crosses the MSCL for the first time $x_{*}(1)$, the point at which the MHD free-fall collapse solution crosses the MSCL for the second time $x_{*}(2)$, the meeting point $x_{m}$, the central accretion rate of the MHD free-fall collapse solution $m_{0}$): (c8, 1, 0.10306, 1.81092, 3.2, 0.1948), (c6, 2, $1.28\cdot 10^{-4}$, 0.873, 1.25, $2.5513\times 10^{-4}$), (c7, 3, $1.2\times 10^{-6}$, 1.165, 2.3, $2.3990\times 10^{-6}$). More information is contained in Table~\ref{t5}. The dashed line corresponds to the MSCL.}
+\label{19}
+\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{Ca(log)-x3}
+%\caption{The $\alpha-x$ diagram of Class III converging isothermal MHD Shocks relevant to Group 2 free-fall collapse solutions with $\lambda=0.1$ and a log-scaled $\alpha$ axis. The dashed line corresponds to the MSCL.}
+%\label{20}
+%\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\columnwidth]{Cb(log)-x3}
+%\caption{The $b-x$ diagram of Class III converging isothermal MHD Shocks relevant to Group 2 free-fall collapse solutions with $\lambda=0.1$. The $b$ axis is scaled by the log function.}
+%\label{21}
+%\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{CvA-x3.2}
+\caption{The $v_{A}/a$ versus $x$ diagram of Class III converging isothermal MHD Shocks relevant to Group 2 MHD free-fall collapse solutions with $\lambda=0.1$, corresponding to Figure~\ref{19} and Table~\ref{t5}.}
+\label{22}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+% End of mnras_template.tex
+
